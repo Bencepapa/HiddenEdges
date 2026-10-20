@@ -4117,8 +4117,8 @@ function drawPiece(p,g,i){const u=unitsOf(p),dx=p.drag?p.drag[0]-(g.BX+p.x*g.C):
   ctx.save();ctx.globalAlpha=.42;ctx.fillStyle=TILE_COL[i%TILE_COL.length];ctx.fill(pp);ctx.restore();
   hatch(pp,[0,0,600,800],[-45,45,0,90,-45,45][i%6],7,LW.thin);pen(LW.thick*1.3);outline(u,g,dx,dy);}
 function sheetTileCol(){const l=L(),g=tileGeo();txt('SZÍNES LAP · így áll össze',30,118,10.5);
-  // tile puzzles reveal only every other piece; the rest of the shape stays blank
-  l.sol.forEach(([n,r,x,y],i)=>{if(l.kind==='tan'&&i%2)return;const u=qrots(PLIB[n])[r].map(([a,b,q])=>[a+x,b+y,q]),pp=shapePath(u,g);ctx.fillStyle=TILE_COL[i%TILE_COL.length];ctx.fill(pp);pen(LW.thick);outline(u,g);});
+  // the colour sheet reveals only about a third of the pieces; the rest of the shape stays blank
+  l.sol.forEach(([n,r,x,y],i)=>{if(i%3)return;const u=qrots(PLIB[n])[r].map(([a,b,q])=>[a+x,b+y,q]),pp=shapePath(u,g);ctx.fillStyle=TILE_COL[i%TILE_COL.length];ctx.fill(pp);pen(LW.thick);outline(u,g);});
   pen(LW.thick*1.6);outline(l.target,g);noteLine(l);}
 function sheetTile(){const l=L(),g=tileGeo();txt('KIRAKÓ · húzd az elemeket a formára',30,118,10.5,'left',700,INK,'alphabetic',540);
   drawTarget(l,g);pen(LW.med);seg(30,392,570,392);txt('ELEMEK',30,410,10.5);
@@ -4211,7 +4211,7 @@ function genTiles(r,kind){const names=kind==='tet'?shuffleR(r,['I','O','T','L','
     if(!best||sc<best.sc)best={sc,sol,us,mx:Math.min(...xs),my:Math.min(...ys)};}
   const target=best.us.map(([x,y,q])=>[x-best.mx,y-best.my,q]),sol=best.sol.map(([n,ri_,dx,dy])=>[n,ri_,dx-best.mx,dy-best.my]);
   const t=tmplOf(EASY,kind==='tet'?'Burkolat':'Parketta');
-  return tileLevel({...fromTemplate(t),kind,pieces:names,target,sol});}
+  const l=tileLevel({...fromTemplate(t),kind,pieces:names,target,sol});l.sheets=['tile'];return l;}   // RANDOM is the hard folder: no colour sheet
 const GENERATORS={'Vonalvastagság':genWalls,'Magasságtérkép':genHeights,'Kulcsmásolás':genKey,'Látkép':genSky,'Árnyék':r=>genShadow(r,false),
   'Árnyékfestmény':r=>genShadow(r,true),'Revíziók':genLog,'Méretlánc':genChain,'Elemek':r=>genTiles(r,'tet'),'Csempe':r=>genTiles(r,'tan')};
 function openRandom(ti,seed){const[name]=GEN_TYPES[ti],gen=GENERATORS[name];if(!gen){S.popup='A generátor hamarosan érkezik.';render();return;}
