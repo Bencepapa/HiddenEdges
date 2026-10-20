@@ -4150,23 +4150,15 @@ function fromTemplate(t,extra){return{name:t.name,sub:t.sub,rev:t.rev,...extra};
 
 function genWalls(r){const N=5;let w;do{w=[...Array(N)].map(()=>[...Array(N)].map(()=>r()<.45?1:0));}while(w.flat().filter(v=>v).length<6||w.flat().filter(v=>!v).length<6);
   const t=tmplOf(LEVELS,'Szigetelés');return{...fromTemplate(t),N,maxH:1,sheets:['wires','plan'],wall:w,check(g){return g.every((row,y)=>row.every((v,x)=>v===1-this.wall[y][x]));}};}
-// how much of each cell's marker (its floor if empty, else the top of its column) the axonometric picture shows, 0..1
-let VIS_CV=null;
-function isoVisibility(g){const N=g.length,s=24,W=300;if(!VIS_CV){VIS_CV=document.createElement('canvas');VIS_CV.width=VIS_CV.height=W;}
-  const c=VIS_CV.getContext('2d',{willReadFrequently:true}),P=(x,y,z)=>[W/2+(x-y)*C30*s,W/2-N*s/2+(x+y)*s/2-z*s+40];
-  const quad=(x,y,z)=>[P(x,y,z),P(x+1,y,z),P(x+1,y+1,z),P(x,y+1,z)],fill=(pts,col)=>{c.fillStyle=col;c.beginPath();pts.forEach((q,i)=>i?c.lineTo(q[0],q[1]):c.moveTo(q[0],q[1]));c.closePath();c.fill();};
-  const id=k=>`rgb(${10+k},0,0)`,count=()=>{const d=c.getImageData(0,0,W,W).data,n=new Array(N*N).fill(0);for(let i=0;i<d.length;i+=4)if(d[i+1]===0&&d[i+2]===0&&d[i]>=10&&d[i]<10+N*N)n[d[i]-10]++;return n;};
-  const marker=(x,y)=>quad(x,y,g[y][x]);
-  // full area of every marker on its own
-  // every marker is the same rhombus, so one sample gives the full area
-  c.clearRect(0,0,W,W);fill(quad(0,0,0),id(0));const area=count()[0],full=new Array(N*N).fill(area);
-  // the whole picture: markers, then every cube's visible faces drawn back to front in white
-  c.clearRect(0,0,W,W);for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(!g[y][x])fill(marker(x,y),id(y*N+x));
-  const cubes=[];for(let y=0;y<N;y++)for(let x=0;x<N;x++)for(let z=0;z<g[y][x];z++)cubes.push([x,y,z]);
-  cubes.sort((a,b)=>(a[0]+a[1]+a[2])-(b[0]+b[1]+b[2])||a[2]-b[2]);
-  cubes.forEach(([x,y,z])=>{const top=z===g[y][x]-1;fill([P(x+1,y,z),P(x+1,y+1,z),P(x+1,y+1,z+1),P(x+1,y,z+1)],'#fff');fill([P(x,y+1,z),P(x+1,y+1,z),P(x+1,y+1,z+1),P(x,y+1,z+1)],'#fff');
-    fill(quad(x,y,z+1),top?id(y*N+x):'#fff');});
-  const seenN=count();return full.map((f,i)=>f?seenN[i]/f:1);}
+// how much of each cell's marker (its floor if empty, else the top of its column) the axonometric picture shows, 0..1.
+// The picture looks along (1,1,1): a point is hidden when the ray from it towards the viewer passes through a cube.
+function isoVisibility(g){const N=g.length,K=6,res=[];
+  const hidden=(u,v,h)=>{let t=0;for(let guard=0;guard<4*N;guard++){
+      const nu=Math.floor(u+t)+1-(u+t),nv=Math.floor(v+t)+1-(v+t);t+=Math.min(nu,nv)+1e-9;
+      const a=Math.floor(u+t),b=Math.floor(v+t);if(a>=N||b>=N)return false;
+      if(h+t<g[b][a])return true;}return false;};
+  for(let y=0;y<N;y++)for(let x=0;x<N;x++){let seen=0;for(let i=0;i<K;i++)for(let j=0;j<K;j++)if(!hidden(x+(i+.5)/K,y+(j+.5)/K,g[y][x]))seen++;res.push(seen/(K*K));}
+  return res;}
 function genView(r){
   for(let k=0;k<200;k++){const N=ri(r,3,4),ask=pickR(r,['A','B','top']),g=[...Array(N)].map(()=>[...Array(N)].map(()=>r()<.25?0:ri(r,1,3)));
     if(Math.max(...g.flat())<2||g.flat().filter(v=>v).length<N+2)continue;
