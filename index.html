@@ -2284,6 +2284,27 @@ body{overflow:hidden}
    "it": "SUONO"
   },
   {
+   "hu": "VÉLETLEN",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "RANDOM",
+   "de": "ZUFALL",
+   "it": "CASUALE"
+  },
+  {
+   "hu": "„{c}” oszlop törölve",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "column “{c}” cleared",
+   "de": "Spalte „{c}“ geleert",
+   "it": "colonna «{c}» svuotata"
+  },
+  {
+   "hu": "Tükrözve a vízszintes tengelyre",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "Mirrored on the horizontal axis",
+   "de": "An der waagerechten Achse gespiegelt",
+   "it": "Specchiato sull'asse orizzontale"
+  },
+  {
    "hu": "PÉLDA",
    "ctx": "Appears on: Easy level 12 (Belváros), sheet 1; Easy level 2 (Látkép), sheet 1 (+1 more).",
    "en": "EXAMPLE",
@@ -2997,9 +3018,9 @@ const S={lvl:0,sheet:0,grid:null,undo:[],solved:{},anim:null,ghosts:[],settings:
 S.screen='title';S.toc={kind:'hard',page:0};S.popup=null;S.pack='hard';
 try{const s=JSON.parse(localStorage.getItem('takart-el-v1')||'null');if(s){S.lvl=s.lvl|0;S.pack=s.pack==='easy'?'easy':'hard';S.solved=s.solved||{};S.unlocked=!!s.unlocked;Object.assign(S.set,s.set||{});}}catch(e){}
 function save(){try{localStorage.setItem('takart-el-v1',JSON.stringify({lvl:S.lvl,pack:S.pack,solved:S.solved,set:S.set,unlocked:!!S.unlocked}));}catch(e){}}
-const PACK=()=>S.pack==='easy'?EASY:LEVELS;
+const PACK=()=>S.pack==='easy'?EASY:S.pack==='random'&&S.rnd?[S.rnd.level]:LEVELS;
 const L=()=>PACK()[S.lvl];
-const sk=i=>(S.pack==='easy'?'e':'')+i;
+const sk=i=>S.pack==='random'&&S.rnd?'r'+S.rnd.ti+'_'+S.rnd.seed:(S.pack==='easy'?'e':'')+i;
 function startLevel(i){
   S.lvl=(i+PACK().length)%PACK().length;S.sheet=0;const l=L();
   S.grid=Array.from({length:l.N},()=>Array(l.N).fill(0));S.undo=[];S.anim=null;S.ghosts=[];S.cleaned=false;
@@ -3032,17 +3053,17 @@ function drawFrame(){
   const l=L();
   pen(LW.thin);ctx.strokeRect(8,8,584,784);pen(LW.thick);ctx.strokeRect(18,18,564,764);
   for(let c=1;c<6;c++){const x=18+c*94;pen(LW.thin);seg(x,8,x,18);seg(x,782,x,792);}
-  txt(String(S.lvl+1).padStart(2,'0'),30,56,28,'left',700);
+  txt(S.pack==='random'?String(S.rnd.ti+1).padStart(2,'0'):String(S.lvl+1).padStart(2,'0'),30,56,28,'left',700);
   txt(l.name.toUpperCase(),80,48,16,'left',700,INK,'alphabetic',174);
   txt(l.sub,80,75,10.5,'left',400,INK,'alphabetic',370);
   // level arrows
   button(262,26,98,36,'TISZTÍT',false,()=>{S.settings=false;S.ghosts=[];S.cleaned=true;SFX.play('whoosh');flash(render,true);},'szellemkép');
   navButton('list',()=>turn(()=>openToc(S.pack)));
-  button(366,26,44,36,'‹',false,()=>turn(()=>S.lvl===0?openToc(S.pack):startLevel(S.lvl-1)));
-  button(416,26,44,36,'›',false,()=>turn(()=>S.lvl===PACK().length-1?openToc(S.pack):startLevel(S.lvl+1)));
+  button(366,26,44,36,'‹',false,()=>turn(()=>S.pack==='random'||S.lvl===0?openToc(S.pack):startLevel(S.lvl-1)));
+  button(416,26,44,36,'›',false,()=>turn(()=>S.pack==='random'?openRandom(S.rnd.ti):S.lvl===PACK().length-1?openToc(S.pack):startLevel(S.lvl+1)));
   // settings: a gear in the title block
   button(522,26,44,36,'',S.settings,()=>{S.settings=!S.settings;render();});gear(544,44,11,S.settings?'#fff':INK);
-  txt(T(`PÁLYA ${S.lvl+1}/${PACK().length}`)+(S.solved[sk(S.lvl)]?'  ✓':''),566,76,9.5,'right',700);
+  txt((S.pack==='random'?T('VÉLETLEN')+' #'+S.rnd.seed:T(`PÁLYA ${S.lvl+1}/${PACK().length}`))+(S.solved[sk(S.lvl)]?'  ✓':''),566,76,9.5,'right',700);
   pen(LW.med);seg(30,82,570,82);
   // sheet tabs
   pen(LW.med);seg(30,712,570,712);
@@ -3778,7 +3799,7 @@ const GEN_TYPES=[['Vonalvastagság','vonalvastagság-kalibráció'],['Furatok','
   ['Kockaháló','hálóról a látható lapok'],['Árnyékfestmény','festett árnyékból a magasságok'],['Látkép','magasságok a látható házak számából'],['Kulcsmásolás','recék a mintakulcsról'],['Elemek','tetris-elemekből egy forma'],['Csempe','háromszögekből, négyzetekből forma']];
 function allSolved(){return LEVELS.every((_,i)=>S.solved[i]);}
 function tocEntries(){const k=S.toc.kind;if(k!=='random'){const P=k==='easy'?EASY:LEVELS,pre=k==='easy'?'e':'';return P.map((l,i)=>({no:i+1,name:l.name,note:l.sub,done:!!S.solved[pre+i],go:()=>turn(()=>openGame(i,k))}));}
-  return GEN_TYPES.map(([n,d],i)=>({no:i+1,name:n,note:d,done:false,go:()=>{S.popup='A generátor hamarosan érkezik.';render();}}));}
+  return GEN_TYPES.map(([n,d],i)=>({no:i+1,name:n,note:d,done:Object.keys(S.solved).some(k=>k.startsWith('r'+i+'_')),go:()=>turn(()=>openRandom(i))}));}
 const TOC_ROWS=15;
 function tocPages(){return Math.max(1,Math.ceil(tocEntries().length/TOC_ROWS));}
 // any jump between levels or screens: in NORMAL page-turn mode it flashes like a sheet change
@@ -4113,6 +4134,90 @@ function initTiles(l){const g=tileGeo(),x0=Math.ceil((40-g.BX)/g.C),xMax=Math.fl
     if(x+w>xMax){x=x0;y+=rowH;rowH=0;}
     const p={n,r:0,x,y,ci:i,drag:null};x+=w+(g.C<45?1:0);rowH=Math.max(rowH,h);return p;});}
 
+/* ---------- RANDOM folder: puzzle generators ---------- */
+const ri=(r,a,b)=>a+Math.floor(r()*(b-a+1)),pickR=(r,a)=>a[Math.floor(r()*a.length)];
+function shuffleR(r,a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+const tmplOf=(list,name)=>list.find(l=>l.name===name);
+// every generated level copies the instruction line of a hand-made level of the same kind
+function fromTemplate(t,extra){return{name:t.name,sub:t.sub,rev:t.rev,...extra};}
+
+function genWalls(r){const N=5;let w;do{w=[...Array(N)].map(()=>[...Array(N)].map(()=>r()<.45?1:0));}while(w.flat().filter(v=>v).length<6||w.flat().filter(v=>!v).length<6);
+  const t=tmplOf(LEVELS,'Szigetelés');return{...fromTemplate(t),N,maxH:1,sheets:['wires','plan'],wall:w,check(g){return g.every((row,y)=>row.every((v,x)=>v===1-this.wall[y][x]));}};}
+function genHeights(r){const N=ri(r,3,4);let g;
+  // both views must have some relief, otherwise the top view is a guess
+  const varied=a=>new Set(a).size>=3;
+  do{g=[...Array(N)].map(()=>[...Array(N)].map(()=>r()<.3?0:ri(r,1,3)));}while(!varied(proj(g).front)||!varied(proj(g).side)||g.flat().filter(v=>v).length<N*N-4);
+  const t=tmplOf(LEVELS,'Két nézet');return{...fromTemplate(t),N,maxH:3,sheets:['views','plan'],target:g,
+    check(G){const a=proj(G),b=proj(this.target);return same(a.front,b.front)&&same(a.side,b.side);}};}
+function genKey(r){const n=ri(r,5,7);let bits;do{bits=[...Array(n)].map(()=>ri(r,0,3));}while(new Set(bits).size<3);
+  const v=ri(r,0,2),t=tmplOf(EASY,['Kulcsmásolás','Fordított kulcs','Fejjel lefelé'][v]);
+  return keyLevel({...fromTemplate(t),bits,flip:v===1,upside:v===2});}
+// skyline: every 4×4 Latin square, used to keep the clue set unique
+let LATIN4=null;
+function latin4(){if(LATIN4)return LATIN4;const P=[];(function perm(a,k){if(k===4){P.push(a.slice());return;}for(let i=k;i<4;i++){[a[k],a[i]]=[a[i],a[k]];perm(a,k+1);[a[k],a[i]]=[a[i],a[k]];}})([1,2,3,4],0);
+  const out=[];(function rec(rows){if(rows.length===4){out.push(rows.map(x=>x.slice()));return;}for(const p of P)if(rows.every(q=>q.every((v,i)=>v!==p[i])))rec(rows.concat([p]));})([]);return LATIN4=out;}
+function skyClues(g){const ln=skyLines(g),o={};['top','bottom','left','right'].forEach(s=>o[s]=ln[s].map(seen));return o;}
+function genSky(r){const L4=latin4();let g,cl;
+  do{g=pickR(r,L4);cl=skyClues(g);}while(L4.filter(h=>{const c=skyClues(h);return['top','bottom','left','right'].every(s=>c[s].every((v,i)=>v===cl[s][i]));}).length!==1);
+  const slots=shuffleR(r,['top','bottom','left','right'].flatMap(s=>[0,1,2,3].map(i=>[s,i]))),target=ri(r,8,11);
+  for(const[s,i]of slots){if(Object.values(cl).flat().filter(v=>v!=null).length<=target)break;const v=cl[s][i];cl[s][i]=null;
+    if(L4.filter(h=>{const c=skyClues(h);return['top','bottom','left','right'].every(q=>c[q].every((w,j)=>cl[q][j]==null||w===cl[q][j]));}).length!==1)cl[s][i]=v;}
+  const t=tmplOf(EASY,'Háztömb');return skyLevel({...fromTemplate(t),N:4,sol:g,clues:cl,photo:pickR(r,['S','E',null])});}
+function genShadow(r,painted){const N=6;
+  for(let tries=0;tries<500;tries++){const B=[...Array(N)].map(()=>Array(N).fill('.'));const n=ri(r,4,6);
+    for(let k=0;k<n;k++){const x=ri(r,0,N-1),y=ri(r,1,N-1);if(B[y][x]==='.')B[y][x]=String(ri(r,1,3));}
+    const t=painted?tmplOf(LEVELS,'Árnyékfestmény'):tmplOf(LEVELS,pickR(r,['Árnyék','Tetőárnyék']));
+    const base=painted?{N,dir:[0,-1],hideH:true,paint:{...t.paint}}:{N,dir:t.dir,roofs:t.roofs};
+    if(painted){const free=[];B.forEach((row,y)=>row.forEach((c,x)=>{if(c==='.'&&y>=3)free.push([x,y]);}));base.paint.ref=pickR(r,free);}
+    const l=shadowLevel({...fromTemplate(t),...base,blocks:B.map(row=>row.join(''))});
+    const cnt=l.solution.flat().filter(v=>v).length;if(cnt>=4&&cnt<=14)return l;}
+  return null;}
+function genLog(r){const N=5,cols='abcde';let base;do{base=[...Array(N)].map(()=>[...Array(N)].map(()=>r()<.4?1:0));}while(base.flat().filter(v=>v).length<6);
+  const kinds=shuffleR(r,['fillRow','clearRow','fillCol','clearCol','mirrorV','mirrorH','rot']).slice(0,3);
+  const txt=(o,a)=>({fillRow:`${a+1}. sor kitöltve`,clearRow:`${a+1}. sor törölve`,fillCol:`„${cols[a]}” oszlop kitöltve`,clearCol:`„${cols[a]}” oszlop törölve`,
+    mirrorV:'Tükrözve a függőleges tengelyre',mirrorH:'Tükrözve a vízszintes tengelyre',rot:'Elforgatva 90°-kal, óramutató szerint'})[o];
+  const dated=r()<.5,d0=ri(r,1,20);let ops=kinds.map((op,i)=>{const a=ri(r,0,N-1);return{id:'ABC'[i],date:`2026.0${3+i}.${String(d0+i).padStart(2,'0')}`,txt:txt(op,a),op,a};});
+  if(dated){ops=shuffleR(r,ops);ops.forEach((o,i)=>o.id='DEFG'[i]);}
+  const t=tmplOf(LEVELS,dated?'Dátumrend':'Revíziók');
+  return logLevel({...fromTemplate(t),N,base:base.map(row=>row.map(v=>v?'#':'.').join('')),ops});}
+// dimension chains: blur lengths while a row-by-row search still finds exactly one drawing
+function runsOf(bits){const out=[];bits.forEach(b=>{if(out.length&&out[out.length-1][0]===b)out[out.length-1][1]++;else out.push([b,1]);});return out;}
+function chainCands(ch,N){const res=[];for(let m=0;m<1<<N;m++){const bits=[...Array(N)].map((_,i)=>(m>>(N-1-i))&1),rr=runsOf(bits);
+  if(rr.length===ch.length&&rr.every(([t,len],i)=>t===ch[i][0]&&(ch[i][1]==null||ch[i][1]===len)))res.push(bits);}return res;}
+function chainCount(ch,N,cap=2){const R=ch.rows.map(c=>chainCands(c,N)),Cc=ch.cols.map(c=>chainCands(c,N));
+  const pref=Cc.map(cs=>{const s=new Set();cs.forEach(b=>{for(let k=1;k<=N;k++)s.add(b.slice(0,k).join(''));});return s;});
+  let cnt=0;const rows=[];(function rec(y){if(cnt>=cap)return;if(y===N){cnt++;return;}
+    for(const b of R[y]){rows[y]=b;let ok=true;for(let x=0;x<N&&ok;x++)if(!pref[x].has(rows.slice(0,y+1).map(rw=>rw[x]).join('')))ok=false;if(ok)rec(y+1);}})(0);return cnt;}
+function genChain(r){const N=6;let g;do{g=[...Array(N)].map(()=>[...Array(N)].map(()=>r()<.55?1:0));}while(g.some(row=>!row.some(v=>v))||g[0].some((_,x)=>!g.some(row=>row[x])));
+  const ch={rows:g.map(row=>runsOf(row).map(([t,n])=>[t,n])),cols:g[0].map((_,x)=>runsOf(g.map(row=>row[x])).map(([t,n])=>[t,n]))};
+  const slots=shuffleR(r,[...ch.rows.flatMap((c,i)=>c.map((_,j)=>['rows',i,j])),...ch.cols.flatMap((c,i)=>c.map((_,j)=>['cols',i,j]))]);
+  // blur at most about half of the lengths: enough to need thinking, not a full nonogram
+  const maxBlur=Math.round(slots.length*.5);let blurred=0;
+  for(const[s,i,j]of slots){if(blurred>=maxBlur)break;const v=ch[s][i][j][1];ch[s][i][j][1]=null;if(chainCount(ch,N)!==1)ch[s][i][j][1]=v;else blurred++;}
+  const t=tmplOf(LEVELS,'Méretlánc');return chainLevel({...fromTemplate(t),N,shape:g.map(row=>row.map(v=>v?'#':'.').join('')),chains:ch});}
+// tiles: drop pieces one by one next to the growing shape and keep the most compact result
+function genTiles(r,kind){const names=kind==='tet'?shuffleR(r,['I','O','T','L','J','S','Z']).slice(0,ri(r,4,6)):[...Array(ri(r,4,6))].map(()=>pickR(r,['big','mid','sq','rect','tri','tri']));
+  const nb=([x,y,q])=>[[x,y,(q+1)%4],[x,y,(q+3)%4],{0:[x,y-1,2],1:[x+1,y,3],2:[x,y+1,0],3:[x-1,y,1]}[q]];let best=null;
+  for(let t=0;t<160;t++){const U=new Set(),sol=[];let ok=true;
+    for(const n of names){const rs=qrots(PLIB[n]),opts=[];
+      // candidate offsets: put one unit of the piece onto a free unit that borders the shape
+      const front=new Set();U.forEach(k=>nb(k.split(',').map(Number)).forEach(v=>{const kk=v.join(',');if(!U.has(kk))front.add(kk);}));
+      rs.forEach((p,ri_)=>{if(!U.size){opts.push([0,0,ri_]);return;}const seenO=new Set();
+        front.forEach(fk=>{const f=fk.split(',').map(Number);p.forEach(([a,b,q])=>{if(q!==f[2])return;const dx=f[0]-a,dy=f[1]-b,ok=dx+','+dy;if(seenO.has(ok))return;seenO.add(ok);
+          if(!p.some(([a2,b2,q2])=>U.has([a2+dx,b2+dy,q2].join(','))))opts.push([dx,dy,ri_]);});});});
+      if(!opts.length){ok=false;break;}const[dx,dy,ri_]=pickR(r,opts);sol.push([n,ri_,dx,dy]);rs[ri_].forEach(([a,b,q])=>U.add([a+dx,b+dy,q].join(',')));}
+    if(!ok)continue;const us=[...U].map(k=>k.split(',').map(Number)),xs=us.map(u=>u[0]),ys=us.map(u=>u[1]);
+    const per=us.reduce((s,u)=>s+nb(u).filter(v=>!U.has(v.join(','))).length,0),sc=per+(Math.max(...xs)-Math.min(...xs)+1)*(Math.max(...ys)-Math.min(...ys)+1)*.6;
+    if(!best||sc<best.sc)best={sc,sol,us,mx:Math.min(...xs),my:Math.min(...ys)};}
+  const target=best.us.map(([x,y,q])=>[x-best.mx,y-best.my,q]),sol=best.sol.map(([n,ri_,dx,dy])=>[n,ri_,dx-best.mx,dy-best.my]);
+  const t=tmplOf(EASY,kind==='tet'?'Burkolat':'Parketta');
+  return tileLevel({...fromTemplate(t),kind,pieces:names,target,sol});}
+const GENERATORS={'Vonalvastagság':genWalls,'Magasságtérkép':genHeights,'Kulcsmásolás':genKey,'Látkép':genSky,'Árnyék':r=>genShadow(r,false),
+  'Árnyékfestmény':r=>genShadow(r,true),'Revíziók':genLog,'Méretlánc':genChain,'Elemek':r=>genTiles(r,'tet'),'Csempe':r=>genTiles(r,'tan')};
+function openRandom(ti,seed){const[name]=GEN_TYPES[ti],gen=GENERATORS[name];if(!gen){S.popup='A generátor hamarosan érkezik.';render();return;}
+  seed=seed||((Math.random()*1e6)|0)+1;const l=gen(rng(seed));if(!l){openRandom(ti,seed+1);return;}
+  l.name=name;l.sub='#'+seed;l.gen=true;S.rnd={ti,seed,level:l};S.pack='random';S.screen='game';S.settings=false;startLevel(0);}
+
 /* ---------- sound: small paper-and-pen noises synthesised with Web Audio ---------- */
 const SFX=(()=>{let ac=null,master=null,noise=null;
   function init(){if(ac)return true;const A=window.AudioContext||window.webkitAudioContext;if(!A)return false;
@@ -4364,6 +4469,6 @@ function checkWin(){
 startLevel(S.lvl);
 new ResizeObserver(()=>resize()).observe(cv);
 if(document.fonts){document.fonts.load('700 12px "Roboto Mono"').then(render).catch(()=>{});document.fonts.ready.then(render);}
-window.__takart={S,LEVELS,EASY,startLevel,goSheet,render,checkWin,openToc,openGame,T};
+window.__takart={S,LEVELS,EASY,startLevel,goSheet,render,checkWin,openToc,openGame,T,openRandom,GEN_TYPES,qrots,PLIB};
 })();
 </script>

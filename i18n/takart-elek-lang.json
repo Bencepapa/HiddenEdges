@@ -2255,6 +2255,27 @@
    "it": "SUONO"
   },
   {
+   "hu": "VÉLETLEN",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "RANDOM",
+   "de": "ZUFALL",
+   "it": "CASUALE"
+  },
+  {
+   "hu": "„{c}” oszlop törölve",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "column “{c}” cleared",
+   "de": "Spalte „{c}“ geleert",
+   "it": "colonna «{c}» svuotata"
+  },
+  {
+   "hu": "Tükrözve a vízszintes tengelyre",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "Mirrored on the horizontal axis",
+   "de": "An der waagerechten Achse gespiegelt",
+   "it": "Specchiato sull'asse orizzontale"
+  },
+  {
    "hu": "PÉLDA",
    "ctx": "Appears on: Easy level 12 (Belváros), sheet 1; Easy level 2 (Látkép), sheet 1 (+1 more).",
    "en": "EXAMPLE",

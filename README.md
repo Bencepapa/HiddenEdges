@@ -42,6 +42,8 @@ Progress and settings are kept in the browser's `localStorage`.
 
 **EASY (15):** key copying, skyline (visible-tower clues), view picker, tile shapes with triangles, furnishing by simple placement rules.
 
+**RANDOM:** puzzles generated in the browser from a seed (shown as `#seed`; › makes a new one). Generators so far: line weight, height map, key copying, skyline (unique 4×4 Latin squares), shadow, painted shadow, revision log, dimension chains (blurred while a solver still finds exactly one drawing), tetromino and triangle tile shapes. Still to come: drill holes, construction, furnishing, overlays, cube nets.
+
 ## Languages
 
 English, German, Italian and Hungarian. All UI text lives in one JSON table that is embedded in `index.html` (`<script id="i18n">`) and also exported as `i18n/takart-elek-lang.json`.
