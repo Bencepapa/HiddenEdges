@@ -3981,17 +3981,17 @@ const ED=EASY_DATA,ETL=ED.tiles,SK=ED.sky,RM=ED.rooms;
 const EASY=[
   keyLevel({name:'Kulcsmásolás',sub:'recét recére',rev:'REV. 1 — Másold le a mintakulcs recéit a nyerskulcsra.',bits:[2,0,3,1,2]}),
   skyLevel({name:'Látkép',sub:'a szám: hány ház látszik',rev:'REV. 2 — A szélső szám: hány ház látszik onnan. A magasabb ház eltakarja a mögötte állót.',...SK[0]}),
-  viewLevel({name:'Nézetválasztó',sub:'melyik az A nézet?',rev:'REV. 3 — Melyik rajz mutatja a testet az A nyíl felől? Koppints rá.',N:3,ask:'A',g:[[2,1,0],[3,1,1],[1,0,2]]}),
+  viewLevel({name:'Nézetválasztó',sub:'melyik az A nézet?',rev:'REV. 3 — Melyik rajz mutatja a testet az A nyíl felől? Koppints rá.',N:3,ask:'A',g:[[2,2,2],[3,1,1],[1,0,0]]}),
   tileLevel({name:'Csempe',sub:'háromszög is van',rev:'REV. 4 — Rakd ki a formát a lapokkal. Húzd őket, koppintás: forgatás.',...ETL[3]}),
   easyRoom({name:'Szoba',sub:'legyen hol járni',rev:'REV. 5 — Rendezd be a szobát. Minden bútor legyen elérhető az ajtótól.',...RM[0],near:[['chair','desk','szék az íróasztal mellett']]}),
   keyLevel({name:'Fordított kulcs',sub:'a kulcs a másik irányba néz',rev:'REV. 6 — A mintakulcsot fordítva tették a gépbe.',bits:[1,3,0,2,3,1],flip:true}),
   skyLevel({name:'Háztömb',sub:'négy ház, négy magasság',photo:'S',rev:'REV. 7 — Oszloponként is minden magasság egyszer.',...SK[1]}),
-  viewLevel({name:'Felülről',sub:'csak a kontúr számít',rev:'REV. 8 — Melyik rajz a test felülnézete? Az A nyíl az alsó élnél van.',N:3,ask:'top',g:[[1,0,2],[2,1,0],[0,3,1]]}),
+  viewLevel({name:'Felülről',sub:'csak a kontúr számít',rev:'REV. 8 — Melyik rajz a test felülnézete? Az A nyíl az alsó élnél van.',N:3,ask:'top',g:[[3,2,1],[1,0,1],[1,0,0]]}),
   tileLevel({name:'Burkolat',sub:'a nagy háromszög a kulcs',rev:'REV. 9 — Rakd ki a formát a lapokkal. Húzd őket, koppintás: forgatás.',...ETL[4]}),
   easyRoom({name:'Iroda',sub:'két asztal, egy nyomtató',rev:'REV. 10 — Rendezd be az irodát. Minden bútor legyen elérhető az ajtótól.',...RM[1]}),
   keyLevel({name:'Fejjel lefelé',sub:'a recék alul vannak',rev:'REV. 11 — A mintakulcs fejjel lefelé fekszik.',bits:[3,1,2,0,3,2,1],upside:true}),
   skyLevel({name:'Belváros',sub:'kevesebb szám',photo:'E',rev:'REV. 12 — Kevesebb szám, ugyanaz a szabály.',...SK[2]}),
-  viewLevel({name:'Oldalról',sub:'a B nyíl felől',rev:'REV. 13 — Melyik rajz mutatja a testet a B nyíl felől? Koppints rá.',N:4,ask:'B',g:[[3,1,0,2],[2,0,1,1],[1,2,0,0],[0,1,1,1]]}),
+  viewLevel({name:'Oldalról',sub:'a B nyíl felől',rev:'REV. 13 — Melyik rajz mutatja a testet a B nyíl felől? Koppints rá.',N:4,ask:'B',g:[[3,2,3,3],[3,2,2,0],[2,1,1,1],[1,1,1,1]]}),
   tileLevel({name:'Parketta',sub:'két nagy háromszög',rev:'REV. 14 — Rakd ki a formát a lapokkal. Húzd őket, koppintás: forgatás.',...ETL[5]}),
   easyRoom({name:'Fürdő',sub:'víz csak a kék körnél',rev:'REV. 15 — A WC, a mosdó és a zuhany csak vizes pontra kerülhet (kék kör).',...RM[2]}),
 ];
@@ -4150,9 +4150,28 @@ function fromTemplate(t,extra){return{name:t.name,sub:t.sub,rev:t.rev,...extra};
 
 function genWalls(r){const N=5;let w;do{w=[...Array(N)].map(()=>[...Array(N)].map(()=>r()<.45?1:0));}while(w.flat().filter(v=>v).length<6||w.flat().filter(v=>!v).length<6);
   const t=tmplOf(LEVELS,'Szigetelés');return{...fromTemplate(t),N,maxH:1,sheets:['wires','plan'],wall:w,check(g){return g.every((row,y)=>row.every((v,x)=>v===1-this.wall[y][x]));}};}
+// how much of each cell's marker (its floor if empty, else the top of its column) the axonometric picture shows, 0..1
+let VIS_CV=null;
+function isoVisibility(g){const N=g.length,s=24,W=300;if(!VIS_CV){VIS_CV=document.createElement('canvas');VIS_CV.width=VIS_CV.height=W;}
+  const c=VIS_CV.getContext('2d',{willReadFrequently:true}),P=(x,y,z)=>[W/2+(x-y)*C30*s,W/2-N*s/2+(x+y)*s/2-z*s+40];
+  const quad=(x,y,z)=>[P(x,y,z),P(x+1,y,z),P(x+1,y+1,z),P(x,y+1,z)],fill=(pts,col)=>{c.fillStyle=col;c.beginPath();pts.forEach((q,i)=>i?c.lineTo(q[0],q[1]):c.moveTo(q[0],q[1]));c.closePath();c.fill();};
+  const id=k=>`rgb(${10+k},0,0)`,count=()=>{const d=c.getImageData(0,0,W,W).data,n=new Array(N*N).fill(0);for(let i=0;i<d.length;i+=4)if(d[i+1]===0&&d[i+2]===0&&d[i]>=10&&d[i]<10+N*N)n[d[i]-10]++;return n;};
+  const marker=(x,y)=>quad(x,y,g[y][x]);
+  // full area of every marker on its own
+  // every marker is the same rhombus, so one sample gives the full area
+  c.clearRect(0,0,W,W);fill(quad(0,0,0),id(0));const area=count()[0],full=new Array(N*N).fill(area);
+  // the whole picture: markers, then every cube's visible faces drawn back to front in white
+  c.clearRect(0,0,W,W);for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(!g[y][x])fill(marker(x,y),id(y*N+x));
+  const cubes=[];for(let y=0;y<N;y++)for(let x=0;x<N;x++)for(let z=0;z<g[y][x];z++)cubes.push([x,y,z]);
+  cubes.sort((a,b)=>(a[0]+a[1]+a[2])-(b[0]+b[1]+b[2])||a[2]-b[2]);
+  cubes.forEach(([x,y,z])=>{const top=z===g[y][x]-1;fill([P(x+1,y,z),P(x+1,y+1,z),P(x+1,y+1,z+1),P(x+1,y,z+1)],'#fff');fill([P(x,y+1,z),P(x+1,y+1,z),P(x+1,y+1,z+1),P(x,y+1,z+1)],'#fff');
+    fill(quad(x,y,z+1),top?id(y*N+x):'#fff');});
+  const seenN=count();return full.map((f,i)=>f?seenN[i]/f:1);}
 function genView(r){
   for(let k=0;k<200;k++){const N=ri(r,3,4),ask=pickR(r,['A','B','top']),g=[...Array(N)].map(()=>[...Array(N)].map(()=>r()<.25?0:ri(r,1,3)));
     if(Math.max(...g.flat())<2||g.flat().filter(v=>v).length<N+2)continue;
+    // every cell must be readable in the picture: no floor or roof hidden behind a taller tower
+    if(Math.min(...isoVisibility(g))<.5)continue;
     const t=tmplOf(EASY,ask==='A'?'Nézetválasztó':ask==='B'?'Oldalról':'Felülről'),l=viewLevel({...fromTemplate(t),N,ask,g});
     // four different drawings, and the answer sits in a random box
     if(new Set(l.opts.map(o=>JSON.stringify(o.v))).size!==4)continue;
@@ -4484,6 +4503,6 @@ function checkWin(){
 startLevel(S.lvl);
 new ResizeObserver(()=>resize()).observe(cv);
 if(document.fonts){document.fonts.load('700 12px "Roboto Mono"').then(render).catch(()=>{});document.fonts.ready.then(render);}
-window.__takart={S,LEVELS,EASY,startLevel,goSheet,render,checkWin,openToc,openGame,T,openRandom,GEN_TYPES,qrots,PLIB};
+window.__takart={S,LEVELS,EASY,startLevel,goSheet,render,checkWin,openToc,openGame,T,openRandom,GEN_TYPES,qrots,PLIB,isoVisibility};
 })();
 </script>
