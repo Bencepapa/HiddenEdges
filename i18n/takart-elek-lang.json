@@ -1,0 +1,2720 @@
+{
+ "_about": "Takart élek / Hidden Edges – UI text. 'hu' is the source text and the lookup key. Placeholders in {braces} must be kept. 'ctx' says where the text appears. Leave a language empty to fall back to Hungarian.",
+ "languages": {
+  "hu": "Magyar",
+  "en": "English",
+  "de": "Deutsch",
+  "it": "Italiano"
+ },
+ "entries": [
+  {
+   "hu": "TISZTÍT",
+   "ctx": "Appears on: Easy level 1 (Kulcsmásolás), sheet 1; Easy level 10 (Iroda), sheet 1 (+76 more).",
+   "en": "CLEAN",
+   "de": "REINIGEN",
+   "it": "PULISCI"
+  },
+  {
+   "hu": "VISSZA",
+   "ctx": "Appears on: Level 1 (Két nézet), sheet 2; Level 10 (Méretlánc), sheet 1 (+23 more).",
+   "en": "UNDO",
+   "de": "RÜCKGÄNGIG",
+   "it": "ANNULLA"
+  },
+  {
+   "hu": "KÉSZ",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "DONE",
+   "de": "FERTIG",
+   "it": "FATTO"
+  },
+  {
+   "hu": "RENDBEN",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "OK",
+   "de": "OK",
+   "it": "OK"
+  },
+  {
+   "hu": "BEZÁRÁS",
+   "ctx": "Appears on: Popup (title screen).",
+   "en": "CLOSE",
+   "de": "SCHLIESSEN",
+   "it": "CHIUDI"
+  },
+  {
+   "hu": "Feloldáshoz kérem a jelszót",
+   "ctx": "Locked RANDOM folder popup: line above the password field.",
+   "en": "Enter the password to unlock",
+   "de": "Zum Entsperren bitte das Passwort eingeben",
+   "it": "Inserisci la password per sbloccare"
+  },
+  {
+   "hu": "jelszó",
+   "ctx": "Placeholder inside the password field of the locked RANDOM folder.",
+   "en": "password",
+   "de": "Passwort",
+   "it": "password"
+  },
+  {
+   "hu": "vonalzó",
+   "ctx": "THE PASSWORD of the RANDOM folder: the word for a drafting ruler. Every language's form is accepted. Also used as a tool caption. One word, no spaces.",
+   "en": "ruler",
+   "de": "Lineal",
+   "it": "righello"
+  },
+  {
+   "hu": "Minden NEHÉZ feladvány kész. A jelszó: {pw}",
+   "ctx": "Locked RANDOM folder popup after all HARD puzzles are solved; {pw} is the password word in capitals.",
+   "en": "All HARD puzzles solved. The password: {pw}",
+   "de": "Alle SCHWEREN Rätsel gelöst. Das Passwort: {pw}",
+   "it": "Tutti gli enigmi DIFFICILI risolti. La password: {pw}"
+  },
+  {
+   "hu": "Feloldás",
+   "ctx": "Screen-reader label of the key button next to the password field.",
+   "en": "Unlock",
+   "de": "Entsperren",
+   "it": "Sblocca"
+  },
+  {
+   "hu": "Koppints a fülekre a lapok közti váltáshoz.",
+   "ctx": "Appears on: Easy level 13 (Torony), sheet 1; Easy level 13 (Torony), sheet 2 (+57 more).",
+   "en": "Tap the tabs to switch between sheets.",
+   "de": "Tippe auf die Reiter, um zwischen den Blättern zu wechseln.",
+   "it": "Tocca le linguette per cambiare foglio."
+  },
+  {
+   "hu": "PÁLYA {n}/{total}",
+   "ctx": "Header, under the level arrows: current level number and level count.",
+   "en": "LEVEL {n}/{total}",
+   "de": "LEVEL {n}/{total}",
+   "it": "LIVELLO {n}/{total}"
+  },
+  {
+   "hu": "JÓVÁHAGYVA",
+   "ctx": "Appears on: Level 1 (Két nézet), sheet 2; Level 10 (Méretlánc), sheet 1 (+28 more).",
+   "en": "APPROVED",
+   "de": "GENEHMIGT",
+   "it": "APPROVATO"
+  },
+  {
+   "hu": "NÉZETEK",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "VIEWS",
+   "de": "ANSICHTEN",
+   "it": "VISTE"
+  },
+  {
+   "hu": "SZÍNES LAP",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "COLOUR SHEET",
+   "de": "FARBBLATT",
+   "it": "FOGLIO A COLORI"
+  },
+  {
+   "hu": "FELÜLNÉZET",
+   "ctx": "Appears on: Level 1 (Két nézet), sheet 1; Level 1 (Két nézet), sheet 2 (+23 more).",
+   "en": "TOP VIEW",
+   "de": "DRAUFSICHT",
+   "it": "VISTA DALL'ALTO"
+  },
+  {
+   "hu": "FÓLIÁK",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "OVERLAYS",
+   "de": "FOLIEN",
+   "it": "LUCIDI"
+  },
+  {
+   "hu": "MÉRETLÁNC",
+   "ctx": "Appears on: Contents sheet (hard), page 1; Contents sheet (random) (+1 more).",
+   "en": "DIM. CHAINS",
+   "de": "MASSKETTEN",
+   "it": "CATENE DI QUOTE"
+  },
+  {
+   "hu": "FURATTERV",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "DRILL PLAN",
+   "de": "BOHRPLAN",
+   "it": "FORATURE"
+  },
+  {
+   "hu": "SZERKESZTÉS",
+   "ctx": "Appears on: Contents sheet (hard), page 1; Contents sheet (random) (+1 more).",
+   "en": "CONSTRUCTION",
+   "de": "KONSTRUKTION",
+   "it": "COSTRUZIONE"
+  },
+  {
+   "hu": "NYOMAT",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "PRINT",
+   "de": "DRUCK",
+   "it": "STAMPA"
+  },
+  {
+   "hu": "REVÍZIÓK",
+   "ctx": "Appears on: Contents sheet (hard), page 2; Contents sheet (random) (+2 more).",
+   "en": "REVISIONS",
+   "de": "REVISIONEN",
+   "it": "REVISIONI"
+  },
+  {
+   "hu": "FALTERV",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "WALL PLAN",
+   "de": "WANDPLAN",
+   "it": "PARETI"
+  },
+  {
+   "hu": "KOCKAHÁLÓ",
+   "ctx": "Appears on: Contents sheet (random).",
+   "en": "CUBE NET",
+   "de": "WÜRFELNETZ",
+   "it": "SVILUPPO"
+  },
+  {
+   "hu": "ÁRNYÉK",
+   "ctx": "Appears on: Contents sheet (hard), page 2; Contents sheet (random) (+1 more).",
+   "en": "SHADOW",
+   "de": "SCHATTEN",
+   "it": "OMBRA"
+  },
+  {
+   "hu": "ALAPRAJZ",
+   "ctx": "Appears on: Level 18 (Szigetelés), sheet 1; Level 18 (Szigetelés), sheet 2.",
+   "en": "FLOOR PLAN",
+   "de": "GRUNDRISS",
+   "it": "PIANTA"
+  },
+  {
+   "hu": "REGGEL",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "MORNING",
+   "de": "MORGENS",
+   "it": "MATTINA"
+  },
+  {
+   "hu": "DÉLBEN",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "NOON",
+   "de": "MITTAGS",
+   "it": "MEZZOGIORNO"
+  },
+  {
+   "hu": "DÉLUTÁN",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "AFTERNOON",
+   "de": "NACHMITTAGS",
+   "it": "POMERIGGIO"
+  },
+  {
+   "hu": "TAKART ÉLEK",
+   "ctx": "Game title on the title screen and contents title block.",
+   "en": "HIDDEN EDGES",
+   "de": "VERDECKTE KANTEN",
+   "it": "SPIGOLI NASCOSTI"
+  },
+  {
+   "hu": "Fejtörők a rajzasztalról",
+   "ctx": "Title screen subtitle.",
+   "en": "Puzzles from the drafting table",
+   "de": "Rätsel vom Zeichentisch",
+   "it": "Enigmi dal tavolo da disegno"
+  },
+  {
+   "hu": "KÖNNYŰ",
+   "ctx": "Appears on: Popup (title screen); Reset progress popup (+2 more).",
+   "en": "EASY",
+   "de": "LEICHT",
+   "it": "FACILE"
+  },
+  {
+   "hu": "NEHÉZ",
+   "ctx": "Appears on: Popup (title screen); Reset progress popup (+2 more).",
+   "en": "HARD",
+   "de": "SCHWER",
+   "it": "DIFFICILE"
+  },
+  {
+   "hu": "RANDOM",
+   "ctx": "Appears on: Popup (title screen); Settings panel (+1 more).",
+   "en": "RANDOM",
+   "de": "ZUFALL",
+   "it": "CASUALE"
+  },
+  {
+   "hu": "SZERZŐ",
+   "ctx": "Appears on: Popup (title screen); Settings panel (+1 more).",
+   "en": "AUTHOR",
+   "de": "AUTOR",
+   "it": "AUTORE"
+  },
+  {
+   "hu": "DÁTUM",
+   "ctx": "Appears on: Level 19 (Revíziók), sheet 1; Level 19 (Revíziók), sheet 2 (+5 more).",
+   "en": "DATE",
+   "de": "DATUM",
+   "it": "DATA"
+  },
+  {
+   "hu": "LÉPTÉK",
+   "ctx": "Appears on: Contents sheet (hard), page 1; Level 9 (Lépték), sheet 1 (+4 more).",
+   "en": "SCALE",
+   "de": "MASSSTAB",
+   "it": "SCALA"
+  },
+  {
+   "hu": "LAP",
+   "ctx": "Appears on: Popup (title screen); Settings panel (+1 more).",
+   "en": "SHEET",
+   "de": "BLATT",
+   "it": "FOGLIO"
+  },
+  {
+   "hu": "Ez a mappa még nem elérhető.",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "This folder is not available yet.",
+   "de": "Dieser Ordner ist noch nicht verfügbar.",
+   "it": "Questa cartella non è ancora disponibile."
+  },
+  {
+   "hu": "Teljesítsd a NEHÉZ feladatokat, hogy megtudd a jelszót.",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "Solve all HARD puzzles to learn the password.",
+   "de": "Löse alle SCHWEREN Rätsel, um das Passwort zu erfahren.",
+   "it": "Risolvi tutti gli enigmi DIFFICILI per scoprire la password."
+  },
+  {
+   "hu": "A generátor hamarosan érkezik.",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "The generator is coming soon.",
+   "de": "Der Generator kommt bald.",
+   "it": "Il generatore arriverà presto."
+  },
+  {
+   "hu": "TARTALOMJEGYZÉK",
+   "ctx": "Appears on: Contents sheet (easy); Contents sheet (hard), page 1 (+4 more).",
+   "en": "CONTENTS",
+   "de": "INHALT",
+   "it": "INDICE"
+  },
+  {
+   "hu": "nehéz feladványok",
+   "ctx": "Appears on: Contents sheet (hard), page 1; Contents sheet (hard), page 2.",
+   "en": "hard puzzles",
+   "de": "schwere Rätsel",
+   "it": "enigmi difficili"
+  },
+  {
+   "hu": "generálható feladattípusok",
+   "ctx": "Appears on: Contents sheet (random).",
+   "en": "generated puzzle types",
+   "de": "generierbare Rätseltypen",
+   "it": "tipi di enigma generabili"
+  },
+  {
+   "hu": "SZ.",
+   "ctx": "Appears on: Contents sheet (easy); Contents sheet (hard), page 1 (+4 more).",
+   "en": "NO.",
+   "de": "NR.",
+   "it": "N."
+  },
+  {
+   "hu": "MEGNEVEZÉS",
+   "ctx": "Appears on: Contents sheet (easy); Contents sheet (hard), page 1 (+4 more).",
+   "en": "TITLE",
+   "de": "BEZEICHNUNG",
+   "it": "TITOLO"
+  },
+  {
+   "hu": "MEGJEGYZÉS",
+   "ctx": "Appears on: Contents sheet (easy); Contents sheet (hard), page 1 (+4 more).",
+   "en": "NOTE",
+   "de": "BEMERKUNG",
+   "it": "NOTA"
+  },
+  {
+   "hu": "Lapozni a jobb felső sarokban lehet,",
+   "ctx": "Appears on: Contents sheet (easy); Contents sheet (hard), page 1 (+4 more).",
+   "en": "Turn sheets in the top right corner,",
+   "de": "Blättern geht oben rechts,",
+   "it": "Sfoglia in alto a destra,"
+  },
+  {
+   "hu": "vagy koppints egy számra vagy címre",
+   "ctx": "Appears on: Contents sheet (easy); Contents sheet (hard), page 1 (+4 more).",
+   "en": "or tap a number or a title",
+   "de": "oder tippe auf eine Nummer oder einen Titel,",
+   "it": "oppure tocca un numero o un titolo"
+  },
+  {
+   "hu": "az ugráshoz.",
+   "ctx": "Appears on: Contents sheet (easy); Contents sheet (hard), page 1 (+4 more).",
+   "en": "to jump there.",
+   "de": "um dorthin zu springen.",
+   "it": "per andarci."
+  },
+  {
+   "hu": "CÍM",
+   "ctx": "Appears on: Contents sheet (easy); Contents sheet (hard), page 1 (+4 more).",
+   "en": "TITLE",
+   "de": "TITEL",
+   "it": "TITOLO"
+  },
+  {
+   "hu": "LAPOK",
+   "ctx": "Appears on: Contents sheet (easy); Contents sheet (hard), page 1 (+4 more).",
+   "en": "SHEETS",
+   "de": "BLÄTTER",
+   "it": "FOGLI"
+  },
+  {
+   "hu": "RAJZOLTA",
+   "ctx": "Appears on: Contents sheet (easy); Contents sheet (hard), page 1 (+4 more).",
+   "en": "DRAWN BY",
+   "de": "GEZEICHNET",
+   "it": "DISEGNATO"
+  },
+  {
+   "hu": "JÓVÁHAGYTA",
+   "ctx": "Appears on: Contents sheet (easy); Contents sheet (hard), page 1 (+4 more).",
+   "en": "APPROVED BY",
+   "de": "GENEHMIGT",
+   "it": "APPROVATO"
+  },
+  {
+   "hu": "{done}/{total} KÉSZ",
+   "ctx": "Contents sheet, title block cell next to SHEETS: solved count.",
+   "en": "{done}/{total} DONE",
+   "de": "{done}/{total} FERTIG",
+   "it": "{done}/{total} FATTI"
+  },
+  {
+   "hu": "Két nézet",
+   "ctx": "Level title.",
+   "en": "Two views",
+   "de": "Zwei Ansichten",
+   "it": "Due viste"
+  },
+  {
+   "hu": "Mozaik",
+   "ctx": "Level title.",
+   "en": "Mosaic",
+   "de": "Mosaik",
+   "it": "Mosaico"
+  },
+  {
+   "hu": "Méretlánc",
+   "ctx": "Level title AND random-folder puzzle type name.",
+   "en": "Dimension chain",
+   "de": "Maßkette",
+   "it": "Catena di quote"
+  },
+  {
+   "hu": "Furatok",
+   "ctx": "Level title AND random-folder puzzle type name.",
+   "en": "Drill holes",
+   "de": "Bohrungen",
+   "it": "Fori"
+  },
+  {
+   "hu": "Fólia",
+   "ctx": "Level title AND random-folder puzzle type name.",
+   "en": "Overlay",
+   "de": "Folie",
+   "it": "Lucido"
+  },
+  {
+   "hu": "Revíziók",
+   "ctx": "Level title AND random-folder puzzle type name.",
+   "en": "Revisions",
+   "de": "Revisionen",
+   "it": "Revisioni"
+  },
+  {
+   "hu": "Szigetelés",
+   "ctx": "Level title.",
+   "en": "Insulation",
+   "de": "Dämmung",
+   "it": "Isolamento"
+  },
+  {
+   "hu": "Kockaháló",
+   "ctx": "Random-folder puzzle type name.",
+   "en": "Cube net",
+   "de": "Würfelnetz",
+   "it": "Sviluppo del cubo"
+  },
+  {
+   "hu": "Vonalvastagság",
+   "ctx": "Random-folder puzzle type name.",
+   "en": "Line weight",
+   "de": "Linienstärke",
+   "it": "Spessore linea"
+  },
+  {
+   "hu": "Lakberendezés",
+   "ctx": "Random-folder puzzle type name.",
+   "en": "Furnishing",
+   "de": "Einrichtung",
+   "it": "Arredamento"
+  },
+  {
+   "hu": "Magasságtérkép",
+   "ctx": "Random-folder puzzle type name.",
+   "en": "Height map",
+   "de": "Höhenkarte",
+   "it": "Mappa delle altezze"
+  },
+  {
+   "hu": "harmadik nézet szerkesztővonalakkal",
+   "ctx": "Appears on: Contents sheet (random).",
+   "en": "third view with construction lines",
+   "de": "dritte Ansicht mit Hilfslinien",
+   "it": "terza vista con linee di costruzione"
+  },
+  {
+   "hu": "festett árnyékból a magasságok",
+   "ctx": "Appears on: Contents sheet (random).",
+   "en": "heights from a painted shadow",
+   "de": "Höhen aus einem gemalten Schatten",
+   "it": "altezze da un'ombra dipinta"
+  },
+  {
+   "hu": "Árnyék",
+   "ctx": "Level title AND random-folder puzzle type name.",
+   "en": "Shadow",
+   "de": "Schatten",
+   "it": "Ombra"
+  },
+  {
+   "hu": "Benapozás",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "Sunlight",
+   "de": "Besonnung",
+   "it": "Soleggiamento"
+  },
+  {
+   "hu": "elöl- és oldalnézetből felülnézet",
+   "ctx": "Appears on: Contents sheet (random).",
+   "en": "top view from front and side views",
+   "de": "Draufsicht aus Vorder- und Seitenansicht",
+   "it": "vista dall'alto da vista frontale e laterale"
+  },
+  {
+   "hu": "színes jelek a felülnézetre",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "colour marks onto the top view",
+   "de": "Farbmarken auf die Draufsicht",
+   "it": "segni colorati sulla vista dall'alto"
+  },
+  {
+   "hu": "fal/üres láncok, egyedi megoldás",
+   "ctx": "Appears on: Contents sheet (random).",
+   "en": "wall/gap chains, unique solution",
+   "de": "Wand- und Lückenketten, eindeutige Lösung",
+   "it": "catene muro/vuoto, soluzione unica"
+  },
+  {
+   "hu": "metszetek és furatmélységek",
+   "ctx": "Appears on: Contents sheet (random).",
+   "en": "sections and hole depths",
+   "de": "Schnitte und Bohrtiefen",
+   "it": "sezioni e profondità dei fori"
+  },
+  {
+   "hu": "forgatott, tükrözött kitűzési fóliák",
+   "ctx": "Appears on: Contents sheet (random).",
+   "en": "rotated, flipped setting-out overlays",
+   "de": "gedrehte, gespiegelte Absteckfolien",
+   "it": "lucidi di tracciamento ruotati e specchiati"
+  },
+  {
+   "hu": "módosítási napló végrehajtása",
+   "ctx": "Appears on: Contents sheet (random).",
+   "en": "apply the changes in the revision log",
+   "de": "Änderungen aus dem Protokoll umsetzen",
+   "it": "applicare le modifiche del registro"
+  },
+  {
+   "hu": "vonalvastagság-kalibráció",
+   "ctx": "Appears on: Contents sheet (random).",
+   "en": "line weight calibration",
+   "de": "Linienstärken-Kalibrierung",
+   "it": "calibrazione dello spessore"
+  },
+  {
+   "hu": "hálóról a látható lapok",
+   "ctx": "Appears on: Contents sheet (random).",
+   "en": "visible faces from the net",
+   "de": "sichtbare Flächen aus dem Netz",
+   "it": "facce visibili dallo sviluppo"
+  },
+  {
+   "hu": "45°-os árnyékszerkesztés",
+   "ctx": "Appears on: Contents sheet (random).",
+   "en": "45° shadow construction",
+   "de": "45°-Schattenkonstruktion",
+   "it": "costruzione delle ombre a 45°"
+  },
+  {
+   "hu": "bútorok a napjárás szerint",
+   "ctx": "Appears on: Contents sheet (random).",
+   "en": "furniture by the sun's path",
+   "de": "Möbel nach dem Sonnenstand",
+   "it": "mobili secondo il sole"
+  },
+  {
+   "hu": "BEÁLLÍTÁSOK",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "SETTINGS",
+   "de": "EINSTELLUNGEN",
+   "it": "IMPOSTAZIONI"
+  },
+  {
+   "hu": "VONALVASTAGSÁG",
+   "ctx": "Appears on: Contents sheet (random); Settings panel (+1 more).",
+   "en": "LINE WEIGHT",
+   "de": "LINIENSTÄRKE",
+   "it": "SPESSORE LINEE"
+  },
+  {
+   "hu": "MEGJELENÍTÉS",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "RENDERING",
+   "de": "DARSTELLUNG",
+   "it": "VISUALIZZAZIONE"
+  },
+  {
+   "hu": "Natív",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "Native",
+   "de": "Nativ",
+   "it": "Nativo"
+  },
+  {
+   "hu": "Szürke 16",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "Grey 16",
+   "de": "Grau 16",
+   "it": "Grigio 16"
+  },
+  {
+   "hu": "E-INK EMULÁCIÓ MOBILON",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "E-INK EMULATION ON MOBILE",
+   "de": "E-INK-EMULATION (MOBIL)",
+   "it": "EMULAZIONE E-INK SU MOBILE"
+  },
+  {
+   "hu": "KI",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "OFF",
+   "de": "AUS",
+   "it": "NO"
+  },
+  {
+   "hu": "BE",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "ON",
+   "de": "AN",
+   "it": "SÌ"
+  },
+  {
+   "hu": "LAPVÁLTÁS",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "PAGE TURN",
+   "de": "BLATTWECHSEL",
+   "it": "CAMBIO PAGINA"
+  },
+  {
+   "hu": "GYORS",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "FAST",
+   "de": "SCHNELL",
+   "it": "VELOCE"
+  },
+  {
+   "hu": "szellemképes",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "with ghosting",
+   "de": "mit Geisterbild",
+   "it": "con ghosting"
+  },
+  {
+   "hu": "NORMÁL",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "NORMAL",
+   "de": "NORMAL",
+   "it": "NORMALE"
+  },
+  {
+   "hu": "villanással",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "with flash",
+   "de": "mit Blitz",
+   "it": "con lampo"
+  },
+  {
+   "hu": "BETŰMÉRET-KALIBRÁCIÓ",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "FONT SIZE CALIBRATION",
+   "de": "SCHRIFTKALIBRIERUNG",
+   "it": "CALIBRAZIONE CARATTERI"
+  },
+  {
+   "hu": "kisebb",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "smaller",
+   "de": "kleiner",
+   "it": "più piccolo"
+  },
+  {
+   "hu": "nagyobb",
+   "ctx": "Appears on: Settings panel; Settings panel (in game).",
+   "en": "larger",
+   "de": "größer",
+   "it": "più grande"
+  },
+  {
+   "hu": "Árvíztűrő",
+   "ctx": "Settings: short sample word showing the current font size; any short word with the language's special letters.",
+   "en": "Blueprint",
+   "de": "Größe",
+   "it": "Perché sì"
+  },
+  {
+   "hu": "Tengely",
+   "ctx": "Level title (header and contents list), level “Tengely”.",
+   "en": "Axis",
+   "de": "Achse",
+   "it": "Asse"
+  },
+  {
+   "hu": "Három lap",
+   "ctx": "Level title (header and contents list), level “Három lap”.",
+   "en": "Three sheets",
+   "de": "Drei Blätter",
+   "it": "Tre fogli"
+  },
+  {
+   "hu": "Három fólia",
+   "ctx": "Level title (header and contents list), level “Három fólia”.",
+   "en": "Three overlays",
+   "de": "Drei Folien",
+   "it": "Tre lucidi"
+  },
+  {
+   "hu": "Kettős fedés",
+   "ctx": "Level title (header and contents list), level “Kettős fedés”.",
+   "en": "Double coverage",
+   "de": "Doppelte Deckung",
+   "it": "Doppia copertura"
+  },
+  {
+   "hu": "Tükörfólia",
+   "ctx": "Level title (header and contents list), level “Tükörfólia”.",
+   "en": "Mirrored overlay",
+   "de": "Spiegelfolie",
+   "it": "Lucido specchiato"
+  },
+  {
+   "hu": "Lépték",
+   "ctx": "Level title (header and contents list), level “Lépték”.",
+   "en": "Scale",
+   "de": "Maßstab",
+   "it": "Scala"
+  },
+  {
+   "hu": "Három vágás",
+   "ctx": "Level title (header and contents list), level “Három vágás”.",
+   "en": "Three cuts",
+   "de": "Drei Schnitte",
+   "it": "Tre tagli"
+  },
+  {
+   "hu": "Szerkesztés",
+   "ctx": "Level title AND random-folder puzzle type name.",
+   "en": "Construction",
+   "de": "Konstruktion",
+   "it": "Costruzione"
+  },
+  {
+   "hu": "Ferde lap",
+   "ctx": "Level title (header and contents list), level “Ferde lap”.",
+   "en": "Slanted face",
+   "de": "Schräge Fläche",
+   "it": "Faccia inclinata"
+  },
+  {
+   "hu": "Rácsfólia",
+   "ctx": "Level title (header and contents list), level “Rácsfólia”.",
+   "en": "Grid overlay",
+   "de": "Gitterfolie",
+   "it": "Lucido a griglia"
+  },
+  {
+   "hu": "Három fázis",
+   "ctx": "Level title (header and contents list), level “Három fázis”.",
+   "en": "Three phases",
+   "de": "Drei Phasen",
+   "it": "Tre fasi"
+  },
+  {
+   "hu": "Hamis nyom",
+   "ctx": "Level title (header and contents list), level “Hamis nyom”.",
+   "en": "False trace",
+   "de": "Falsche Spur",
+   "it": "Falsa traccia"
+  },
+  {
+   "hu": "Dátumrend",
+   "ctx": "Level title (header and contents list), level “Dátumrend”.",
+   "en": "Date order",
+   "de": "Datumsfolge",
+   "it": "Ordine delle date"
+  },
+  {
+   "hu": "Furat oldalról",
+   "ctx": "Level title (header and contents list), level “Furat oldalról”.",
+   "en": "Hole from the side",
+   "de": "Bohrung von der Seite",
+   "it": "Foro di fianco"
+  },
+  {
+   "hu": "Hajtogatás",
+   "ctx": "Level title (header and contents list), level “Hajtogatás”.",
+   "en": "Folding",
+   "de": "Falten",
+   "it": "Piegatura"
+  },
+  {
+   "hu": "Lépcsőháló",
+   "ctx": "Level title (header and contents list), level “Lépcsőháló”.",
+   "en": "Staircase net",
+   "de": "Treppennetz",
+   "it": "Sviluppo a scala"
+  },
+  {
+   "hu": "Tetőárnyék",
+   "ctx": "Level title (header and contents list), level “Tetőárnyék”.",
+   "en": "Roof shadow",
+   "de": "Dachschatten",
+   "it": "Ombra sul tetto"
+  },
+  {
+   "hu": "Árnyékfestmény",
+   "ctx": "Level title AND random-folder puzzle type name.",
+   "en": "Shadow painting",
+   "de": "Schattenbild",
+   "it": "Quadro d'ombre"
+  },
+  {
+   "hu": "Hamis nap",
+   "ctx": "Level title (header and contents list), level “Hamis nap”.",
+   "en": "False sun",
+   "de": "Falsche Sonne",
+   "it": "Sole falso"
+  },
+  {
+   "hu": "Konyha",
+   "ctx": "Level title (header and contents list), level “Konyha”.",
+   "en": "Kitchen",
+   "de": "Küche",
+   "it": "Cucina"
+  },
+  {
+   "hu": "Hálószoba",
+   "ctx": "Level title (header and contents list), level “Hálószoba”.",
+   "en": "Bedroom",
+   "de": "Schlafzimmer",
+   "it": "Camera da letto"
+  },
+  {
+   "hu": "Nappali",
+   "ctx": "Level title (header and contents list), level “Nappali”.",
+   "en": "Living room",
+   "de": "Wohnzimmer",
+   "it": "Soggiorno"
+  },
+  {
+   "hu": "a harmadik elveszett",
+   "ctx": "Level subtitle / riddle hint under the title, level “Két nézet”.",
+   "en": "the third has gone missing",
+   "de": "die dritte ging verloren",
+   "it": "la terza è andata persa"
+  },
+  {
+   "hu": "a szín nem marad, csak a nyoma",
+   "ctx": "Level subtitle / riddle hint under the title, level “Mozaik”.",
+   "en": "the colour fades, its trace stays",
+   "de": "die Farbe vergeht, die Spur bleibt",
+   "it": "il colore svanisce, resta la traccia"
+  },
+  {
+   "hu": "a fél is egész",
+   "ctx": "Level subtitle / riddle hint under the title, level “Tengely”.",
+   "en": "a half makes a whole",
+   "de": "die Hälfte ist ganz",
+   "it": "la metà è intera"
+  },
+  {
+   "hu": "ami piros, az nincs",
+   "ctx": "Level subtitle / riddle hint under the title, level “Három lap”.",
+   "en": "if it's red, it's not there",
+   "de": "was rot ist, gibt es nicht",
+   "it": "ciò che è rosso non c'è"
+  },
+  {
+   "hu": "a jel a jelre kerül",
+   "ctx": "Level subtitle / riddle hint under the title, level “Fólia”.",
+   "en": "match mark to mark",
+   "de": "Marke auf Marke",
+   "it": "segno su segno"
+  },
+  {
+   "hu": "a körvonal nem hazudik",
+   "ctx": "Level subtitle / riddle hint under the title, level “Három fólia”.",
+   "en": "the outline does not lie",
+   "de": "der Umriss lügt nicht",
+   "it": "il contorno non mente"
+  },
+  {
+   "hu": "ami kétszer fedett, az nincs",
+   "ctx": "Level subtitle / riddle hint under the title, level “Kettős fedés”.",
+   "en": "covered twice means empty",
+   "de": "doppelt gedeckt heißt leer",
+   "it": "coperto due volte è vuoto"
+  },
+  {
+   "hu": "a fóliának két oldala van",
+   "ctx": "Level subtitle / riddle hint under the title, level “Tükörfólia”.",
+   "en": "an overlay has two sides",
+   "de": "eine Folie hat zwei Seiten",
+   "it": "un lucido ha due facce"
+  },
+  {
+   "hu": "a lap 1:50-es",
+   "ctx": "Level subtitle / riddle hint under the title, level “Lépték”.",
+   "en": "the sheet is 1:50",
+   "de": "das Blatt ist 1:50",
+   "it": "il foglio è in scala 1:50"
+  },
+  {
+   "hu": "a lánc mindig 6",
+   "ctx": "Level subtitle / riddle hint under the title, level “Méretlánc”.",
+   "en": "every chain adds up to 6",
+   "de": "jede Kette ergibt 6",
+   "it": "ogni catena fa 6"
+  },
+  {
+   "hu": "a szaggatott vonal is vonal",
+   "ctx": "Level subtitle / riddle hint under the title, level “Furatok”.",
+   "en": "even dashed lines count",
+   "de": "auch gestrichelte Linien zählen",
+   "it": "anche una linea tratteggiata conta"
+  },
+  {
+   "hu": "minden vágás számít",
+   "ctx": "Level subtitle / riddle hint under the title, level “Három vágás”.",
+   "en": "every cut counts",
+   "de": "jeder Schnitt zählt",
+   "it": "ogni taglio conta"
+  },
+  {
+   "hu": "a harmadik nézet szerkeszthető",
+   "ctx": "Appears on: Contents sheet (hard), page 1; Level 13 (Szerkesztés), sheet 1.",
+   "en": "the third view can be constructed",
+   "de": "die dritte Ansicht ist konstruierbar",
+   "it": "la terza vista si può costruire"
+  },
+  {
+   "hu": "nem minden él vízszintes",
+   "ctx": "Level subtitle / riddle hint under the title, level “Ferde lap”.",
+   "en": "not every edge is level",
+   "de": "nicht jede Kante ist waagerecht",
+   "it": "non ogni spigolo è orizzontale"
+  },
+  {
+   "hu": "a rés mögött más terv van",
+   "ctx": "Level subtitle / riddle hint under the title, level “Rácsfólia”.",
+   "en": "another plan hides behind the grid",
+   "de": "hinter den Schlitzen liegt ein anderer Plan",
+   "it": "dietro le fessure c'è un altro progetto"
+  },
+  {
+   "hu": "az utasítás is a rács mögött van",
+   "ctx": "Level subtitle / riddle hint under the title, level “Három fázis”.",
+   "en": "the instructions are behind the grid too",
+   "de": "auch die Anweisung liegt hinter dem Gitter",
+   "it": "anche l'istruzione è dietro la griglia"
+  },
+  {
+   "hu": "a színes lap hazudik",
+   "ctx": "Level subtitle / riddle hint under the title, level “Hamis nyom”.",
+   "en": "the colour sheet lies",
+   "de": "das Farbblatt lügt",
+   "it": "il foglio a colori mente"
+  },
+  {
+   "hu": "a toll túl vastag",
+   "ctx": "Level subtitle / riddle hint under the title, level “Szigetelés”.",
+   "en": "the pen is too thick",
+   "de": "der Stift ist zu dick",
+   "it": "la penna è troppo spessa"
+  },
+  {
+   "hu": "minden módosítás számít",
+   "ctx": "Level subtitle / riddle hint under the title, level “Revíziók”.",
+   "en": "every change counts",
+   "de": "jede Änderung zählt",
+   "it": "ogni modifica conta"
+  },
+  {
+   "hu": "a napló nem sorrendben készült",
+   "ctx": "Level subtitle / riddle hint under the title, level “Dátumrend”.",
+   "en": "the log was not kept in order",
+   "de": "die Einträge sind nicht chronologisch",
+   "it": "il registro non è in ordine"
+  },
+  {
+   "hu": "a furat is szerkeszthető",
+   "ctx": "Level subtitle / riddle hint under the title, level “Furat oldalról”.",
+   "en": "the hole can be constructed too",
+   "de": "auch die Bohrung ist konstruierbar",
+   "it": "anche il foro si può costruire"
+  },
+  {
+   "hu": "melyik három lapot látjuk?",
+   "ctx": "Level subtitle / riddle hint under the title, level “Hajtogatás”.",
+   "en": "which three faces do we see?",
+   "de": "welche drei Flächen sehen wir?",
+   "it": "quali tre facce vediamo?"
+  },
+  {
+   "hu": "a háló nem kereszt",
+   "ctx": "Level subtitle / riddle hint under the title, level “Lépcsőháló”.",
+   "en": "the net is not a cross",
+   "de": "das Netz ist kein Kreuz",
+   "it": "lo sviluppo non è una croce"
+  },
+  {
+   "hu": "a fény nyugatról jön, 45°-ban",
+   "ctx": "Level subtitle / riddle hint under the title, level “Árnyék”.",
+   "en": "light from the west at 45°",
+   "de": "Licht von Westen, unter 45°",
+   "it": "luce da ovest a 45°"
+  },
+  {
+   "hu": "az árnyék a tetőre is esik",
+   "ctx": "Level subtitle / riddle hint under the title, level “Tetőárnyék”.",
+   "en": "shadows fall on roofs too",
+   "de": "Schatten fallen auch auf Dächer",
+   "it": "l'ombra cade anche sui tetti"
+  },
+  {
+   "hu": "a festő pontosan festett",
+   "ctx": "Level subtitle / riddle hint under the title, level “Árnyékfestmény”.",
+   "en": "the painter got every detail right",
+   "de": "der Maler nahm es ganz genau",
+   "it": "il pittore non sbagliò un'ombra"
+  },
+  {
+   "hu": "a vázlat máskor készült",
+   "ctx": "Level subtitle / riddle hint under the title, level “Hamis nap”.",
+   "en": "the sketch was made at another time",
+   "de": "die Skizze entstand zu einer anderen Tageszeit",
+   "it": "lo schizzo è di un'altra ora"
+  },
+  {
+   "hu": "a mosogató mindig napos legyen",
+   "ctx": "Level subtitle / riddle hint under the title, level “Konyha”.",
+   "en": "keep the sink sunny all day",
+   "de": "die Spüle soll immer Sonne haben",
+   "it": "il lavello sempre al sole"
+  },
+  {
+   "hu": "reggel ébresszen a nap",
+   "ctx": "Level subtitle / riddle hint under the title, level “Hálószoba”.",
+   "en": "let the sun wake you",
+   "de": "die Sonne soll dich wecken",
+   "it": "che il sole ti svegli"
+  },
+  {
+   "hu": "a tévét sose érje nap",
+   "ctx": "Level subtitle / riddle hint under the title, level “Nappali”.",
+   "en": "never let the sun hit the TV",
+   "de": "nie Sonne auf den Fernseher",
+   "it": "mai sole sulla TV"
+  },
+  {
+   "hu": "REV. A — A felülnézetet újra kell rajzolni.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Két nézet”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. A — The top view must be redrawn.",
+   "de": "REV. A — Die Draufsicht muss neu gezeichnet werden.",
+   "it": "REV. A — La pianta va ridisegnata."
+  },
+  {
+   "hu": "REV. B — A mozaik tervét a műhelyben felejtették.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Mozaik”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. B — The mosaic plan was left in the workshop.",
+   "de": "REV. B — Der Mosaikplan blieb in der Werkstatt.",
+   "it": "REV. B — Il progetto del mosaico è rimasto in officina."
+  },
+  {
+   "hu": "REV. C — Csak a bal szárny terve maradt meg.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Tengely”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. C — Only the plan of the left wing survived.",
+   "de": "REV. C — Nur der Plan des linken Flügels blieb erhalten.",
+   "it": "REV. C — È rimasto solo il progetto dell'ala sinistra."
+  },
+  {
+   "hu": "REV. D — A toronyházak között maradtak üres telkek.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Három lap”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. D — Empty plots were left between the towers.",
+   "de": "REV. D — Zwischen den Türmen blieben leere Grundstücke.",
+   "it": "REV. D — Tra le torri sono rimasti lotti vuoti."
+  },
+  {
+   "hu": "REV. E — A kitűzési fóliát valaki elforgatta.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Fólia”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. E — Someone rotated the setting-out overlay.",
+   "de": "REV. E — Jemand hat die Absteckfolie gedreht.",
+   "it": "REV. E — Qualcuno ha ruotato il lucido di tracciamento."
+  },
+  {
+   "hu": "REV. F — A homlokzati fóliák összekeveredtek.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Három fólia”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. F — The facade overlays got mixed up.",
+   "de": "REV. F — Die Fassadenfolien wurden vertauscht.",
+   "it": "REV. F — I lucidi delle facciate si sono mescolati."
+  },
+  {
+   "hu": "REV. G — Két terv készült ugyanarra a telekre.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Kettős fedés”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. G — Two plans were made for the same plot.",
+   "de": "REV. G — Für dasselbe Grundstück gibt es zwei Pläne.",
+   "it": "REV. G — Due progetti per lo stesso lotto."
+  },
+  {
+   "hu": "REV. H — A fóliát fordítva fűzték a dossziéba.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Tükörfólia”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. H — The overlay was filed back to front.",
+   "de": "REV. H — Die Folie wurde verkehrt abgeheftet.",
+   "it": "REV. H — Il lucido è stato archiviato al rovescio."
+  },
+  {
+   "hu": "REV. I — A részletrajzok más léptékben készültek.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Lépték”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. I — The detail drawings use other scales.",
+   "de": "REV. I — Die Detailzeichnungen haben andere Maßstäbe.",
+   "it": "REV. I — I dettagli sono in altre scale."
+  },
+  {
+   "hu": "REV. J — Néhány méret elmosódott. A teljes méret mindenhol 6.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Méretlánc”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. J — Some dimensions have been smudged. Each chain totals 6.",
+   "de": "REV. J — Einige Maße sind verwischt. Jede Summe ist 6.",
+   "it": "REV. J — Alcune quote sono sbiadite. Ogni totale è 6."
+  },
+  {
+   "hu": "REV. K — A furatokat csak a nézeteken jelölték.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Furatok”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. K — The holes are marked only on the views.",
+   "de": "REV. K — Die Bohrungen sind nur in den Ansichten eingetragen.",
+   "it": "REV. K — I fori sono segnati solo nelle viste."
+  },
+  {
+   "hu": "REV. L — Legfeljebb három metszet. Koppints számra vagy betűre.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Három vágás”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. L — Three sections at most. Tap a number or a letter.",
+   "de": "REV. L — Höchstens drei Schnitte. Tippe auf eine Zahl oder einen Buchstaben.",
+   "it": "REV. L — Al massimo tre sezioni. Tocca un numero o una lettera."
+  },
+  {
+   "hu": "REV. M — Az oldalnézet hiányzik. 45°-os segédvonallal szerkeszthető.",
+   "ctx": "Appears on: Level 13 (Szerkesztés), sheet 1.",
+   "en": "REV. M — The side view is missing. Construct it with a 45° mitre line.",
+   "de": "REV. M — Die Seitenansicht fehlt. Mit einer 45°-Hilfslinie konstruierbar.",
+   "it": "REV. M — Manca la vista laterale. Si costruisce con una linea a 45°."
+  },
+  {
+   "hu": "REV. N — Az oldalnézet hiányzik. A ferde él két pontból adódik.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Ferde lap”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. N — The side view is missing. The slanted edge comes from two points.",
+   "de": "REV. N — Die Seitenansicht fehlt. Die schräge Kante ergibt sich aus zwei Punkten.",
+   "it": "REV. N — Manca la vista laterale. Lo spigolo inclinato nasce da due punti."
+  },
+  {
+   "hu": "REV. O — Két tervet nyomtak egymásba. Csak az egyik érvényes.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Rácsfólia”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. O — Two plans were overprinted. Only one is valid.",
+   "de": "REV. O — Zwei Pläne wurden übereinandergedruckt. Nur einer ist gültig.",
+   "it": "REV. O — Due progetti sono stati stampati uno sull'altro. Solo uno è valido."
+  },
+  {
+   "hu": "REV. P — Három lapot nyomtak egymásba.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Három fázis”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. P — Three sheets were overprinted.",
+   "de": "REV. P — Drei Blätter wurden übereinandergedruckt.",
+   "it": "REV. P — Tre fogli sono stati stampati uno sull'altro."
+  },
+  {
+   "hu": "REV. Q — A felülnézeten jó jelölések vannak.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Hamis nyom”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. Q — The top view has the right marks.",
+   "de": "REV. Q — Die Draufsicht hat die richtigen Marken.",
+   "it": "REV. Q — La pianta ha i segni giusti."
+  },
+  {
+   "hu": "REV. R — Csak a tömör falak maradnak. A tollat túl vastagra állították.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Szigetelés”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. R — Only the solid walls stay. The line weight was set too high.",
+   "de": "REV. R — Nur die massiven Wände bleiben. Die Strichstärke wurde zu hoch eingestellt.",
+   "it": "REV. R — Restano solo i muri pieni. Lo spessore del tratto era impostato troppo alto."
+  },
+  {
+   "hu": "REV. S — Az alaptervet három módosítás követte.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Revíziók”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. S — Three changes followed the base plan.",
+   "de": "REV. S — Auf den Grundplan folgten drei Änderungen.",
+   "it": "REV. S — Al progetto base seguirono tre modifiche."
+  },
+  {
+   "hu": "REV. T — A bejegyzéseket dátum szerint kell végrehajtani.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Dátumrend”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. T — Carry out the entries in date order.",
+   "de": "REV. T — Die Einträge sind nach Datum auszuführen.",
+   "it": "REV. T — Esegui le voci in ordine di data."
+  },
+  {
+   "hu": "REV. U — Az oldalnézetbe a takart furat is kell, szaggatott vonallal.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Furat oldalról”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. U — Show the hidden hole in the side view with dashed lines.",
+   "de": "REV. U — Die Seitenansicht braucht auch die verdeckte Bohrung, gestrichelt.",
+   "it": "REV. U — Nella vista laterale serve anche il foro nascosto, tratteggiato."
+  },
+  {
+   "hu": "REV. V — A kockát ebből a hálóból hajtották össze. Jelöld a hálón a három látható lapot.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Hajtogatás”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. V — The cube was folded from this net. Mark the three visible faces on the net.",
+   "de": "REV. V — Der Würfel wurde aus diesem Netz gefaltet. Markiere die drei sichtbaren Flächen im Netz.",
+   "it": "REV. V — Il cubo è piegato da questo sviluppo. Segna le tre facce visibili."
+  },
+  {
+   "hu": "REV. W — Lépcsős háló. Jelöld a hálón a három látható lapot.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Lépcsőháló”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. W — Staircase net. Mark the three visible faces on the net.",
+   "de": "REV. W — Treppennetz. Markiere die drei sichtbaren Flächen im Netz.",
+   "it": "REV. W — Sviluppo a scala. Segna le tre facce visibili."
+  },
+  {
+   "hu": "REV. X — Jelöld az árnyékot a talajon. Fény: nyugatról, 45°.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Árnyék”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. X — Mark the shadow on the ground. Light: from the west, 45°.",
+   "de": "REV. X — Markiere den Schatten am Boden. Licht: von Westen, 45°.",
+   "it": "REV. X — Segna l'ombra a terra. Luce: da ovest, 45°."
+  },
+  {
+   "hu": "REV. Y — Délben délről süt a nap, 45°. Az alacsonyabb tetőre is árnyék eshet.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Tetőárnyék”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. Y — At noon the sun is in the south, 45°. Lower roofs can be shaded too.",
+   "de": "REV. Y — Mittags steht die Sonne im Süden, 45°. Auch niedrigere Dächer können Schatten bekommen.",
+   "it": "REV. Y — A mezzogiorno il sole è a sud, 45°. Anche i tetti più bassi possono essere in ombra."
+  },
+  {
+   "hu": "REV. Z — Pontban délben délről süt a nap, 45°-ban. Jelöld az árnyékot.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Árnyékfestmény”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. Z — At exactly noon the sun is in the south at 45°. Mark the shadow.",
+   "de": "REV. Z — Genau mittags steht die Sonne im Süden unter 45°. Markiere den Schatten.",
+   "it": "REV. Z — A mezzogiorno esatto il sole è a sud a 45°. Segna l'ombra."
+  },
+  {
+   "hu": "REV. AA — Délben délről süt a nap, 45°. A tetőre is eshet árnyék. A vázlat hamis.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Hamis nap”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. AA — At noon the sun is in the south, 45°. Roofs can be shaded. The sketch is false.",
+   "de": "REV. AA — Mittags Sonne aus Süden, 45°. Auch Dächer bekommen Schatten. Die Skizze ist falsch.",
+   "it": "REV. AA — A mezzogiorno sole da sud, 45°. Anche i tetti vanno in ombra. Lo schizzo è falso."
+  },
+  {
+   "hu": "REV. AB — Rendezd be a konyhát. Duplakerettel jelölve a falnál álló bútor.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Konyha”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. AB — Furnish the kitchen. A double frame marks furniture that stands at a wall.",
+   "de": "REV. AB — Richte die Küche ein. Doppelter Rahmen: Möbel an der Wand.",
+   "it": "REV. AB — Arreda la cucina. Doppia cornice: mobile contro il muro."
+  },
+  {
+   "hu": "REV. AC — Az ágyat reggel érje nap, este ne. A számítógép délben se kapjon napot.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Hálószoba”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. AC — Sun on the bed in the morning, not in the evening. No sun on the computer at noon.",
+   "de": "REV. AC — Morgens Sonne aufs Bett, abends nicht. Mittags keine Sonne auf den Computer.",
+   "it": "REV. AC — Sole sul letto al mattino, non la sera. Niente sole sul computer a mezzogiorno."
+  },
+  {
+   "hu": "REV. AD — A kanapé háttal a falnak álljon, és lássák róla a tévét.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Nappali”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. AD — The sofa stands with its back to a wall, facing the TV.",
+   "de": "REV. AD — Das Sofa steht mit dem Rücken zur Wand und blickt auf den Fernseher.",
+   "it": "REV. AD — Il divano con lo schienale al muro, rivolto alla TV."
+  },
+  {
+   "hu": "ELÖLNÉZET",
+   "ctx": "Appears on: Level 1 (Két nézet), sheet 1; Level 1 (Két nézet), sheet 2 (+8 more).",
+   "en": "FRONT VIEW",
+   "de": "VORDERANSICHT",
+   "it": "VISTA FRONTALE"
+  },
+  {
+   "hu": "OLDALNÉZET",
+   "ctx": "Appears on: Level 1 (Két nézet), sheet 1; Level 1 (Két nézet), sheet 2 (+5 more).",
+   "en": "SIDE VIEW",
+   "de": "SEITENANSICHT",
+   "it": "VISTA LATERALE"
+  },
+  {
+   "hu": "OLDALNÉZET ?",
+   "ctx": "Appears on: Level 13 (Szerkesztés), sheet 1; Level 14 (Ferde lap), sheet 1 (+1 more).",
+   "en": "SIDE VIEW ?",
+   "de": "SEITENANSICHT ?",
+   "it": "VISTA LATERALE ?"
+  },
+  {
+   "hu": "AXONOMETRIA",
+   "ctx": "Appears on: Level 1 (Két nézet), sheet 2; Level 15 (Rácsfólia), sheet 2 (+13 more).",
+   "en": "AXONOMETRIC",
+   "de": "AXONOMETRIE",
+   "it": "ASSONOMETRIA"
+  },
+  {
+   "hu": "FELÜLNÉZET · HELYSZÍNRAJZ",
+   "ctx": "Appears on: Level 15 (Rácsfólia), sheet 2; Level 16 (Három fázis), sheet 2 (+11 more).",
+   "en": "TOP VIEW · SITE PLAN",
+   "de": "DRAUFSICHT · LAGEPLAN",
+   "it": "VISTA DALL'ALTO · PLANIMETRIA"
+  },
+  {
+   "hu": "MOZAIK · SZÍNTERV",
+   "ctx": "Appears on: Level 17 (Hamis nyom), sheet 1; Level 17 (Hamis nyom), sheet 2 (+5 more).",
+   "en": "MOSAIC · COLOUR SCHEME",
+   "de": "MOSAIK · FARBPLAN",
+   "it": "MOSAICO · PIANO COLORI"
+  },
+  {
+   "hu": "FÓLIÁK · húzd a rajzra, koppints a forgatáshoz",
+   "ctx": "Appears on: Level 5 (Fólia), sheet 1; Level 5 (Fólia), sheet 2 (+8 more).",
+   "en": "OVERLAYS · drag onto the drawing, tap to rotate",
+   "de": "FOLIEN · auf die Zeichnung ziehen, zum Drehen tippen",
+   "it": "LUCIDI · trascina sul disegno, tocca per ruotare"
+  },
+  {
+   "hu": "ILLESZTŐJELEK",
+   "ctx": "Appears on: Level 5 (Fólia), sheet 1; Level 5 (Fólia), sheet 2 (+8 more).",
+   "en": "REGISTRATION MARKS",
+   "de": "PASSMARKEN",
+   "it": "CROCI DI REGISTRO"
+  },
+  {
+   "hu": "Kör a körre, négyzet a négyzetre.",
+   "ctx": "Appears on: Level 5 (Fólia), sheet 1; Level 5 (Fólia), sheet 2 (+8 more).",
+   "en": "Circle on circle, square on square.",
+   "de": "Kreis auf Kreis, Quadrat auf Quadrat.",
+   "it": "Cerchio su cerchio, quadrato su quadrato."
+  },
+  {
+   "hu": "ILLESZTŐLAP · a kockák a felülnézetre kerülnek",
+   "ctx": "Appears on: Level 5 (Fólia), sheet 1; Level 5 (Fólia), sheet 2 (+8 more).",
+   "en": "REGISTRATION SHEET · blocks go on the top view",
+   "de": "PASSBLATT · die Blöcke kommen auf die Draufsicht",
+   "it": "FOGLIO DI REGISTRO · i blocchi vanno sulla vista dall'alto"
+  },
+  {
+   "hu": "KIJELÖLT FÓLIA: {id}",
+   "ctx": "Foil sheet: which foil the tool buttons act on; {id} is a letter.",
+   "en": "SELECTED OVERLAY: {id}",
+   "de": "GEWÄHLTE FOLIE: {id}",
+   "it": "LUCIDO SCELTO: {id}"
+  },
+  {
+   "hu": "ÁTFORDÍT",
+   "ctx": "Appears on: Level 8 (Tükörfólia), sheet 1; Level 8 (Tükörfólia), sheet 2.",
+   "en": "FLIP",
+   "de": "WENDEN",
+   "it": "CAPOVOLGI"
+  },
+  {
+   "hu": "LAP: M 1:50",
+   "ctx": "Appears on: Level 9 (Lépték), sheet 1; Level 9 (Lépték), sheet 2.",
+   "en": "SHEET: 1:50",
+   "de": "BLATT: M 1:50",
+   "it": "FOGLIO: 1:50"
+  },
+  {
+   "hu": "MÉRETLÁNCOK · M 1:50",
+   "ctx": "Appears on: Level 10 (Méretlánc), sheet 1.",
+   "en": "DIMENSION CHAINS · 1:50",
+   "de": "MASSKETTEN · M 1:50",
+   "it": "QUOTATURE · 1:50"
+  },
+  {
+   "hu": "JELMAGYARÁZAT",
+   "ctx": "Appears on: Level 10 (Méretlánc), sheet 1; Level 11 (Furatok), sheet 1 (+6 more).",
+   "en": "LEGEND",
+   "de": "LEGENDE",
+   "it": "LEGENDA"
+  },
+  {
+   "hu": "fal",
+   "ctx": "Appears on: Level 10 (Méretlánc), sheet 1; Level 18 (Szigetelés), sheet 1 (+1 more).",
+   "en": "wall",
+   "de": "Wand",
+   "it": "muro"
+  },
+  {
+   "hu": "üres",
+   "ctx": "Appears on: Level 10 (Méretlánc), sheet 1; Level 15 (Rácsfólia), sheet 1 (+3 more).",
+   "en": "empty",
+   "de": "leer",
+   "it": "vuoto"
+  },
+  {
+   "hu": "FELÜLNÉZET · koppints: mélység",
+   "ctx": "Appears on: Level 11 (Furatok), sheet 1; Level 12 (Három vágás), sheet 1.",
+   "en": "TOP VIEW · tap: depth",
+   "de": "DRAUFSICHT · tippen: Tiefe",
+   "it": "VISTA DALL'ALTO · tocca: profondità"
+  },
+  {
+   "hu": "átmenő furat",
+   "ctx": "Appears on: Level 11 (Furatok), sheet 1.",
+   "en": "through hole",
+   "de": "Durchgangsbohrung",
+   "it": "foro passante"
+  },
+  {
+   "hu": "vakfurat (mélység)",
+   "ctx": "Appears on: Level 11 (Furatok), sheet 1.",
+   "en": "blind hole (depth)",
+   "de": "Sackloch (Tiefe)",
+   "it": "foro cieco (profondità)"
+  },
+  {
+   "hu": "takart él",
+   "ctx": "Appears on: Level 11 (Furatok), sheet 1; Level 21 (Furat oldalról), sheet 1.",
+   "en": "hidden edge",
+   "de": "verdeckte Kante",
+   "it": "spigolo nascosto"
+  },
+  {
+   "hu": "METSZETEK {n}/{max}",
+   "ctx": "Drill sheet: sections used / allowed.",
+   "en": "SECTIONS {n}/{max}",
+   "de": "SCHNITTE {n}/{max}",
+   "it": "SEZIONI {n}/{max}"
+  },
+  {
+   "hu": "Koppints egy számra vagy betűre.",
+   "ctx": "Appears on: Level 12 (Három vágás), sheet 1.",
+   "en": "Tap a number or a letter.",
+   "de": "Tippe auf eine Zahl oder einen Buchstaben.",
+   "it": "Tocca un numero o una lettera."
+  },
+  {
+   "hu": "ÚJRA",
+   "ctx": "Appears on: Level 12 (Három vágás), sheet 1.",
+   "en": "RESET",
+   "de": "NEU",
+   "it": "RESET"
+  },
+  {
+   "hu": "TUS",
+   "ctx": "Appears on: Level 13 (Szerkesztés), sheet 1; Level 14 (Ferde lap), sheet 1 (+1 more).",
+   "en": "INK",
+   "de": "TUSCHE",
+   "it": "CHINA"
+  },
+  {
+   "hu": "kontúr",
+   "ctx": "Appears on: Level 13 (Szerkesztés), sheet 1; Level 14 (Ferde lap), sheet 1 (+1 more).",
+   "en": "outline",
+   "de": "Kontur",
+   "it": "contorno"
+  },
+  {
+   "hu": "TÖRÖL",
+   "ctx": "Appears on: Level 13 (Szerkesztés), sheet 1; Level 14 (Ferde lap), sheet 1 (+1 more).",
+   "en": "CLEAR",
+   "de": "LÖSCHEN",
+   "it": "CANCELLA"
+  },
+  {
+   "hu": "Vonalzó: koppints egy sarokpontra vagy metszéspontra.",
+   "ctx": "Appears on: Level 13 (Szerkesztés), sheet 1; Level 14 (Ferde lap), sheet 1 (+1 more).",
+   "en": "Ruler: tap a corner or an intersection.",
+   "de": "Lineal: tippe auf eine Ecke oder einen Schnittpunkt.",
+   "it": "Righello: tocca un vertice o un'intersezione."
+  },
+  {
+   "hu": "Tus: koppints metszéspontokra sorban, zárd az első ponton.",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "Ink: tap intersections in order, close on the first point.",
+   "de": "Tusche: Schnittpunkte der Reihe nach antippen, am ersten Punkt schließen.",
+   "it": "China: tocca le intersezioni in ordine, chiudi sul primo punto."
+  },
+  {
+   "hu": "Takart él: koppints a két végpontjára.",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "Hidden edge: tap both of its ends.",
+   "de": "Verdeckte Kante: tippe auf beide Enden.",
+   "it": "Spigolo nascosto: tocca i due estremi."
+  },
+  {
+   "hu": "A kontúr nem egyezik. VISSZA vagy TÖRÖL.",
+   "ctx": "Construction sheet: error when the closed outline is wrong.",
+   "en": "The outline does not match. UNDO or CLEAR.",
+   "de": "Die Kontur stimmt nicht. RÜCKGÄNGIG oder LÖSCHEN.",
+   "it": "Il contorno non corrisponde. ANNULLA o CANCELLA."
+  },
+  {
+   "hu": "A kontúr és a takart élek még nem egyeznek.",
+   "ctx": "Construction sheet with hidden edges: error message.",
+   "en": "The outline and hidden edges do not match yet.",
+   "de": "Kontur und verdeckte Kanten stimmen noch nicht.",
+   "it": "Contorno e spigoli nascosti non corrispondono ancora."
+  },
+  {
+   "hu": "NYOMAT · M 1:50",
+   "ctx": "Appears on: Level 15 (Rácsfólia), sheet 1; Level 15 (Rácsfólia), sheet 2 (+2 more).",
+   "en": "PRINT · 1:50",
+   "de": "DRUCK · M 1:50",
+   "it": "STAMPA · 1:50"
+  },
+  {
+   "hu": "NYOMAT · húzd óvatosan vízszintesen",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "PRINT · drag gently sideways",
+   "de": "DRUCK · vorsichtig waagerecht ziehen",
+   "it": "STAMPA · trascina piano in orizzontale"
+  },
+  {
+   "hu": "MOZDÍT",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "MOVE",
+   "de": "SCHIEBEN",
+   "it": "SPOSTA"
+  },
+  {
+   "hu": "FÓLIA LE",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "OVERLAY OFF",
+   "de": "FOLIE AB",
+   "it": "TOGLI LUCIDO"
+  },
+  {
+   "hu": "RÁCSFÓLIA",
+   "ctx": "Appears on: Contents sheet (hard), page 1; Level 15 (Rácsfólia), sheet 1 (+3 more).",
+   "en": "GRID OVERLAY",
+   "de": "GITTERFOLIE",
+   "it": "LUCIDO A GRIGLIA"
+  },
+  {
+   "hu": "kitöltendő",
+   "ctx": "Appears on: Level 15 (Rácsfólia), sheet 1; Level 15 (Rácsfólia), sheet 2 (+2 more).",
+   "en": "fill",
+   "de": "füllen",
+   "it": "pieno"
+  },
+  {
+   "hu": "TERV 1",
+   "ctx": "Appears on: Level 15 (Rácsfólia), sheet 1; Level 15 (Rácsfólia), sheet 2.",
+   "en": "PLAN 1",
+   "de": "PLAN 1",
+   "it": "PROGETTO 1"
+  },
+  {
+   "hu": "TERV 2",
+   "ctx": "Appears on: Level 15 (Rácsfólia), sheet 1; Level 15 (Rácsfólia), sheet 2.",
+   "en": "PLAN 2",
+   "de": "PLAN 2",
+   "it": "PROGETTO 2"
+  },
+  {
+   "hu": "TERV C",
+   "ctx": "Appears on: Level 16 (Három fázis), sheet 1; Level 16 (Három fázis), sheet 2.",
+   "en": "PLAN C",
+   "de": "PLAN C",
+   "it": "PROGETTO C"
+  },
+  {
+   "hu": "TERV D",
+   "ctx": "Appears on: Level 16 (Három fázis), sheet 1; Level 16 (Három fázis), sheet 2.",
+   "en": "PLAN D",
+   "de": "PLAN D",
+   "it": "PROGETTO D"
+  },
+  {
+   "hu": "ÉRVÉNYES",
+   "ctx": "Appears on: Level 15 (Rácsfólia), sheet 1; Level 15 (Rácsfólia), sheet 2.",
+   "en": "VALID",
+   "de": "GÜLTIG",
+   "it": "VALIDO"
+  },
+  {
+   "hu": "ÉRVÉNYTELEN",
+   "ctx": "Appears on: Level 15 (Rácsfólia), sheet 1; Level 15 (Rácsfólia), sheet 2 (+2 more).",
+   "en": "INVALID",
+   "de": "UNGÜLTIG",
+   "it": "NON VALIDO"
+  },
+  {
+   "hu": "A TERV D",
+   "ctx": "Appears on: Level 16 (Három fázis), sheet 1; Level 16 (Három fázis), sheet 2.",
+   "en": "PLAN D",
+   "de": "PLAN D",
+   "it": "PROGETTO D"
+  },
+  {
+   "hu": "TÜKRÖZENDŐ",
+   "ctx": "Appears on: Level 16 (Három fázis), sheet 1; Level 16 (Három fázis), sheet 2.",
+   "en": "TO BE MIRRORED",
+   "de": "SPIEGELN",
+   "it": "DA SPECCHIARE"
+  },
+  {
+   "hu": "ANYAGJELÖLÉS · M 1:5",
+   "ctx": "Appears on: Level 18 (Szigetelés), sheet 1; Level 18 (Szigetelés), sheet 2.",
+   "en": "MATERIALS · 1:5",
+   "de": "MATERIALIEN · M 1:5",
+   "it": "MATERIALI · 1:5"
+  },
+  {
+   "hu": "szigetelés",
+   "ctx": "Appears on: Level 18 (Szigetelés), sheet 1; Level 18 (Szigetelés), sheet 2.",
+   "en": "insulation",
+   "de": "Dämmung",
+   "it": "isolante"
+  },
+  {
+   "hu": "REVÍZIÓS NAPLÓ",
+   "ctx": "Appears on: Level 19 (Revíziók), sheet 1; Level 19 (Revíziók), sheet 2 (+2 more).",
+   "en": "REVISION LOG",
+   "de": "REVISIONSPROTOKOLL",
+   "it": "REGISTRO REVISIONI"
+  },
+  {
+   "hu": "JEL",
+   "ctx": "Appears on: Level 19 (Revíziók), sheet 1; Level 19 (Revíziók), sheet 2 (+2 more).",
+   "en": "MARK",
+   "de": "ZEICHEN",
+   "it": "SIGLA"
+  },
+  {
+   "hu": "LEÍRÁS",
+   "ctx": "Appears on: Level 19 (Revíziók), sheet 1; Level 19 (Revíziók), sheet 2 (+2 more).",
+   "en": "DESCRIPTION",
+   "de": "BESCHREIBUNG",
+   "it": "DESCRIZIONE"
+  },
+  {
+   "hu": "JELÖLÉSEK",
+   "ctx": "Appears on: Level 19 (Revíziók), sheet 1; Level 19 (Revíziók), sheet 2 (+2 more).",
+   "en": "NOTATION",
+   "de": "BEZEICHNUNGEN",
+   "it": "NOTAZIONE"
+  },
+  {
+   "hu": "REV. 0 — ALAPTERV",
+   "ctx": "Appears on: Level 19 (Revíziók), sheet 1; Level 19 (Revíziók), sheet 2 (+2 more).",
+   "en": "REV. 0 — BASE PLAN",
+   "de": "REV. 0 — GRUNDPLAN",
+   "it": "REV. 0 — PROGETTO BASE"
+  },
+  {
+   "hu": "sorok: 1–5 felülről",
+   "ctx": "Appears on: Level 19 (Revíziók), sheet 1; Level 19 (Revíziók), sheet 2 (+2 more).",
+   "en": "rows: 1–5 from the top",
+   "de": "Zeilen: 1–5 von oben",
+   "it": "righe: 1–5 dall'alto"
+  },
+  {
+   "hu": "oszlopok: a–e balról",
+   "ctx": "Appears on: Level 19 (Revíziók), sheet 1; Level 19 (Revíziók), sheet 2 (+2 more).",
+   "en": "columns: a–e from the left",
+   "de": "Spalten: a–e von links",
+   "it": "colonne: a–e da sinistra"
+  },
+  {
+   "hu": "forgatás: a lap közepe körül",
+   "ctx": "Appears on: Level 19 (Revíziók), sheet 1; Level 19 (Revíziók), sheet 2 (+2 more).",
+   "en": "rotation: about the centre of the sheet",
+   "de": "Drehung: um die Blattmitte",
+   "it": "rotazione: attorno al centro del foglio"
+  },
+  {
+   "hu": "{n}. sor kitöltve",
+   "ctx": "Revision log entry: row n was filled.",
+   "en": "row {n} filled",
+   "de": "Zeile {n} gefüllt",
+   "it": "riga {n} riempita"
+  },
+  {
+   "hu": "{n}. sor törölve",
+   "ctx": "Revision log entry: row n was cleared.",
+   "en": "row {n} cleared",
+   "de": "Zeile {n} geleert",
+   "it": "riga {n} svuotata"
+  },
+  {
+   "hu": "„{c}” oszlop kitöltve",
+   "ctx": "Revision log entry: column letter c was filled.",
+   "en": "column “{c}” filled",
+   "de": "Spalte „{c}“ gefüllt",
+   "it": "colonna «{c}» riempita"
+  },
+  {
+   "hu": "Elforgatva 90°-kal, óramutató szerint",
+   "ctx": "Appears on: Level 20 (Dátumrend), sheet 1; Level 20 (Dátumrend), sheet 2.",
+   "en": "Rotated 90° clockwise",
+   "de": "Um 90° im Uhrzeigersinn gedreht",
+   "it": "Ruotato di 90° in senso orario"
+  },
+  {
+   "hu": "Tükrözve a függőleges tengelyre",
+   "ctx": "Appears on: Level 19 (Revíziók), sheet 1; Level 19 (Revíziók), sheet 2.",
+   "en": "Mirrored on the vertical axis",
+   "de": "An der senkrechten Achse gespiegelt",
+   "it": "Specchiato sull'asse verticale"
+  },
+  {
+   "hu": "VISSZAVONVA",
+   "ctx": "Appears on: Level 20 (Dátumrend), sheet 1; Level 20 (Dátumrend), sheet 2.",
+   "en": "VOID",
+   "de": "WIDERRUFEN",
+   "it": "ANNULLATO"
+  },
+  {
+   "hu": "KOCKAHÁLÓ · nyomott oldal kívül",
+   "ctx": "Appears on: Level 22 (Hajtogatás), sheet 1; Level 23 (Lépcsőháló), sheet 1.",
+   "en": "CUBE NET · printed side out",
+   "de": "WÜRFELNETZ · bedruckte Seite außen",
+   "it": "SVILUPPO · lato stampato all'esterno"
+  },
+  {
+   "hu": "Koppints a háló lapjaira: {n}/3 kijelölve.",
+   "ctx": "Cube-net sheet: selection counter.",
+   "en": "Tap faces on the net: {n}/3 selected.",
+   "de": "Tippe auf Flächen im Netz: {n}/3 gewählt.",
+   "it": "Tocca le facce dello sviluppo: {n}/3 scelte."
+  },
+  {
+   "hu": "ÖSSZEHAJTVA",
+   "ctx": "Appears on: Level 22 (Hajtogatás), sheet 1; Level 23 (Lépcsőháló), sheet 1.",
+   "en": "FOLDED",
+   "de": "GEFALTET",
+   "it": "PIEGATO"
+  },
+  {
+   "hu": "Ez nem az a három lap.",
+   "ctx": "Cube-net sheet: error when three wrong faces are selected.",
+   "en": "Those are not the three faces.",
+   "de": "Das sind nicht die drei Flächen.",
+   "it": "Non sono queste le tre facce."
+  },
+  {
+   "hu": "FÉNY 45° · METSZET",
+   "ctx": "Appears on: Level 24 (Árnyék), sheet 1; Level 25 (Tetőárnyék), sheet 1 (+2 more).",
+   "en": "LIGHT 45° · SECTION",
+   "de": "LICHT 45° · SCHNITT",
+   "it": "LUCE 45° · SEZIONE"
+  },
+  {
+   "hu": "FÉNY",
+   "ctx": "Appears on: Level 24 (Árnyék), sheet 1; Level 25 (Tetőárnyék), sheet 1 (+2 more).",
+   "en": "LIGHT",
+   "de": "LICHT",
+   "it": "LUCE"
+  },
+  {
+   "hu": "tömb",
+   "ctx": "Appears on: Level 24 (Árnyék), sheet 1; Level 25 (Tetőárnyék), sheet 1 (+2 more).",
+   "en": "block",
+   "de": "Block",
+   "it": "blocco"
+  },
+  {
+   "hu": "és magassága",
+   "ctx": "Shadow sheet legend, second line after ‘tömb’ (block): block and its height.",
+   "en": "and its height",
+   "de": "und seine Höhe",
+   "it": "e la sua altezza"
+  },
+  {
+   "hu": "árnyék",
+   "ctx": "Appears on: Level 24 (Árnyék), sheet 1; Level 25 (Tetőárnyék), sheet 1 (+2 more).",
+   "en": "shadow",
+   "de": "Schatten",
+   "it": "ombra"
+  },
+  {
+   "hu": "az árnyék olyan hosszú,",
+   "ctx": "Appears on: Level 24 (Árnyék), sheet 1; Level 25 (Tetőárnyék), sheet 1 (+2 more).",
+   "en": "the shadow is as long",
+   "de": "der Schatten ist so lang,",
+   "it": "l'ombra è lunga"
+  },
+  {
+   "hu": "amilyen magas a tömb",
+   "ctx": "Appears on: Level 24 (Árnyék), sheet 1; Level 25 (Tetőárnyék), sheet 1 (+2 more).",
+   "en": "as the block is high",
+   "de": "wie der Block hoch ist",
+   "it": "quanto è alto il blocco"
+  },
+  {
+   "hu": "SZÍNES VÁZLAT · {text}",
+   "ctx": "Painted sketch sheet caption; {text} is the painting's own caption.",
+   "en": "COLOUR SKETCH · {text}",
+   "de": "FARBSKIZZE · {text}",
+   "it": "SCHIZZO A COLORI · {text}"
+  },
+  {
+   "hu": "1 m",
+   "ctx": "Appears on: Level 26 (Árnyékfestmény), sheet 1; Level 26 (Árnyékfestmény), sheet 2.",
+   "en": "1 m",
+   "de": "1 m",
+   "it": "1 m"
+  },
+  {
+   "hu": "A festő délután 4-kor festette · árnyékok ÉK felé · a rúd 1 m",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "Painted at 4 pm · shadows to the NE · the pole is 1 m",
+   "de": "Um 16 Uhr gemalt · Schatten nach NO · der Stab ist 1 m",
+   "it": "Dipinto alle 16 · ombre verso NE · l'asta è 1 m"
+  },
+  {
+   "hu": "Délelőtt 10 óra · a nap DK-ről süt",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "10 am · the sun is in the SE",
+   "de": "10 Uhr vormittags · Sonne aus SO",
+   "it": "Ore 10 · il sole è a SE"
+  },
+  {
+   "hu": "KÖVETELMÉNYEK",
+   "ctx": "Appears on: Level 28 (Konyha), sheet 1; Level 28 (Konyha), sheet 2 (+10 more).",
+   "en": "REQUIREMENTS",
+   "de": "ANFORDERUNGEN",
+   "it": "REQUISITI"
+  },
+  {
+   "hu": "bútor",
+   "ctx": "Appears on: Level 28 (Konyha), sheet 1; Level 28 (Konyha), sheet 2 (+10 more).",
+   "en": "furniture",
+   "de": "Möbel",
+   "it": "mobile"
+  },
+  {
+   "hu": "reggel",
+   "ctx": "Appears on: Level 28 (Konyha), sheet 1; Level 28 (Konyha), sheet 2 (+10 more).",
+   "en": "morning",
+   "de": "morgens",
+   "it": "mattina"
+  },
+  {
+   "hu": "délben",
+   "ctx": "Appears on: Level 28 (Konyha), sheet 1; Level 28 (Konyha), sheet 2 (+10 more).",
+   "en": "noon",
+   "de": "mittags",
+   "it": "mezzogiorno"
+  },
+  {
+   "hu": "délután",
+   "ctx": "Appears on: Level 28 (Konyha), sheet 1; Level 28 (Konyha), sheet 2 (+10 more).",
+   "en": "afternoon",
+   "de": "nachmittags",
+   "it": "pomeriggio"
+  },
+  {
+   "hu": "☼ napos · ✕ árnyékban · – mindegy · ▮ falhoz",
+   "ctx": "Appears on: Level 28 (Konyha), sheet 1; Level 28 (Konyha), sheet 2 (+10 more).",
+   "en": "☼ sunny · ✕ shaded · – any · ▮ at a wall",
+   "de": "☼ sonnig · ✕ schattig · – egal · ▮ an der Wand",
+   "it": "☼ al sole · ✕ in ombra · – indifferente · ▮ al muro"
+  },
+  {
+   "hu": "ajtótól elérhető",
+   "ctx": "Appears on: Easy level 10 (Iroda), sheet 1; Easy level 15 (Fürdő), sheet 1 (+13 more).",
+   "en": "reachable from the door",
+   "de": "von der Tür erreichbar",
+   "it": "raggiungibile dalla porta"
+  },
+  {
+   "hu": "asztal nem ér mosogatóhoz, tűzhelyhez",
+   "ctx": "Appears on: Level 28 (Konyha), sheet 1; Level 28 (Konyha), sheet 2 (+2 more).",
+   "en": "table clear of sink and stove",
+   "de": "Tisch berührt weder Spüle noch Herd",
+   "it": "tavolo lontano da lavello e fornello"
+  },
+  {
+   "hu": "tévé látszik",
+   "ctx": "Appears on: Level 30 (Nappali), sheet 1; Level 30 (Nappali), sheet 2 (+2 more).",
+   "en": "TV visible",
+   "de": "Fernseher sichtbar",
+   "it": "TV visibile"
+  },
+  {
+   "hu": "pálma szabadon",
+   "ctx": "Appears on: Level 30 (Nappali), sheet 1; Level 30 (Nappali), sheet 2 (+2 more).",
+   "en": "palm stands free",
+   "de": "Palme steht frei",
+   "it": "palma isolata"
+  },
+  {
+   "hu": "sárga, vonalkázott: napfolt a padlón",
+   "ctx": "Appears on: Level 28 (Konyha), sheet 2; Level 28 (Konyha), sheet 3 (+7 more).",
+   "en": "yellow hatch: sunlight on the floor",
+   "de": "gelb schraffiert: Sonnenfleck am Boden",
+   "it": "tratteggio giallo: sole sul pavimento"
+  },
+  {
+   "hu": "É",
+   "ctx": "Compass letter on the floor plans (North).",
+   "en": "N",
+   "de": "N",
+   "it": "N"
+  },
+  {
+   "hu": "mosogató",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "sink",
+   "de": "Spüle",
+   "it": "lavello"
+  },
+  {
+   "hu": "tűzhely",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "stove",
+   "de": "Herd",
+   "it": "fornello"
+  },
+  {
+   "hu": "hűtő",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "fridge",
+   "de": "Kühlschr.",
+   "it": "frigo"
+  },
+  {
+   "hu": "asztal",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "table",
+   "de": "Tisch",
+   "it": "tavolo"
+  },
+  {
+   "hu": "kamra",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "pantry",
+   "de": "Vorrat",
+   "it": "dispensa"
+  },
+  {
+   "hu": "szék",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "chair",
+   "de": "Stuhl",
+   "it": "sedia"
+  },
+  {
+   "hu": "ágy",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "bed",
+   "de": "Bett",
+   "it": "letto"
+  },
+  {
+   "hu": "szgép",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "PC",
+   "de": "PC",
+   "it": "PC"
+  },
+  {
+   "hu": "szekrény",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "wardrobe",
+   "de": "Schrank",
+   "it": "armadio"
+  },
+  {
+   "hu": "növény",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "plant",
+   "de": "Pflanze",
+   "it": "pianta"
+  },
+  {
+   "hu": "éjjeli",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "night st.",
+   "de": "Nachtt.",
+   "it": "comodino"
+  },
+  {
+   "hu": "tükör",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "mirror",
+   "de": "Spiegel",
+   "it": "specchio"
+  },
+  {
+   "hu": "tévé",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "TV",
+   "de": "TV",
+   "it": "TV"
+  },
+  {
+   "hu": "kanapé",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "sofa",
+   "de": "Sofa",
+   "it": "divano"
+  },
+  {
+   "hu": "fotel",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "armchair",
+   "de": "Sessel",
+   "it": "poltrona"
+  },
+  {
+   "hu": "polc",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "shelf",
+   "de": "Regal",
+   "it": "scaffale"
+  },
+  {
+   "hu": "zongora",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "piano",
+   "de": "Klavier",
+   "it": "pianoforte"
+  },
+  {
+   "hu": "pálma",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "palm",
+   "de": "Palme",
+   "it": "palma"
+  },
+  {
+   "hu": "ELŐREHALADÁS TÖRLÉSE",
+   "ctx": "Button in Settings and on the contents sheet that opens the reset-progress popup.",
+   "en": "RESET PROGRESS",
+   "de": "FORTSCHRITT LÖSCHEN",
+   "it": "AZZERA PROGRESSI"
+  },
+  {
+   "hu": "Az előrehaladás törlődik.",
+   "ctx": "Appears on: Reset progress popup.",
+   "en": "Your progress will be deleted.",
+   "de": "Dein Fortschritt wird gelöscht.",
+   "it": "I tuoi progressi verranno cancellati."
+  },
+  {
+   "hu": "Mit töröljünk? A NEHÉZ törlése a lakatot is visszazárja.",
+   "ctx": "Appears on: Reset progress popup.",
+   "en": "What should be reset? Resetting HARD also locks the folder again.",
+   "de": "Was soll gelöscht werden? SCHWER löschen sperrt auch den Ordner wieder.",
+   "it": "Cosa azzerare? Azzerare DIFFICILE richiude anche la cartella."
+  },
+  {
+   "hu": "MINDENT",
+   "ctx": "Reset popup button: reset all progress.",
+   "en": "EVERYTHING",
+   "de": "ALLES",
+   "it": "TUTTO"
+  },
+  {
+   "hu": "MÉGSE",
+   "ctx": "Reset popup: cancel button.",
+   "en": "CANCEL",
+   "de": "ABBRECHEN",
+   "it": "ANNULLA"
+  },
+  {
+   "hu": "könnyű feladványok",
+   "ctx": "Appears on: Contents sheet (easy); Reset progress popup (+1 more).",
+   "en": "easy puzzles",
+   "de": "leichte Rätsel",
+   "it": "enigmi facili"
+  },
+  {
+   "hu": "KULCS",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "KEY",
+   "de": "SCHLÜSSEL",
+   "it": "CHIAVE"
+  },
+  {
+   "hu": "FOTÓ",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "PHOTO",
+   "de": "FOTO",
+   "it": "FOTO"
+  },
+  {
+   "hu": "FOTÓ DÉLRŐL · így látszik a város",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "PHOTO FROM THE SOUTH · how the city looks",
+   "de": "FOTO VON SÜDEN · so sieht die Stadt aus",
+   "it": "FOTO DA SUD · così appare la città"
+  },
+  {
+   "hu": "D",
+   "ctx": "Appears on: Level 20 (Dátumrend), sheet 1; Level 20 (Dátumrend), sheet 2.",
+   "en": "S",
+   "de": "S",
+   "it": "S"
+  },
+  {
+   "hu": "LÁTKÉP",
+   "ctx": "Appears on: Contents sheet (easy); Easy level 2 (Látkép), sheet 1 (+2 more).",
+   "en": "SKYLINE",
+   "de": "SKYLINE",
+   "it": "SKYLINE"
+  },
+  {
+   "hu": "KIRAKÓ",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "PUZZLE",
+   "de": "PUZZLE",
+   "it": "PUZZLE"
+  },
+  {
+   "hu": "MINTAKULCS",
+   "ctx": "Appears on: Easy level 1 (Kulcsmásolás), sheet 1; Easy level 11 (Fejjel lefelé), sheet 1 (+1 more).",
+   "en": "ORIGINAL KEY",
+   "de": "MUSTERSCHLÜSSEL",
+   "it": "CHIAVE CAMPIONE"
+  },
+  {
+   "hu": "NYERSKULCS · koppints a recék helyére",
+   "ctx": "Appears on: Easy level 1 (Kulcsmásolás), sheet 1; Easy level 11 (Fejjel lefelé), sheet 1 (+1 more).",
+   "en": "KEY BLANK · tap where the cuts go",
+   "de": "SCHLÜSSELROHLING · tippe auf die Kerbstellen",
+   "it": "CHIAVE GREZZA · tocca dove vanno i denti"
+  },
+  {
+   "hu": "LÁTKÉP · koppints: magasság",
+   "ctx": "Appears on: Easy level 12 (Belváros), sheet 1; Easy level 2 (Látkép), sheet 1 (+1 more).",
+   "en": "SKYLINE · tap: height",
+   "de": "SKYLINE · tippen: Höhe",
+   "it": "SKYLINE · tocca: altezza"
+  },
+  {
+   "hu": "magasságok a látható házak számából",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "heights from the number of houses in sight",
+   "de": "Höhen aus der Zahl sichtbarer Häuser",
+   "it": "altezze dal numero di case visibili"
+  },
+  {
+   "hu": "recék a mintakulcsról",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "cuts copied from a master key",
+   "de": "Kerben vom Musterschlüssel",
+   "it": "denti dalla chiave campione"
+  },
+  {
+   "hu": "napjárás szerint vagy szabályok alapján",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "by the sun or by placement rules",
+   "de": "nach dem Sonnenstand oder nach Regeln",
+   "it": "secondo il sole o secondo regole"
+  },
+  {
+   "hu": "tetris-elemekből egy forma",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "a shape from tetromino pieces",
+   "de": "eine Form aus Tetris-Teilen",
+   "it": "una forma da pezzi tetris"
+  },
+  {
+   "hu": "háromszögekből, négyzetekből forma",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "a shape from triangles and squares",
+   "de": "eine Form aus Dreiecken und Quadraten",
+   "it": "una forma da triangoli e quadrati"
+  },
+  {
+   "hu": "Nézetválasztó",
+   "ctx": "Level title (header and contents list), level “Nézetválasztó”.",
+   "en": "View picker",
+   "de": "Ansichtswahl",
+   "it": "Scegli la vista"
+  },
+  {
+   "hu": "melyik az A nézet?",
+   "ctx": "Level subtitle / riddle hint under the title, level “Nézetválasztó”.",
+   "en": "which one is view A?",
+   "de": "welche ist Ansicht A?",
+   "it": "qual è la vista A?"
+  },
+  {
+   "hu": "Felülről",
+   "ctx": "Level title (header and contents list), level “Felülről”.",
+   "en": "From above",
+   "de": "Von oben",
+   "it": "Dall'alto"
+  },
+  {
+   "hu": "csak a kontúr számít",
+   "ctx": "Level subtitle / riddle hint under the title, level “Felülről”.",
+   "en": "only the outline counts",
+   "de": "nur der Umriss zählt",
+   "it": "conta solo il contorno"
+  },
+  {
+   "hu": "Oldalról",
+   "ctx": "Level title (header and contents list), level “Oldalról”.",
+   "en": "From the side",
+   "de": "Von der Seite",
+   "it": "Di fianco"
+  },
+  {
+   "hu": "a B nyíl felől",
+   "ctx": "Level subtitle / riddle hint under the title, level “Oldalról”.",
+   "en": "as seen from arrow B",
+   "de": "vom Pfeil B aus",
+   "it": "dalla freccia B"
+  },
+  {
+   "hu": "REV. 3 — Melyik rajz mutatja a testet az A nyíl felől? Koppints rá.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Nézetválasztó”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. 3 — Which drawing shows the solid as seen from arrow A? Tap it.",
+   "de": "REV. 3 — Welche Zeichnung zeigt den Körper vom Pfeil A? Tippe darauf.",
+   "it": "REV. 3 — Quale disegno mostra il solido dalla freccia A? Toccalo."
+  },
+  {
+   "hu": "REV. 8 — Melyik rajz a test felülnézete? Az A nyíl az alsó élnél van.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Felülről”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. 8 — Which drawing is the top view? Arrow A is at the bottom edge.",
+   "de": "REV. 8 — Welche Zeichnung ist die Draufsicht? Pfeil A ist an der unteren Kante.",
+   "it": "REV. 8 — Quale disegno mostra la vista dall'alto? La freccia A è sul bordo inferiore."
+  },
+  {
+   "hu": "REV. 13 — Melyik rajz mutatja a testet a B nyíl felől? Koppints rá.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Oldalról”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. 13 — Which drawing shows the solid as seen from arrow B? Tap it.",
+   "de": "REV. 13 — Welche Zeichnung zeigt den Körper vom Pfeil B? Tippe darauf.",
+   "it": "REV. 13 — Quale disegno mostra il solido dalla freccia B? Toccalo."
+  },
+  {
+   "hu": "TEST",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "SOLID",
+   "de": "KÖRPER",
+   "it": "SOLIDO"
+  },
+  {
+   "hu": "Melyik a felülnézet?",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "Which one is the top view?",
+   "de": "Welche ist die Draufsicht?",
+   "it": "Qual è la vista dall'alto?"
+  },
+  {
+   "hu": "Melyik az A nézet?",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "Which one is view A?",
+   "de": "Welche ist Ansicht A?",
+   "it": "Qual è la vista A?"
+  },
+  {
+   "hu": "Melyik a B nézet?",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "Which one is view B?",
+   "de": "Welche ist Ansicht B?",
+   "it": "Qual è la vista B?"
+  },
+  {
+   "hu": "szellemkép",
+   "ctx": "Small second line under the CLEAN button in the header: the button wipes the e-ink ghost image off the screen.",
+   "en": "ghosting",
+   "de": "Geisterbild",
+   "it": "fantasmi"
+  },
+  {
+   "hu": "PÉLDA",
+   "ctx": "Appears on: Easy level 12 (Belváros), sheet 1; Easy level 2 (Látkép), sheet 1 (+1 more).",
+   "en": "EXAMPLE",
+   "de": "BEISPIEL",
+   "it": "ESEMPIO"
+  },
+  {
+   "hu": "a 2-es és a 3-as látszik, az 1-es takarva",
+   "ctx": "Appears on: Easy level 12 (Belváros), sheet 1; Easy level 2 (Látkép), sheet 1 (+1 more).",
+   "en": "the 2 and the 3 are seen, the 1 is hidden",
+   "de": "die 2 und die 3 sind sichtbar, die 1 ist verdeckt",
+   "it": "si vedono il 2 e il 3, l'1 è nascosto"
+  },
+  {
+   "hu": "SZÍNES LAP · így áll össze",
+   "ctx": "Appears on: Easy level 13 (Torony), sheet 1; Easy level 13 (Torony), sheet 2 (+10 more).",
+   "en": "COLOUR SHEET · how it fits",
+   "de": "FARBBLATT · so passt es",
+   "it": "FOGLIO A COLORI · come si incastra"
+  },
+  {
+   "hu": "KIRAKÓ · húzd az elemeket a formára",
+   "ctx": "Appears on: Easy level 13 (Torony), sheet 2; Easy level 14 (Parketta), sheet 2 (+4 more).",
+   "en": "PUZZLE · drag the pieces onto the shape",
+   "de": "PUZZLE · ziehe die Teile auf die Form",
+   "it": "PUZZLE · trascina i pezzi sulla forma"
+  },
+  {
+   "hu": "ELEMEK",
+   "ctx": "Appears on: Contents sheet (easy); Easy level 13 (Torony), sheet 2 (+8 more).",
+   "en": "PIECES",
+   "de": "TEILE",
+   "it": "PEZZI"
+  },
+  {
+   "hu": "SZABÁLYOK",
+   "ctx": "Appears on: Easy level 10 (Iroda), sheet 1; Easy level 15 (Fürdő), sheet 1 (+1 more).",
+   "en": "RULES",
+   "de": "REGELN",
+   "it": "REGOLE"
+  },
+  {
+   "hu": "{a} és {b} nem érintkezhet",
+   "ctx": "Easy room rules list: two furniture names that must not touch; {a} and {b} are furniture names.",
+   "en": "{a} and {b} must not touch",
+   "de": "{a} und {b} dürfen sich nicht berühren",
+   "it": "{a} e {b} non devono toccarsi"
+  },
+  {
+   "hu": "szék az íróasztal mellett",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "chair next to the desk",
+   "de": "Stuhl neben dem Schreibtisch",
+   "it": "sedia accanto alla scrivania"
+  },
+  {
+   "hu": "falhoz álló bútor",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "furniture against a wall",
+   "de": "Möbel an der Wand",
+   "it": "mobile contro il muro"
+  },
+  {
+   "hu": "vizes pont",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "water connection",
+   "de": "Wasseranschluss",
+   "it": "attacco acqua"
+  },
+  {
+   "hu": "▮ falhoz · ◯ vizes pont",
+   "ctx": "Appears on: Easy level 15 (Fürdő), sheet 1.",
+   "en": "▮ at a wall · ◯ water point",
+   "de": "▮ an der Wand · ◯ Wasseranschluss",
+   "it": "▮ al muro · ◯ attacco acqua"
+  },
+  {
+   "hu": "WC, mosdó, zuhany kék körön",
+   "ctx": "Appears on: Easy level 15 (Fürdő), sheet 1.",
+   "en": "WC, washbasin, shower on a blue ring",
+   "de": "WC, Waschbecken, Dusche auf blauem Ring",
+   "it": "WC, lavabo, doccia su un cerchio blu"
+  },
+  {
+   "hu": "Kulcsmásolás",
+   "ctx": "Level title (header and contents list), level “Kulcsmásolás”.",
+   "en": "Key copying",
+   "de": "Schlüsselkopie",
+   "it": "Copia chiave"
+  },
+  {
+   "hu": "recét recére",
+   "ctx": "Level subtitle / riddle hint under the title, level “Kulcsmásolás”.",
+   "en": "cut for cut",
+   "de": "Kerbe für Kerbe",
+   "it": "dente per dente"
+  },
+  {
+   "hu": "Látkép",
+   "ctx": "Level title (header and contents list), level “Látkép”.",
+   "en": "Skyline",
+   "de": "Skyline",
+   "it": "Skyline"
+  },
+  {
+   "hu": "a szám: hány ház látszik",
+   "ctx": "Level subtitle / riddle hint under the title, level “Látkép”.",
+   "en": "the number: houses in sight",
+   "de": "die Zahl: sichtbare Häuser",
+   "it": "il numero: case visibili"
+  },
+  {
+   "hu": "Elemek",
+   "ctx": "Appears on: Contents sheet (easy); Easy level 13 (Torony), sheet 2 (+8 more).",
+   "en": "Pieces",
+   "de": "Teile",
+   "it": "Pezzi"
+  },
+  {
+   "hu": "négy elem, egy forma",
+   "ctx": "Appears on: Contents sheet (easy); Easy level 3 (Elemek), sheet 1 (+3 more).",
+   "en": "four pieces, one shape",
+   "de": "vier Teile, eine Form",
+   "it": "quattro pezzi, una forma"
+  },
+  {
+   "hu": "Csempe",
+   "ctx": "Level title (header and contents list), level “Csempe”.",
+   "en": "Tiles",
+   "de": "Fliesen",
+   "it": "Piastrelle"
+  },
+  {
+   "hu": "háromszög is van",
+   "ctx": "Level subtitle / riddle hint under the title, level “Csempe”.",
+   "en": "there are triangles too",
+   "de": "auch Dreiecke",
+   "it": "ci sono anche triangoli"
+  },
+  {
+   "hu": "Szoba",
+   "ctx": "Level title (header and contents list), level “Szoba”.",
+   "en": "Room",
+   "de": "Zimmer",
+   "it": "Stanza"
+  },
+  {
+   "hu": "legyen hol járni",
+   "ctx": "Level subtitle / riddle hint under the title, level “Szoba”.",
+   "en": "leave room to walk",
+   "de": "Platz zum Gehen",
+   "it": "spazio per camminare"
+  },
+  {
+   "hu": "Fordított kulcs",
+   "ctx": "Level title (header and contents list), level “Fordított kulcs”.",
+   "en": "Reversed key",
+   "de": "Umgedrehter Schlüssel",
+   "it": "Chiave rovesciata"
+  },
+  {
+   "hu": "a kulcs a másik irányba néz",
+   "ctx": "Level subtitle / riddle hint under the title, level “Fordított kulcs”.",
+   "en": "the key faces the other way",
+   "de": "der Schlüssel zeigt in die andere Richtung",
+   "it": "la chiave guarda dall'altra parte"
+  },
+  {
+   "hu": "Háztömb",
+   "ctx": "Appears on: Contents sheet (easy); Easy level 7 (Háztömb), sheet 1 (+2 more).",
+   "en": "Block",
+   "de": "Häuserblock",
+   "it": "Isolato"
+  },
+  {
+   "hu": "négy ház, négy magasság",
+   "ctx": "Appears on: Contents sheet (easy); Easy level 7 (Háztömb), sheet 1 (+2 more).",
+   "en": "four houses, four heights",
+   "de": "vier Häuser, vier Höhen",
+   "it": "quattro case, quattro altezze"
+  },
+  {
+   "hu": "Raktár",
+   "ctx": "Appears on: Contents sheet (easy); Easy level 8 (Raktár), sheet 1 (+3 more).",
+   "en": "Warehouse",
+   "de": "Lager",
+   "it": "Magazzino"
+  },
+  {
+   "hu": "öt elem",
+   "ctx": "Appears on: Contents sheet (easy); Easy level 8 (Raktár), sheet 1 (+3 more).",
+   "en": "five pieces",
+   "de": "fünf Teile",
+   "it": "cinque pezzi"
+  },
+  {
+   "hu": "Burkolat",
+   "ctx": "Level title (header and contents list), level “Burkolat”.",
+   "en": "Flooring",
+   "de": "Bodenbelag",
+   "it": "Pavimento"
+  },
+  {
+   "hu": "a nagy háromszög a kulcs",
+   "ctx": "Level subtitle / riddle hint under the title, level “Burkolat”.",
+   "en": "the big triangle is the key",
+   "de": "das große Dreieck ist der Schlüssel",
+   "it": "il triangolo grande è la chiave"
+  },
+  {
+   "hu": "Iroda",
+   "ctx": "Level title (header and contents list), level “Iroda”.",
+   "en": "Office",
+   "de": "Büro",
+   "it": "Ufficio"
+  },
+  {
+   "hu": "két asztal, egy nyomtató",
+   "ctx": "Level subtitle / riddle hint under the title, level “Iroda”.",
+   "en": "two desks, one printer",
+   "de": "zwei Tische, ein Drucker",
+   "it": "due scrivanie, una stampante"
+  },
+  {
+   "hu": "Fejjel lefelé",
+   "ctx": "Level title (header and contents list), level “Fejjel lefelé”.",
+   "en": "Upside down",
+   "de": "Kopfüber",
+   "it": "Sottosopra"
+  },
+  {
+   "hu": "a recék alul vannak",
+   "ctx": "Level subtitle / riddle hint under the title, level “Fejjel lefelé”.",
+   "en": "the cuts face down",
+   "de": "die Kerben sind unten",
+   "it": "i denti sono sotto"
+  },
+  {
+   "hu": "Belváros",
+   "ctx": "Appears on: Contents sheet (easy); Easy level 12 (Belváros), sheet 1 (+2 more).",
+   "en": "Downtown",
+   "de": "Innenstadt",
+   "it": "Centro"
+  },
+  {
+   "hu": "kevesebb szám",
+   "ctx": "Appears on: Contents sheet (easy); Easy level 12 (Belváros), sheet 1 (+2 more).",
+   "en": "fewer numbers",
+   "de": "weniger Zahlen",
+   "it": "meno numeri"
+  },
+  {
+   "hu": "Torony",
+   "ctx": "Appears on: Contents sheet (easy); Easy level 13 (Torony), sheet 1 (+3 more).",
+   "en": "Tower",
+   "de": "Turm",
+   "it": "Torre"
+  },
+  {
+   "hu": "hat elem",
+   "ctx": "Appears on: Contents sheet (easy); Easy level 13 (Torony), sheet 1 (+3 more).",
+   "en": "six pieces",
+   "de": "sechs Teile",
+   "it": "sei pezzi"
+  },
+  {
+   "hu": "Parketta",
+   "ctx": "Level title (header and contents list), level “Parketta”.",
+   "en": "Parquet",
+   "de": "Parkett",
+   "it": "Parquet"
+  },
+  {
+   "hu": "két nagy háromszög",
+   "ctx": "Level subtitle / riddle hint under the title, level “Parketta”.",
+   "en": "two big triangles",
+   "de": "zwei große Dreiecke",
+   "it": "due triangoli grandi"
+  },
+  {
+   "hu": "Fürdő",
+   "ctx": "Level title (header and contents list), level “Fürdő”.",
+   "en": "Bathroom",
+   "de": "Bad",
+   "it": "Bagno"
+  },
+  {
+   "hu": "víz csak a kék körnél",
+   "ctx": "Level subtitle / riddle hint under the title, level “Fürdő”.",
+   "en": "water only at the blue rings",
+   "de": "Wasser nur an den blauen Ringen",
+   "it": "acqua solo ai cerchi blu"
+  },
+  {
+   "hu": "REV. 1 — Másold le a mintakulcs recéit a nyerskulcsra.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Kulcsmásolás”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. 1 — Copy the cuts of the original key onto the blank.",
+   "de": "REV. 1 — Übertrage die Kerben des Musterschlüssels auf den Rohling.",
+   "it": "REV. 1 — Copia i denti della chiave campione sulla grezza."
+  },
+  {
+   "hu": "REV. 2 — A szélső szám: hány ház látszik onnan. A magasabb ház eltakarja a mögötte állót.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Látkép”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. 2 — An edge number: how many houses are seen from there. A taller house hides shorter ones behind it.",
+   "de": "REV. 2 — Randzahl: so viele Häuser sieht man von dort. Ein höheres Haus verdeckt niedrigere dahinter.",
+   "it": "REV. 2 — Numero sul bordo: quante case si vedono da lì. Una casa più alta nasconde quelle più basse dietro."
+  },
+  {
+   "hu": "Minden sorban és oszlopban egyszer szerepel {list}. Nem lehet üres telek.",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "Every row and column holds {list} once. No empty plots.",
+   "de": "Jede Zeile und Spalte enthält {list} genau einmal. Kein leeres Grundstück.",
+   "it": "Ogni riga e colonna contiene {list} una volta. Nessun lotto vuoto."
+  },
+  {
+   "hu": "REV. 3 — Töltsd ki a formát az elemekkel. Húzd őket, koppintás: forgatás.",
+   "ctx": "Appears on: Easy level 3 (Elemek), sheet 1; Easy level 3 (Elemek), sheet 2.",
+   "en": "REV. 3 — Fill the shape with the pieces. Drag them, tap to rotate.",
+   "de": "REV. 3 — Fülle die Form mit den Teilen. Ziehen, tippen: drehen.",
+   "it": "REV. 3 — Riempi la forma con i pezzi. Trascina, tocca per ruotare."
+  },
+  {
+   "hu": "REV. 4 — Rakd ki a formát a lapokkal. Húzd őket, koppintás: forgatás.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Csempe”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. 4 — Lay out the shape with the tiles. Drag them, tap to rotate.",
+   "de": "REV. 4 — Lege die Form mit den Fliesen aus. Ziehen, tippen: drehen.",
+   "it": "REV. 4 — Componi la forma con le piastrelle. Trascina, tocca per ruotare."
+  },
+  {
+   "hu": "REV. 5 — Rendezd be a szobát. Minden bútor legyen elérhető az ajtótól.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Szoba”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. 5 — Furnish the room. Every piece must be reachable from the door.",
+   "de": "REV. 5 — Richte das Zimmer ein. Jedes Möbelstück muss von der Tür aus erreichbar sein.",
+   "it": "REV. 5 — Arreda la stanza. Ogni mobile deve essere raggiungibile dalla porta."
+  },
+  {
+   "hu": "REV. 6 — A mintakulcsot fordítva tették a gépbe.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Fordított kulcs”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. 6 — The original key was put in the machine the other way round.",
+   "de": "REV. 6 — Der Musterschlüssel liegt verkehrt herum in der Maschine.",
+   "it": "REV. 6 — La chiave campione è nella macchina al contrario."
+  },
+  {
+   "hu": "REV. 7 — Oszloponként is minden magasság egyszer.",
+   "ctx": "Appears on: Easy level 7 (Háztömb), sheet 1.",
+   "en": "REV. 7 — Each height once per column too.",
+   "de": "REV. 7 — Auch jede Höhe einmal pro Spalte.",
+   "it": "REV. 7 — Ogni altezza una volta anche per colonna."
+  },
+  {
+   "hu": "REV. 8 — Töltsd ki a formát az elemekkel. Húzd őket, koppintás: forgatás.",
+   "ctx": "Appears on: Easy level 8 (Raktár), sheet 1; Easy level 8 (Raktár), sheet 2.",
+   "en": "REV. 8 — Fill the shape with the pieces. Drag them, tap to rotate.",
+   "de": "REV. 8 — Fülle die Form mit den Teilen. Ziehen, tippen: drehen.",
+   "it": "REV. 8 — Riempi la forma con i pezzi. Trascina, tocca per ruotare."
+  },
+  {
+   "hu": "REV. 9 — Rakd ki a formát a lapokkal. Húzd őket, koppintás: forgatás.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Burkolat”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. 9 — Lay out the shape with the tiles. Drag them, tap to rotate.",
+   "de": "REV. 9 — Lege die Form mit den Fliesen aus. Ziehen, tippen: drehen.",
+   "it": "REV. 9 — Componi la forma con le piastrelle. Trascina, tocca per ruotare."
+  },
+  {
+   "hu": "REV. 10 — Rendezd be az irodát. Minden bútor legyen elérhető az ajtótól.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Iroda”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. 10 — Furnish the office. Every piece must be reachable from the door.",
+   "de": "REV. 10 — Richte das Büro ein. Jedes Möbelstück muss von der Tür aus erreichbar sein.",
+   "it": "REV. 10 — Arreda l'ufficio. Ogni mobile deve essere raggiungibile dalla porta."
+  },
+  {
+   "hu": "REV. 11 — A mintakulcs fejjel lefelé fekszik.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Fejjel lefelé”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. 11 — The original key lies upside down.",
+   "de": "REV. 11 — Der Musterschlüssel liegt auf dem Kopf.",
+   "it": "REV. 11 — La chiave campione è capovolta."
+  },
+  {
+   "hu": "REV. 12 — Kevesebb szám, ugyanaz a szabály.",
+   "ctx": "Appears on: Easy level 12 (Belváros), sheet 1.",
+   "en": "REV. 12 — Fewer numbers, same rule.",
+   "de": "REV. 12 — Weniger Zahlen, dieselbe Regel.",
+   "it": "REV. 12 — Meno numeri, stessa regola."
+  },
+  {
+   "hu": "REV. 13 — Töltsd ki a formát az elemekkel. Húzd őket, koppintás: forgatás.",
+   "ctx": "Appears on: Easy level 13 (Torony), sheet 1; Easy level 13 (Torony), sheet 2.",
+   "en": "REV. 13 — Fill the shape with the pieces. Drag them, tap to rotate.",
+   "de": "REV. 13 — Fülle die Form mit den Teilen. Ziehen, tippen: drehen.",
+   "it": "REV. 13 — Riempi la forma con i pezzi. Trascina, tocca per ruotare."
+  },
+  {
+   "hu": "REV. 14 — Rakd ki a formát a lapokkal. Húzd őket, koppintás: forgatás.",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Parketta”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. 14 — Lay out the shape with the tiles. Drag them, tap to rotate.",
+   "de": "REV. 14 — Lege die Form mit den Fliesen aus. Ziehen, tippen: drehen.",
+   "it": "REV. 14 — Componi la forma con le piastrelle. Trascina, tocca per ruotare."
+  },
+  {
+   "hu": "REV. 15 — A WC, a mosdó és a zuhany csak vizes pontra kerülhet (kék kör).",
+   "ctx": "Revision note at the bottom of every sheet: the instruction of level “Fürdő”. Keep the ‘REV. X —’ prefix.",
+   "en": "REV. 15 — Place the WC, washbasin and shower only at water connections (blue rings).",
+   "de": "REV. 15 — WC, Waschbecken und Dusche nur auf Wasseranschlüsse (blauer Ring).",
+   "it": "REV. 15 — WC, lavabo e doccia solo sugli attacchi d'acqua (cerchio blu)."
+  },
+  {
+   "hu": "íróasztal",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "desk",
+   "de": "Schreibtisch",
+   "it": "scrivania"
+  },
+  {
+   "hu": "asztal 1",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "desk 1",
+   "de": "Tisch 1",
+   "it": "scrivania 1"
+  },
+  {
+   "hu": "asztal 2",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "desk 2",
+   "de": "Tisch 2",
+   "it": "scrivania 2"
+  },
+  {
+   "hu": "nyomtató",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "printer",
+   "de": "Drucker",
+   "it": "stampante"
+  },
+  {
+   "hu": "tárgyaló",
+   "ctx": "Furniture name: small meeting table in the office level. Keep short.",
+   "en": "meeting table",
+   "de": "Besprechung",
+   "it": "tavolo riunioni"
+  },
+  {
+   "hu": "WC",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "WC",
+   "de": "WC",
+   "it": "WC"
+  },
+  {
+   "hu": "mosdó",
+   "ctx": "Furniture name: washbasin (bathroom level). Keep short.",
+   "en": "washbasin",
+   "de": "Waschb.",
+   "it": "lavabo"
+  },
+  {
+   "hu": "zuhany",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "shower",
+   "de": "Dusche",
+   "it": "doccia"
+  },
+  {
+   "hu": "szennyes",
+   "ctx": "Furniture name on the floor plan and in the requirements table of the room puzzles. Keep it short (fits one grid cell).",
+   "en": "laundry",
+   "de": "Wäsche",
+   "it": "bucato"
+  }
+ ]
+}

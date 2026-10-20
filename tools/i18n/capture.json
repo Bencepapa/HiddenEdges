@@ -1,0 +1,4585 @@
+{
+"0": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel"
+],
+"1": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel",
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved",
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved",
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Easy level 2 (Látkép), sheet 1",
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Easy level 7 (Háztömb), sheet 1",
+"Easy level 11 (Fejjel lefelé), sheet 1",
+"Easy level 12 (Belváros), sheet 1"
+],
+"2": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved",
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved",
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Easy level 2 (Látkép), sheet 1",
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Easy level 7 (Háztömb), sheet 1",
+"Easy level 11 (Fejjel lefelé), sheet 1",
+"Easy level 12 (Belváros), sheet 1"
+],
+"3": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved",
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved",
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Easy level 2 (Látkép), sheet 1",
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Easy level 7 (Háztömb), sheet 1",
+"Easy level 11 (Fejjel lefelé), sheet 1",
+"Easy level 12 (Belváros), sheet 1"
+],
+"4": [
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Easy level 11 (Fejjel lefelé), sheet 1"
+],
+"5": [
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved",
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Easy level 11 (Fejjel lefelé), sheet 1"
+],
+"6": [
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Easy level 11 (Fejjel lefelé), sheet 1"
+],
+"7": [
+"Easy level 11 (Fejjel lefelé), sheet 1"
+],
+"10": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Easy level 10 (Iroda), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"11": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Easy level 11 (Fejjel lefelé), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"12": [
+"Contents sheet (hard), page 1",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Easy level 12 (Belváros), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"13": [
+"Contents sheet (hard), page 1",
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Easy level 13 (Torony), sheet 1",
+"Easy level 13 (Torony), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"14": [
+"Contents sheet (hard), page 1",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Easy level 14 (Parketta), sheet 1",
+"Easy level 14 (Parketta), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"15": [
+"Contents sheet (hard), page 1",
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Easy level 15 (Fürdő), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"16": [
+"Contents sheet (hard), page 2",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved"
+],
+"17": [
+"Contents sheet (hard), page 2",
+"Level 17 (Hamis nyom), sheet 1",
+"Level 17 (Hamis nyom), sheet 1 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved"
+],
+"18": [
+"Contents sheet (hard), page 2",
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved"
+],
+"19": [
+"Contents sheet (hard), page 2",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved"
+],
+"20": [
+"Contents sheet (hard), page 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved"
+],
+"21": [
+"Contents sheet (hard), page 2",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"22": [
+"Contents sheet (hard), page 2",
+"Level 22 (Hajtogatás), sheet 1",
+"Level 22 (Hajtogatás), sheet 1 – solved"
+],
+"23": [
+"Contents sheet (hard), page 2",
+"Level 23 (Lépcsőháló), sheet 1",
+"Level 23 (Lépcsőháló), sheet 1 – solved"
+],
+"24": [
+"Contents sheet (hard), page 2",
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved"
+],
+"25": [
+"Contents sheet (hard), page 2",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved"
+],
+"26": [
+"Contents sheet (hard), page 2",
+"Level 26 (Árnyékfestmény), sheet 1",
+"Level 26 (Árnyékfestmény), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved"
+],
+"27": [
+"Contents sheet (hard), page 2",
+"Level 27 (Hamis nap), sheet 1",
+"Level 27 (Hamis nap), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"28": [
+"Contents sheet (hard), page 2",
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved"
+],
+"29": [
+"Contents sheet (hard), page 2",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved"
+],
+"30": [
+"Contents sheet (hard), page 2",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved"
+],
+"2026": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel"
+],
+"null": [
+""
+],
+"UK/US": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel"
+],
+"DEU": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel"
+],
+"ITA": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel"
+],
+"HUN": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel"
+],
+"": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel",
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 2 (Mozaik), sheet 1",
+"Level 2 (Mozaik), sheet 1 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 1",
+"Level 3 (Tengely), sheet 1 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 1",
+"Level 17 (Hamis nyom), sheet 1 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved",
+"Level 22 (Hajtogatás), sheet 1",
+"Level 22 (Hajtogatás), sheet 1 – solved",
+"Level 23 (Lépcsőháló), sheet 1",
+"Level 23 (Lépcsőháló), sheet 1 – solved",
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 1",
+"Level 26 (Árnyékfestmény), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 1",
+"Level 27 (Hamis nap), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved",
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved",
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Easy level 2 (Látkép), sheet 1",
+"Easy level 3 (Elemek), sheet 1",
+"Easy level 3 (Elemek), sheet 2",
+"Easy level 4 (Csempe), sheet 1",
+"Easy level 4 (Csempe), sheet 2",
+"Easy level 5 (Szoba), sheet 1",
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Easy level 7 (Háztömb), sheet 1",
+"Easy level 8 (Raktár), sheet 1",
+"Easy level 8 (Raktár), sheet 2",
+"Easy level 9 (Burkolat), sheet 1",
+"Easy level 9 (Burkolat), sheet 2",
+"Easy level 10 (Iroda), sheet 1",
+"Easy level 11 (Fejjel lefelé), sheet 1",
+"Easy level 12 (Belváros), sheet 1",
+"Easy level 13 (Torony), sheet 1",
+"Easy level 13 (Torony), sheet 2",
+"Easy level 14 (Parketta), sheet 1",
+"Easy level 14 (Parketta), sheet 2",
+"Easy level 15 (Fürdő), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"TAKART ÉLEK": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel",
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"HIDDEN EDGES": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel"
+],
+"Fejtörők a rajzasztalról": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel"
+],
+"KÖNNYŰ": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel",
+"Reset progress popup"
+],
+"0/15": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel"
+],
+"NEHÉZ": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel",
+"Reset progress popup"
+],
+"RANDOM": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel"
+],
+"0/30": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel"
+],
+"SZERZŐ": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel"
+],
+"Bence Dobos": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel",
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"DÁTUM": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"LÉPTÉK": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel",
+"Contents sheet (hard), page 1",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved"
+],
+"1:1": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel"
+],
+"LAP": [
+"Title screen",
+"Popup (title screen)",
+"Settings panel"
+],
+"x": [
+"Popup (title screen)"
+],
+"BEZÁRÁS": [
+"Popup (title screen)"
+],
+"BEÁLLÍTÁSOK": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"VONALVASTAGSÁG": [
+"Settings panel",
+"Contents sheet (random)",
+"Settings panel (in game)"
+],
+"−": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"×1.0": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"+": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"MEGJELENÍTÉS": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"Natív": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"Szürke 16": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"Floyd–St.": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"Bayer 8×8": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"E-INK EMULÁCIÓ MOBILON": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"KI": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"BE": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"LAPVÁLTÁS": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"GYORS": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"szellemképes": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"NORMÁL": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"villanással": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"BETŰMÉRET-KALIBRÁCIÓ": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"kisebb": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"+2 pt": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"nagyobb": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"AUTO": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"Árvíztűrő": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"ELŐREHALADÁS TÖRLÉSE": [
+"Settings panel",
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"KÉSZ": [
+"Settings panel",
+"Settings panel (in game)"
+],
+"00": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"TARTALOMJEGYZÉK": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"nehéz feladványok": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2"
+],
+"‹": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 2 (Mozaik), sheet 1",
+"Level 2 (Mozaik), sheet 1 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 1",
+"Level 3 (Tengely), sheet 1 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 1",
+"Level 17 (Hamis nyom), sheet 1 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved",
+"Level 22 (Hajtogatás), sheet 1",
+"Level 22 (Hajtogatás), sheet 1 – solved",
+"Level 23 (Lépcsőháló), sheet 1",
+"Level 23 (Lépcsőháló), sheet 1 – solved",
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 1",
+"Level 26 (Árnyékfestmény), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 1",
+"Level 27 (Hamis nap), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved",
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved",
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Easy level 2 (Látkép), sheet 1",
+"Easy level 3 (Elemek), sheet 1",
+"Easy level 3 (Elemek), sheet 2",
+"Easy level 4 (Csempe), sheet 1",
+"Easy level 4 (Csempe), sheet 2",
+"Easy level 5 (Szoba), sheet 1",
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Easy level 7 (Háztömb), sheet 1",
+"Easy level 8 (Raktár), sheet 1",
+"Easy level 8 (Raktár), sheet 2",
+"Easy level 9 (Burkolat), sheet 1",
+"Easy level 9 (Burkolat), sheet 2",
+"Easy level 10 (Iroda), sheet 1",
+"Easy level 11 (Fejjel lefelé), sheet 1",
+"Easy level 12 (Belváros), sheet 1",
+"Easy level 13 (Torony), sheet 1",
+"Easy level 13 (Torony), sheet 2",
+"Easy level 14 (Parketta), sheet 1",
+"Easy level 14 (Parketta), sheet 2",
+"Easy level 15 (Fürdő), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"›": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 2 (Mozaik), sheet 1",
+"Level 2 (Mozaik), sheet 1 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 1",
+"Level 3 (Tengely), sheet 1 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 1",
+"Level 17 (Hamis nyom), sheet 1 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved",
+"Level 22 (Hajtogatás), sheet 1",
+"Level 22 (Hajtogatás), sheet 1 – solved",
+"Level 23 (Lépcsőháló), sheet 1",
+"Level 23 (Lépcsőháló), sheet 1 – solved",
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 1",
+"Level 26 (Árnyékfestmény), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 1",
+"Level 27 (Hamis nap), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved",
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved",
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Easy level 2 (Látkép), sheet 1",
+"Easy level 3 (Elemek), sheet 1",
+"Easy level 3 (Elemek), sheet 2",
+"Easy level 4 (Csempe), sheet 1",
+"Easy level 4 (Csempe), sheet 2",
+"Easy level 5 (Szoba), sheet 1",
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Easy level 7 (Háztömb), sheet 1",
+"Easy level 8 (Raktár), sheet 1",
+"Easy level 8 (Raktár), sheet 2",
+"Easy level 9 (Burkolat), sheet 1",
+"Easy level 9 (Burkolat), sheet 2",
+"Easy level 10 (Iroda), sheet 1",
+"Easy level 11 (Fejjel lefelé), sheet 1",
+"Easy level 12 (Belváros), sheet 1",
+"Easy level 13 (Torony), sheet 1",
+"Easy level 13 (Torony), sheet 2",
+"Easy level 14 (Parketta), sheet 1",
+"Easy level 14 (Parketta), sheet 2",
+"Easy level 15 (Fürdő), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"0/30 ✓": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2"
+],
+"SZ.": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"MEGNEVEZÉS": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"MEGJEGYZÉS": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"✓": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"01": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"KÉT NÉZET": [
+"Contents sheet (hard), page 1",
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved"
+],
+"a harmadik elveszett": [
+"Contents sheet (hard), page 1",
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved"
+],
+"02": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 2 (Mozaik), sheet 1",
+"Level 2 (Mozaik), sheet 1 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Easy level 2 (Látkép), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"MOZAIK": [
+"Contents sheet (hard), page 1",
+"Level 2 (Mozaik), sheet 1",
+"Level 2 (Mozaik), sheet 1 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved"
+],
+"a szín nem marad, csak a nyoma": [
+"Contents sheet (hard), page 1",
+"Level 2 (Mozaik), sheet 1",
+"Level 2 (Mozaik), sheet 1 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved"
+],
+"03": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 3 (Tengely), sheet 1",
+"Level 3 (Tengely), sheet 1 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Easy level 3 (Elemek), sheet 1",
+"Easy level 3 (Elemek), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"TENGELY": [
+"Contents sheet (hard), page 1",
+"Level 3 (Tengely), sheet 1",
+"Level 3 (Tengely), sheet 1 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved"
+],
+"a fél is egész": [
+"Contents sheet (hard), page 1",
+"Level 3 (Tengely), sheet 1",
+"Level 3 (Tengely), sheet 1 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved"
+],
+"04": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Easy level 4 (Csempe), sheet 1",
+"Easy level 4 (Csempe), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"HÁROM LAP": [
+"Contents sheet (hard), page 1",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved"
+],
+"ami piros, az nincs": [
+"Contents sheet (hard), page 1",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved"
+],
+"05": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Easy level 5 (Szoba), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"FÓLIA": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved"
+],
+"a jel a jelre kerül": [
+"Contents sheet (hard), page 1",
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved"
+],
+"06": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"HÁROM FÓLIA": [
+"Contents sheet (hard), page 1",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved"
+],
+"a körvonal nem hazudik": [
+"Contents sheet (hard), page 1",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved"
+],
+"07": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Easy level 7 (Háztömb), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"KETTŐS FEDÉS": [
+"Contents sheet (hard), page 1",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved"
+],
+"ami kétszer fedett, az nincs": [
+"Contents sheet (hard), page 1",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved"
+],
+"08": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Easy level 8 (Raktár), sheet 1",
+"Easy level 8 (Raktár), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"TÜKÖRFÓLIA": [
+"Contents sheet (hard), page 1",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved"
+],
+"a fóliának két oldala van": [
+"Contents sheet (hard), page 1",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved"
+],
+"09": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Easy level 9 (Burkolat), sheet 1",
+"Easy level 9 (Burkolat), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"a lap 1:50-es": [
+"Contents sheet (hard), page 1",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved"
+],
+"MÉRETLÁNC": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved"
+],
+"a lánc mindig 6": [
+"Contents sheet (hard), page 1",
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved"
+],
+"FURATOK": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved"
+],
+"a szaggatott vonal is vonal": [
+"Contents sheet (hard), page 1",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved"
+],
+"HÁROM VÁGÁS": [
+"Contents sheet (hard), page 1",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved"
+],
+"minden vágás számít": [
+"Contents sheet (hard), page 1",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved"
+],
+"SZERKESZTÉS": [
+"Contents sheet (hard), page 1",
+"Contents sheet (random)",
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved"
+],
+"a harmadik nézet szerkeszthető": [
+"Contents sheet (hard), page 1",
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved"
+],
+"FERDE LAP": [
+"Contents sheet (hard), page 1",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved"
+],
+"nem minden él vízszintes": [
+"Contents sheet (hard), page 1",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved"
+],
+"RÁCSFÓLIA": [
+"Contents sheet (hard), page 1",
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2"
+],
+"a rés mögött más terv van": [
+"Contents sheet (hard), page 1",
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved"
+],
+"Lapozni a jobb felső sarokban lehet,": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"vagy koppints egy számra vagy címre": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"az ugráshoz.": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"CÍM": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"LAPOK": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"0/30 KÉSZ": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2"
+],
+"RAJZOLTA": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"JÓVÁHAGYTA": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"1 · 1–15": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2"
+],
+"2 · 16–30": [
+"Contents sheet (hard), page 1",
+"Contents sheet (hard), page 2"
+],
+"HÁROM FÁZIS": [
+"Contents sheet (hard), page 2",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved"
+],
+"az utasítás is a rács mögött van": [
+"Contents sheet (hard), page 2",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved"
+],
+"HAMIS NYOM": [
+"Contents sheet (hard), page 2",
+"Level 17 (Hamis nyom), sheet 1",
+"Level 17 (Hamis nyom), sheet 1 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved"
+],
+"a színes lap hazudik": [
+"Contents sheet (hard), page 2",
+"Level 17 (Hamis nyom), sheet 1",
+"Level 17 (Hamis nyom), sheet 1 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved"
+],
+"SZIGETELÉS": [
+"Contents sheet (hard), page 2",
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved"
+],
+"a toll túl vastag": [
+"Contents sheet (hard), page 2",
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved"
+],
+"REVÍZIÓK": [
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved"
+],
+"minden módosítás számít": [
+"Contents sheet (hard), page 2",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved"
+],
+"DÁTUMREND": [
+"Contents sheet (hard), page 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved"
+],
+"a napló nem sorrendben készült": [
+"Contents sheet (hard), page 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved"
+],
+"FURAT OLDALRÓL": [
+"Contents sheet (hard), page 2",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"a furat is szerkeszthető": [
+"Contents sheet (hard), page 2",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"HAJTOGATÁS": [
+"Contents sheet (hard), page 2",
+"Level 22 (Hajtogatás), sheet 1",
+"Level 22 (Hajtogatás), sheet 1 – solved"
+],
+"melyik három lapot látjuk?": [
+"Contents sheet (hard), page 2",
+"Level 22 (Hajtogatás), sheet 1",
+"Level 22 (Hajtogatás), sheet 1 – solved"
+],
+"LÉPCSŐHÁLÓ": [
+"Contents sheet (hard), page 2",
+"Level 23 (Lépcsőháló), sheet 1",
+"Level 23 (Lépcsőháló), sheet 1 – solved"
+],
+"a háló nem kereszt": [
+"Contents sheet (hard), page 2",
+"Level 23 (Lépcsőháló), sheet 1",
+"Level 23 (Lépcsőháló), sheet 1 – solved"
+],
+"ÁRNYÉK": [
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved"
+],
+"a fény nyugatról jön, 45°-ban": [
+"Contents sheet (hard), page 2",
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved"
+],
+"TETŐÁRNYÉK": [
+"Contents sheet (hard), page 2",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved"
+],
+"az árnyék a tetőre is esik": [
+"Contents sheet (hard), page 2",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved"
+],
+"ÁRNYÉKFESTMÉNY": [
+"Contents sheet (hard), page 2",
+"Contents sheet (random)",
+"Level 26 (Árnyékfestmény), sheet 1",
+"Level 26 (Árnyékfestmény), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved"
+],
+"a festő pontosan festett": [
+"Contents sheet (hard), page 2",
+"Level 26 (Árnyékfestmény), sheet 1",
+"Level 26 (Árnyékfestmény), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved"
+],
+"HAMIS NAP": [
+"Contents sheet (hard), page 2",
+"Level 27 (Hamis nap), sheet 1",
+"Level 27 (Hamis nap), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"a vázlat máskor készült": [
+"Contents sheet (hard), page 2",
+"Level 27 (Hamis nap), sheet 1",
+"Level 27 (Hamis nap), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"KONYHA": [
+"Contents sheet (hard), page 2",
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved"
+],
+"a mosogató mindig napos legyen": [
+"Contents sheet (hard), page 2",
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved"
+],
+"HÁLÓSZOBA": [
+"Contents sheet (hard), page 2",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved"
+],
+"reggel ébresszen a nap": [
+"Contents sheet (hard), page 2",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved"
+],
+"NAPPALI": [
+"Contents sheet (hard), page 2",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved"
+],
+"a tévét sose érje nap": [
+"Contents sheet (hard), page 2",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved"
+],
+"generálható feladattípusok": [
+"Contents sheet (random)"
+],
+"vonalvastagság-kalibráció": [
+"Contents sheet (random)"
+],
+"metszetek és furatmélységek": [
+"Contents sheet (random)"
+],
+"harmadik nézet szerkesztővonalakkal": [
+"Contents sheet (random)"
+],
+"45°-os árnyékszerkesztés": [
+"Contents sheet (random)"
+],
+"LAKBERENDEZÉS": [
+"Contents sheet (random)"
+],
+"bútorok a napjárás szerint": [
+"Contents sheet (random)"
+],
+"módosítási napló végrehajtása": [
+"Contents sheet (random)"
+],
+"forgatott, tükrözött kitűzési fóliák": [
+"Contents sheet (random)"
+],
+"MAGASSÁGTÉRKÉP": [
+"Contents sheet (random)"
+],
+"elöl- és oldalnézetből felülnézet": [
+"Contents sheet (random)"
+],
+"fal/üres láncok, egyedi megoldás": [
+"Contents sheet (random)"
+],
+"KOCKAHÁLÓ": [
+"Contents sheet (random)"
+],
+"hálóról a látható lapok": [
+"Contents sheet (random)"
+],
+"festett árnyékból a magasságok": [
+"Contents sheet (random)"
+],
+"0/11 KÉSZ": [
+"Contents sheet (random)"
+],
+"ELÖLNÉZET": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"OLDALNÉZET": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved"
+],
+"a": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"b": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"c": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"?": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 3",
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved"
+],
+"FELÜLNÉZET": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved",
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"REV. A — A felülnézetet újra kell rajzolni.": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved"
+],
+"Koppints a fülekre a lapok közti váltáshoz.": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 2 (Mozaik), sheet 1",
+"Level 2 (Mozaik), sheet 1 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 1",
+"Level 3 (Tengely), sheet 1 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 1",
+"Level 17 (Hamis nyom), sheet 1 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved",
+"Level 26 (Árnyékfestmény), sheet 1",
+"Level 26 (Árnyékfestmény), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 1",
+"Level 27 (Hamis nap), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved",
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved",
+"Easy level 3 (Elemek), sheet 1",
+"Easy level 3 (Elemek), sheet 2",
+"Easy level 4 (Csempe), sheet 1",
+"Easy level 4 (Csempe), sheet 2",
+"Easy level 8 (Raktár), sheet 1",
+"Easy level 8 (Raktár), sheet 2",
+"Easy level 9 (Burkolat), sheet 1",
+"Easy level 9 (Burkolat), sheet 2",
+"Easy level 13 (Torony), sheet 1",
+"Easy level 13 (Torony), sheet 2",
+"Easy level 14 (Parketta), sheet 1",
+"Easy level 14 (Parketta), sheet 2"
+],
+"TISZTÍT": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 2 (Mozaik), sheet 1",
+"Level 2 (Mozaik), sheet 1 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 1",
+"Level 3 (Tengely), sheet 1 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 1",
+"Level 17 (Hamis nyom), sheet 1 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved",
+"Level 22 (Hajtogatás), sheet 1",
+"Level 22 (Hajtogatás), sheet 1 – solved",
+"Level 23 (Lépcsőháló), sheet 1",
+"Level 23 (Lépcsőháló), sheet 1 – solved",
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 1",
+"Level 26 (Árnyékfestmény), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 1",
+"Level 27 (Hamis nap), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved",
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved",
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Easy level 2 (Látkép), sheet 1",
+"Easy level 3 (Elemek), sheet 1",
+"Easy level 3 (Elemek), sheet 2",
+"Easy level 4 (Csempe), sheet 1",
+"Easy level 4 (Csempe), sheet 2",
+"Easy level 5 (Szoba), sheet 1",
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Easy level 7 (Háztömb), sheet 1",
+"Easy level 8 (Raktár), sheet 1",
+"Easy level 8 (Raktár), sheet 2",
+"Easy level 9 (Burkolat), sheet 1",
+"Easy level 9 (Burkolat), sheet 2",
+"Easy level 10 (Iroda), sheet 1",
+"Easy level 11 (Fejjel lefelé), sheet 1",
+"Easy level 12 (Belváros), sheet 1",
+"Easy level 13 (Torony), sheet 1",
+"Easy level 13 (Torony), sheet 2",
+"Easy level 14 (Parketta), sheet 1",
+"Easy level 14 (Parketta), sheet 2",
+"Easy level 15 (Fürdő), sheet 1"
+],
+"PÁLYA 1/30": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved"
+],
+"1 NÉZETEK": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved"
+],
+"2 FELÜLNÉZET": [
+"Level 1 (Két nézet), sheet 1",
+"Level 1 (Két nézet), sheet 1 – solved",
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 2 (Mozaik), sheet 1",
+"Level 2 (Mozaik), sheet 1 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 1",
+"Level 3 (Tengely), sheet 1 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 1",
+"Level 17 (Hamis nyom), sheet 1 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved"
+],
+"AXONOMETRIA": [
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved"
+],
+"VISSZA": [
+"Level 1 (Két nézet), sheet 2",
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved",
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"JÓVÁHAGYVA": [
+"Level 1 (Két nézet), sheet 2 – solved",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 2 – solved",
+"Level 21 (Furat oldalról), sheet 1 – solved",
+"Level 22 (Hajtogatás), sheet 1 – solved",
+"Level 23 (Lépcsőháló), sheet 1 – solved",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 2 – solved",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 30 (Nappali), sheet 1 – solved"
+],
+"MOZAIK · SZÍNTERV": [
+"Level 2 (Mozaik), sheet 1",
+"Level 2 (Mozaik), sheet 1 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 3 (Tengely), sheet 1",
+"Level 3 (Tengely), sheet 1 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 1",
+"Level 17 (Hamis nyom), sheet 1 – solved",
+"Level 17 (Hamis nyom), sheet 2"
+],
+"REV. B — A mozaik tervét a műhelyben felejtették.": [
+"Level 2 (Mozaik), sheet 1",
+"Level 2 (Mozaik), sheet 1 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved"
+],
+"PÁLYA 2/30": [
+"Level 2 (Mozaik), sheet 1",
+"Level 2 (Mozaik), sheet 1 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved"
+],
+"1 SZÍNES LAP": [
+"Level 2 (Mozaik), sheet 1",
+"Level 2 (Mozaik), sheet 1 – solved",
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 1",
+"Level 3 (Tengely), sheet 1 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 1",
+"Level 17 (Hamis nyom), sheet 1 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 26 (Árnyékfestmény), sheet 1",
+"Level 26 (Árnyékfestmény), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 1",
+"Level 27 (Hamis nap), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved",
+"Easy level 3 (Elemek), sheet 1",
+"Easy level 3 (Elemek), sheet 2",
+"Easy level 4 (Csempe), sheet 1",
+"Easy level 4 (Csempe), sheet 2",
+"Easy level 8 (Raktár), sheet 1",
+"Easy level 8 (Raktár), sheet 2",
+"Easy level 9 (Burkolat), sheet 1",
+"Easy level 9 (Burkolat), sheet 2",
+"Easy level 13 (Torony), sheet 1",
+"Easy level 13 (Torony), sheet 2",
+"Easy level 14 (Parketta), sheet 1",
+"Easy level 14 (Parketta), sheet 2"
+],
+"FELÜLNÉZET · HELYSZÍNRAJZ": [
+"Level 2 (Mozaik), sheet 2",
+"Level 2 (Mozaik), sheet 2 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved"
+],
+"REV. C — Csak a bal szárny terve maradt meg.": [
+"Level 3 (Tengely), sheet 1",
+"Level 3 (Tengely), sheet 1 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved"
+],
+"PÁLYA 3/30": [
+"Level 3 (Tengely), sheet 1",
+"Level 3 (Tengely), sheet 1 – solved",
+"Level 3 (Tengely), sheet 2",
+"Level 3 (Tengely), sheet 2 – solved"
+],
+"d": [
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"REV. D — A toronyházak között maradtak üres telkek.": [
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved"
+],
+"PÁLYA 4/30": [
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved"
+],
+"2 SZÍNES LAP": [
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved"
+],
+"3 FELÜLNÉZET": [
+"Level 4 (Három lap), sheet 1",
+"Level 4 (Három lap), sheet 1 – solved",
+"Level 4 (Három lap), sheet 2",
+"Level 4 (Három lap), sheet 2 – solved",
+"Level 4 (Három lap), sheet 3",
+"Level 4 (Három lap), sheet 3 – solved"
+],
+"FÓLIÁK · húzd a rajzra, koppints a forgatáshoz": [
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2"
+],
+"ILLESZTŐLAP · a kockák a felülnézetre kerülnek": [
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2"
+],
+"ILLESZTŐJELEK": [
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2"
+],
+"Kör a körre, négyzet a négyzetre.": [
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2"
+],
+"A": [
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"REV. E — A kitűzési fóliát valaki elforgatta.": [
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved"
+],
+"PÁLYA 5/30": [
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved"
+],
+"1 FÓLIÁK": [
+"Level 5 (Fólia), sheet 1",
+"Level 5 (Fólia), sheet 1 – solved",
+"Level 5 (Fólia), sheet 2",
+"Level 5 (Fólia), sheet 2 – solved",
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved"
+],
+"B": [
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"C": [
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"REV. F — A homlokzati fóliák összekeveredtek.": [
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved"
+],
+"PÁLYA 6/30": [
+"Level 6 (Három fólia), sheet 1",
+"Level 6 (Három fólia), sheet 1 – solved",
+"Level 6 (Három fólia), sheet 2",
+"Level 6 (Három fólia), sheet 2 – solved"
+],
+"REV. G — Két terv készült ugyanarra a telekre.": [
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved"
+],
+"PÁLYA 7/30": [
+"Level 7 (Kettős fedés), sheet 1",
+"Level 7 (Kettős fedés), sheet 1 – solved",
+"Level 7 (Kettős fedés), sheet 2",
+"Level 7 (Kettős fedés), sheet 2 – solved"
+],
+"KIJELÖLT FÓLIA: A": [
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2"
+],
+"ÁTFORDÍT": [
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2"
+],
+"REV. H — A fóliát fordítva fűzték a dossziéba.": [
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved"
+],
+"PÁLYA 8/30": [
+"Level 8 (Tükörfólia), sheet 1",
+"Level 8 (Tükörfólia), sheet 1 – solved",
+"Level 8 (Tükörfólia), sheet 2",
+"Level 8 (Tükörfólia), sheet 2 – solved"
+],
+"M 1:100": [
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2"
+],
+"LAP: M 1:50": [
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2"
+],
+"M 1:25": [
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2"
+],
+"REV. I — A részletrajzok más léptékben készültek.": [
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved"
+],
+"PÁLYA 9/30": [
+"Level 9 (Lépték), sheet 1",
+"Level 9 (Lépték), sheet 1 – solved",
+"Level 9 (Lépték), sheet 2",
+"Level 9 (Lépték), sheet 2 – solved"
+],
+"MÉRETLÁNCOK · M 1:50": [
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved"
+],
+"JELMAGYARÁZAT": [
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"fal": [
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2"
+],
+"üres": [
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2"
+],
+"REV. J — Néhány méret elmosódott. A teljes méret mindenhol 6.": [
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved"
+],
+"PÁLYA 10/30": [
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved"
+],
+"1 MÉRETLÁNC": [
+"Level 10 (Méretlánc), sheet 1",
+"Level 10 (Méretlánc), sheet 1 – solved"
+],
+"FELÜLNÉZET · koppints: mélység": [
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved"
+],
+"+2": [
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved"
+],
+"+1": [
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved"
+],
+"vakfurat (mélység)": [
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved"
+],
+"átmenő furat": [
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved"
+],
+"takart él": [
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"REV. K — A furatokat csak a nézeteken jelölték.": [
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved"
+],
+"PÁLYA 11/30": [
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved"
+],
+"1 FURATTERV": [
+"Level 11 (Furatok), sheet 1",
+"Level 11 (Furatok), sheet 1 – solved",
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved"
+],
+"e": [
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"+3": [
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved"
+],
+"METSZETEK 0/3": [
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved"
+],
+"Koppints egy számra vagy betűre.": [
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved"
+],
+"ÚJRA": [
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved"
+],
+"REV. L — Legfeljebb három metszet. Koppints számra vagy betűre.": [
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved"
+],
+"PÁLYA 12/30": [
+"Level 12 (Három vágás), sheet 1",
+"Level 12 (Három vágás), sheet 1 – solved"
+],
+"OLDALNÉZET ?": [
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"45°": [
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"0°": [
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"vonalzó": [
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"90°": [
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"TUS": [
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"kontúr": [
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"TÖRÖL": [
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"Vonalzó: koppints egy sarokpontra vagy metszéspontra.": [
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"REV. M — Az oldalnézet hiányzik. 45°-os segédvonallal szerkeszthető.": [
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved"
+],
+"PÁLYA 13/30": [
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved"
+],
+"1 SZERKESZTÉS": [
+"Level 13 (Szerkesztés), sheet 1",
+"Level 13 (Szerkesztés), sheet 1 – solved",
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved",
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"REV. N — Az oldalnézet hiányzik. A ferde él két pontból adódik.": [
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved"
+],
+"PÁLYA 14/30": [
+"Level 14 (Ferde lap), sheet 1",
+"Level 14 (Ferde lap), sheet 1 – solved"
+],
+"TERV 1": [
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2"
+],
+"ÉRVÉNYTELEN": [
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2"
+],
+"TERV 2": [
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2"
+],
+"ÉRVÉNYES": [
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2"
+],
+"NYOMAT · M 1:50": [
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2"
+],
+"kitöltendő": [
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2"
+],
+"REV. O — Két tervet nyomtak egymásba. Csak az egyik érvényes.": [
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved"
+],
+"PÁLYA 15/30": [
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved"
+],
+"1 NYOMAT": [
+"Level 15 (Rácsfólia), sheet 1",
+"Level 15 (Rácsfólia), sheet 1 – solved",
+"Level 15 (Rácsfólia), sheet 2",
+"Level 15 (Rácsfólia), sheet 2 – solved",
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved"
+],
+"TERV C": [
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2"
+],
+"TERV D": [
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2"
+],
+"A TERV D": [
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2"
+],
+"TÜKRÖZENDŐ": [
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2"
+],
+"REV. P — Három lapot nyomtak egymásba.": [
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved"
+],
+"PÁLYA 16/30": [
+"Level 16 (Három fázis), sheet 1",
+"Level 16 (Három fázis), sheet 1 – solved",
+"Level 16 (Három fázis), sheet 2",
+"Level 16 (Három fázis), sheet 2 – solved"
+],
+"REV. Q — A felülnézeten jó jelölések vannak.": [
+"Level 17 (Hamis nyom), sheet 1",
+"Level 17 (Hamis nyom), sheet 1 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved"
+],
+"PÁLYA 17/30": [
+"Level 17 (Hamis nyom), sheet 1",
+"Level 17 (Hamis nyom), sheet 1 – solved",
+"Level 17 (Hamis nyom), sheet 2",
+"Level 17 (Hamis nyom), sheet 2 – solved"
+],
+"ANYAGJELÖLÉS · M 1:5": [
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2"
+],
+"szigetelés": [
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2"
+],
+"ALAPRAJZ": [
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2"
+],
+"REV. R — Csak a tömör falak maradnak. A tollat túl vastagra állították.": [
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved"
+],
+"PÁLYA 18/30": [
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved"
+],
+"1 FALTERV": [
+"Level 18 (Szigetelés), sheet 1",
+"Level 18 (Szigetelés), sheet 1 – solved",
+"Level 18 (Szigetelés), sheet 2",
+"Level 18 (Szigetelés), sheet 2 – solved"
+],
+"REV. 0 — ALAPTERV": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"JELÖLÉSEK": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"sorok: 1–5 felülről": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"oszlopok: a–e balról": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"forgatás: a lap közepe körül": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"REVÍZIÓS NAPLÓ": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"JEL": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"LEÍRÁS": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"2026.03.02": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2"
+],
+"„c” oszlop kitöltve": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2"
+],
+"2026.03.09": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2"
+],
+"Tükrözve a függőleges tengelyre": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2"
+],
+"2026.03.16": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2"
+],
+"5. sor törölve": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2"
+],
+"REV. S — Az alaptervet három módosítás követte.": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved"
+],
+"PÁLYA 19/30": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved"
+],
+"1 REVÍZIÓK": [
+"Level 19 (Revíziók), sheet 1",
+"Level 19 (Revíziók), sheet 1 – solved",
+"Level 19 (Revíziók), sheet 2",
+"Level 19 (Revíziók), sheet 2 – solved",
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved"
+],
+"D": [
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"2026.05.21": [
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"„e” oszlop kitöltve": [
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"2026.05.03": [
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"Elforgatva 90°-kal, óramutató szerint": [
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"2026.05.14": [
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"1. sor kitöltve": [
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"VISSZAVONVA": [
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"2026.05.09": [
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"3. sor kitöltve": [
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2"
+],
+"REV. T — A bejegyzéseket dátum szerint kell végrehajtani.": [
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved"
+],
+"PÁLYA 20/30": [
+"Level 20 (Dátumrend), sheet 1",
+"Level 20 (Dátumrend), sheet 1 – solved",
+"Level 20 (Dátumrend), sheet 2",
+"Level 20 (Dátumrend), sheet 2 – solved"
+],
+"- - -": [
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"REV. U — Az oldalnézetbe a takart furat is kell, szaggatott vonallal.": [
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"PÁLYA 21/30": [
+"Level 21 (Furat oldalról), sheet 1",
+"Level 21 (Furat oldalról), sheet 1 – solved"
+],
+"KOCKAHÁLÓ · nyomott oldal kívül": [
+"Level 22 (Hajtogatás), sheet 1",
+"Level 22 (Hajtogatás), sheet 1 – solved",
+"Level 23 (Lépcsőháló), sheet 1",
+"Level 23 (Lépcsőháló), sheet 1 – solved"
+],
+"ÖSSZEHAJTVA": [
+"Level 22 (Hajtogatás), sheet 1",
+"Level 22 (Hajtogatás), sheet 1 – solved",
+"Level 23 (Lépcsőháló), sheet 1",
+"Level 23 (Lépcsőháló), sheet 1 – solved"
+],
+"Koppints a háló lapjaira: 0/3 kijelölve.": [
+"Level 22 (Hajtogatás), sheet 1",
+"Level 22 (Hajtogatás), sheet 1 – solved",
+"Level 23 (Lépcsőháló), sheet 1",
+"Level 23 (Lépcsőháló), sheet 1 – solved"
+],
+"REV. V — A kockát ebből a hálóból hajtották össze. Jelöld a hálón a három látható lapot.": [
+"Level 22 (Hajtogatás), sheet 1",
+"Level 22 (Hajtogatás), sheet 1 – solved"
+],
+"PÁLYA 22/30": [
+"Level 22 (Hajtogatás), sheet 1",
+"Level 22 (Hajtogatás), sheet 1 – solved"
+],
+"1 KOCKAHÁLÓ": [
+"Level 22 (Hajtogatás), sheet 1",
+"Level 22 (Hajtogatás), sheet 1 – solved",
+"Level 23 (Lépcsőháló), sheet 1",
+"Level 23 (Lépcsőháló), sheet 1 – solved"
+],
+"REV. W — Lépcsős háló. Jelöld a hálón a három látható lapot.": [
+"Level 23 (Lépcsőháló), sheet 1",
+"Level 23 (Lépcsőháló), sheet 1 – solved"
+],
+"PÁLYA 23/30": [
+"Level 23 (Lépcsőháló), sheet 1",
+"Level 23 (Lépcsőháló), sheet 1 – solved"
+],
+"FÉNY 45° · METSZET": [
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"az árnyék olyan hosszú,": [
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"amilyen magas a tömb": [
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"FÉNY": [
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"tömb": [
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"és magassága": [
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"árnyék": [
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"REV. X — Jelöld az árnyékot a talajon. Fény: nyugatról, 45°.": [
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved"
+],
+"PÁLYA 24/30": [
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved"
+],
+"1 ÁRNYÉK": [
+"Level 24 (Árnyék), sheet 1",
+"Level 24 (Árnyék), sheet 1 – solved",
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved"
+],
+"REV. Y — Délben délről süt a nap, 45°. Az alacsonyabb tetőre is árnyék eshet.": [
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved"
+],
+"PÁLYA 25/30": [
+"Level 25 (Tetőárnyék), sheet 1",
+"Level 25 (Tetőárnyék), sheet 1 – solved"
+],
+"SZÍNES VÁZLAT · A festő délután 4-kor festette · árnyékok ÉK felé · a rúd 1 m": [
+"Level 26 (Árnyékfestmény), sheet 1",
+"Level 26 (Árnyékfestmény), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2"
+],
+"1 m": [
+"Level 26 (Árnyékfestmény), sheet 1",
+"Level 26 (Árnyékfestmény), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2"
+],
+"REV. Z — Pontban délben délről süt a nap, 45°-ban. Jelöld az árnyékot.": [
+"Level 26 (Árnyékfestmény), sheet 1",
+"Level 26 (Árnyékfestmény), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved"
+],
+"PÁLYA 26/30": [
+"Level 26 (Árnyékfestmény), sheet 1",
+"Level 26 (Árnyékfestmény), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved"
+],
+"2 ÁRNYÉK": [
+"Level 26 (Árnyékfestmény), sheet 1",
+"Level 26 (Árnyékfestmény), sheet 1 – solved",
+"Level 26 (Árnyékfestmény), sheet 2",
+"Level 26 (Árnyékfestmény), sheet 2 – solved",
+"Level 27 (Hamis nap), sheet 1",
+"Level 27 (Hamis nap), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"SZÍNES VÁZLAT · Délelőtt 10 óra · a nap DK-ről süt": [
+"Level 27 (Hamis nap), sheet 1",
+"Level 27 (Hamis nap), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2"
+],
+"REV. AA — Délben délről süt a nap, 45°. A tetőre is eshet árnyék. A vázlat hamis.": [
+"Level 27 (Hamis nap), sheet 1",
+"Level 27 (Hamis nap), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"PÁLYA 27/30": [
+"Level 27 (Hamis nap), sheet 1",
+"Level 27 (Hamis nap), sheet 1 – solved",
+"Level 27 (Hamis nap), sheet 2",
+"Level 27 (Hamis nap), sheet 2 – solved"
+],
+"É": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved",
+"Easy level 5 (Szoba), sheet 1",
+"Easy level 10 (Iroda), sheet 1",
+"Easy level 15 (Fürdő), sheet 1"
+],
+"mosogató": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4"
+],
+"tűzhely": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4"
+],
+"hűtő": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4"
+],
+"asztal": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4"
+],
+"kamra": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4"
+],
+"szék": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4",
+"Easy level 5 (Szoba), sheet 1"
+],
+"KÖVETELMÉNYEK": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"bútor": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"reggel": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"délben": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"délután": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"mosogató ▮": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4"
+],
+"✗": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"tűzhely ▮": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4"
+],
+"hűtő ▮": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4"
+],
+"kamra ▮": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4"
+],
+"☼ napos · ✕ árnyékban · – mindegy · ▮ falhoz": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"ajtótól elérhető": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4",
+"Easy level 5 (Szoba), sheet 1",
+"Easy level 10 (Iroda), sheet 1",
+"Easy level 15 (Fürdő), sheet 1"
+],
+"asztal nem ér mosogatóhoz, tűzhelyhez": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 4"
+],
+"REV. AB — Rendezd be a konyhát. Duplakerettel jelölve a falnál álló bútor.": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved"
+],
+"PÁLYA 28/30": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved"
+],
+"1 ALAPRAJZ": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved",
+"Easy level 5 (Szoba), sheet 1",
+"Easy level 10 (Iroda), sheet 1",
+"Easy level 15 (Fürdő), sheet 1"
+],
+"2 REGGEL": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved"
+],
+"3 DÉLBEN": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved"
+],
+"4 DÉLUTÁN": [
+"Level 28 (Konyha), sheet 1",
+"Level 28 (Konyha), sheet 1 – solved",
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved",
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved",
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved"
+],
+"sárga, vonalkázott: napfolt a padlón": [
+"Level 28 (Konyha), sheet 2",
+"Level 28 (Konyha), sheet 2 – solved",
+"Level 28 (Konyha), sheet 3",
+"Level 28 (Konyha), sheet 3 – solved",
+"Level 28 (Konyha), sheet 4",
+"Level 28 (Konyha), sheet 4 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved"
+],
+"ágy": [
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4",
+"Easy level 5 (Szoba), sheet 1"
+],
+"szekrény": [
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4",
+"Easy level 5 (Szoba), sheet 1",
+"Easy level 15 (Fürdő), sheet 1"
+],
+"növény": [
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4",
+"Easy level 5 (Szoba), sheet 1",
+"Easy level 10 (Iroda), sheet 1"
+],
+"éjjeli": [
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4"
+],
+"tükör": [
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4"
+],
+"szgép ▮": [
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4"
+],
+"szekrény ▮": [
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4"
+],
+"tükör ▮": [
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 4"
+],
+"REV. AC — Az ágyat reggel érje nap, este ne. A számítógép délben se kapjon napot.": [
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved"
+],
+"PÁLYA 29/30": [
+"Level 29 (Hálószoba), sheet 1",
+"Level 29 (Hálószoba), sheet 1 – solved",
+"Level 29 (Hálószoba), sheet 2",
+"Level 29 (Hálószoba), sheet 2 – solved",
+"Level 29 (Hálószoba), sheet 3",
+"Level 29 (Hálószoba), sheet 3 – solved",
+"Level 29 (Hálószoba), sheet 4",
+"Level 29 (Hálószoba), sheet 4 – solved"
+],
+"tévé": [
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"kanapé": [
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"fotel": [
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"polc": [
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4",
+"Easy level 5 (Szoba), sheet 1",
+"Easy level 10 (Iroda), sheet 1"
+],
+"zongora": [
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"pálma": [
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"tévé ▮": [
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"kanapé ▮": [
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"polc ▮": [
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"zongora ▮": [
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"tévé látszik": [
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"pálma szabadon": [
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 4"
+],
+"REV. AD — A kanapé háttal a falnak álljon, és lássák róla a tévét.": [
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved"
+],
+"PÁLYA 30/30": [
+"Level 30 (Nappali), sheet 1",
+"Level 30 (Nappali), sheet 1 – solved",
+"Level 30 (Nappali), sheet 2",
+"Level 30 (Nappali), sheet 2 – solved",
+"Level 30 (Nappali), sheet 3",
+"Level 30 (Nappali), sheet 3 – solved",
+"Level 30 (Nappali), sheet 4",
+"Level 30 (Nappali), sheet 4 – solved"
+],
+"MINTAKULCS": [
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Easy level 11 (Fejjel lefelé), sheet 1"
+],
+"NYERSKULCS · koppints a recék helyére": [
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Easy level 11 (Fejjel lefelé), sheet 1"
+],
+"REV. 1 — Másold le a mintakulcs recéit a nyerskulcsra.": [
+"Easy level 1 (Kulcsmásolás), sheet 1"
+],
+"KULCSMÁSOLÁS": [
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"recét recére": [
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 1/15": [
+"Easy level 1 (Kulcsmásolás), sheet 1"
+],
+"1 KULCS": [
+"Easy level 1 (Kulcsmásolás), sheet 1",
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Easy level 11 (Fejjel lefelé), sheet 1"
+],
+"LÁTKÉP · koppints: magasság": [
+"Easy level 2 (Látkép), sheet 1",
+"Easy level 7 (Háztömb), sheet 1",
+"Easy level 12 (Belváros), sheet 1"
+],
+"PÉLDA": [
+"Easy level 2 (Látkép), sheet 1",
+"Easy level 7 (Háztömb), sheet 1",
+"Easy level 12 (Belváros), sheet 1"
+],
+"a 2-es és a 3-as látszik, az 1-es takarva": [
+"Easy level 2 (Látkép), sheet 1",
+"Easy level 7 (Háztömb), sheet 1",
+"Easy level 12 (Belváros), sheet 1"
+],
+"REV. 2 — A szélső szám: hány ház látszik onnan. Soronként minden magasság egyszer.": [
+"Easy level 2 (Látkép), sheet 1"
+],
+"LÁTKÉP": [
+"Easy level 2 (Látkép), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"a szám: hány ház látszik": [
+"Easy level 2 (Látkép), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 2/15": [
+"Easy level 2 (Látkép), sheet 1"
+],
+"1 LÁTKÉP": [
+"Easy level 2 (Látkép), sheet 1",
+"Easy level 7 (Háztömb), sheet 1",
+"Easy level 12 (Belváros), sheet 1"
+],
+"SZÍNES LAP · így áll össze": [
+"Easy level 3 (Elemek), sheet 1",
+"Easy level 3 (Elemek), sheet 2",
+"Easy level 4 (Csempe), sheet 1",
+"Easy level 4 (Csempe), sheet 2",
+"Easy level 8 (Raktár), sheet 1",
+"Easy level 8 (Raktár), sheet 2",
+"Easy level 9 (Burkolat), sheet 1",
+"Easy level 9 (Burkolat), sheet 2",
+"Easy level 13 (Torony), sheet 1",
+"Easy level 13 (Torony), sheet 2",
+"Easy level 14 (Parketta), sheet 1",
+"Easy level 14 (Parketta), sheet 2"
+],
+"REV. 3 — Töltsd ki a formát az elemekkel. Húzd őket, koppintás: forgatás.": [
+"Easy level 3 (Elemek), sheet 1",
+"Easy level 3 (Elemek), sheet 2"
+],
+"ELEMEK": [
+"Easy level 3 (Elemek), sheet 1",
+"Easy level 3 (Elemek), sheet 2",
+"Easy level 4 (Csempe), sheet 2",
+"Easy level 8 (Raktár), sheet 2",
+"Easy level 9 (Burkolat), sheet 2",
+"Easy level 13 (Torony), sheet 2",
+"Easy level 14 (Parketta), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"négy elem, egy forma": [
+"Easy level 3 (Elemek), sheet 1",
+"Easy level 3 (Elemek), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 3/15": [
+"Easy level 3 (Elemek), sheet 1",
+"Easy level 3 (Elemek), sheet 2"
+],
+"2 KIRAKÓ": [
+"Easy level 3 (Elemek), sheet 1",
+"Easy level 3 (Elemek), sheet 2",
+"Easy level 4 (Csempe), sheet 1",
+"Easy level 4 (Csempe), sheet 2",
+"Easy level 8 (Raktár), sheet 1",
+"Easy level 8 (Raktár), sheet 2",
+"Easy level 9 (Burkolat), sheet 1",
+"Easy level 9 (Burkolat), sheet 2",
+"Easy level 13 (Torony), sheet 1",
+"Easy level 13 (Torony), sheet 2",
+"Easy level 14 (Parketta), sheet 1",
+"Easy level 14 (Parketta), sheet 2"
+],
+"KIRAKÓ · húzd az elemeket a formára": [
+"Easy level 3 (Elemek), sheet 2",
+"Easy level 4 (Csempe), sheet 2",
+"Easy level 8 (Raktár), sheet 2",
+"Easy level 9 (Burkolat), sheet 2",
+"Easy level 13 (Torony), sheet 2",
+"Easy level 14 (Parketta), sheet 2"
+],
+"REV. 4 — Rakd ki a formát a lapokkal. Húzd őket, koppintás: forgatás.": [
+"Easy level 4 (Csempe), sheet 1",
+"Easy level 4 (Csempe), sheet 2"
+],
+"CSEMPE": [
+"Easy level 4 (Csempe), sheet 1",
+"Easy level 4 (Csempe), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"háromszög is van": [
+"Easy level 4 (Csempe), sheet 1",
+"Easy level 4 (Csempe), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 4/15": [
+"Easy level 4 (Csempe), sheet 1",
+"Easy level 4 (Csempe), sheet 2"
+],
+"SZABÁLYOK": [
+"Easy level 5 (Szoba), sheet 1",
+"Easy level 10 (Iroda), sheet 1",
+"Easy level 15 (Fürdő), sheet 1"
+],
+"ágy és szekrény nem érintkezhet": [
+"Easy level 5 (Szoba), sheet 1"
+],
+"íróasztal és ágy nem érintkezhet": [
+"Easy level 5 (Szoba), sheet 1"
+],
+"▮ falhoz": [
+"Easy level 5 (Szoba), sheet 1",
+"Easy level 10 (Iroda), sheet 1"
+],
+"REV. 5 — Rendezd be a szobát. Minden bútor legyen elérhető az ajtótól.": [
+"Easy level 5 (Szoba), sheet 1"
+],
+"SZOBA": [
+"Easy level 5 (Szoba), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"legyen hol járni": [
+"Easy level 5 (Szoba), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 5/15": [
+"Easy level 5 (Szoba), sheet 1"
+],
+"REV. 6 — A mintakulcsot fordítva tették a gépbe.": [
+"Easy level 6 (Fordított kulcs), sheet 1"
+],
+"FORDÍTOTT KULCS": [
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"a kulcs a másik irányba néz": [
+"Easy level 6 (Fordított kulcs), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 6/15": [
+"Easy level 6 (Fordított kulcs), sheet 1"
+],
+"REV. 7 — Oszloponként is minden magasság egyszer.": [
+"Easy level 7 (Háztömb), sheet 1"
+],
+"HÁZTÖMB": [
+"Easy level 7 (Háztömb), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"négy ház, négy magasság": [
+"Easy level 7 (Háztömb), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 7/15": [
+"Easy level 7 (Háztömb), sheet 1"
+],
+"REV. 8 — Töltsd ki a formát az elemekkel. Húzd őket, koppintás: forgatás.": [
+"Easy level 8 (Raktár), sheet 1",
+"Easy level 8 (Raktár), sheet 2"
+],
+"RAKTÁR": [
+"Easy level 8 (Raktár), sheet 1",
+"Easy level 8 (Raktár), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"öt elem": [
+"Easy level 8 (Raktár), sheet 1",
+"Easy level 8 (Raktár), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 8/15": [
+"Easy level 8 (Raktár), sheet 1",
+"Easy level 8 (Raktár), sheet 2"
+],
+"REV. 9 — Rakd ki a formát a lapokkal. Húzd őket, koppintás: forgatás.": [
+"Easy level 9 (Burkolat), sheet 1",
+"Easy level 9 (Burkolat), sheet 2"
+],
+"BURKOLAT": [
+"Easy level 9 (Burkolat), sheet 1",
+"Easy level 9 (Burkolat), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"a nagy háromszög a kulcs": [
+"Easy level 9 (Burkolat), sheet 1",
+"Easy level 9 (Burkolat), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 9/15": [
+"Easy level 9 (Burkolat), sheet 1",
+"Easy level 9 (Burkolat), sheet 2"
+],
+"asztal 1": [
+"Easy level 10 (Iroda), sheet 1"
+],
+"asztal 2": [
+"Easy level 10 (Iroda), sheet 1"
+],
+"nyomtató": [
+"Easy level 10 (Iroda), sheet 1"
+],
+"tárgyaló": [
+"Easy level 10 (Iroda), sheet 1"
+],
+"asztal 1 és asztal 2 nem érintkezhet": [
+"Easy level 10 (Iroda), sheet 1"
+],
+"nyomtató és asztal 1 nem érintkezhet": [
+"Easy level 10 (Iroda), sheet 1"
+],
+"nyomtató és asztal 2 nem érintkezhet": [
+"Easy level 10 (Iroda), sheet 1"
+],
+"REV. 10 — Rendezd be az irodát. Minden bútor legyen elérhető az ajtótól.": [
+"Easy level 10 (Iroda), sheet 1"
+],
+"IRODA": [
+"Easy level 10 (Iroda), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"két asztal, egy nyomtató": [
+"Easy level 10 (Iroda), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 10/15": [
+"Easy level 10 (Iroda), sheet 1"
+],
+"REV. 11 — A mintakulcs fejjel lefelé fekszik.": [
+"Easy level 11 (Fejjel lefelé), sheet 1"
+],
+"FEJJEL LEFELÉ": [
+"Easy level 11 (Fejjel lefelé), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"a recék alul vannak": [
+"Easy level 11 (Fejjel lefelé), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 11/15": [
+"Easy level 11 (Fejjel lefelé), sheet 1"
+],
+"REV. 12 — Kevesebb szám, ugyanaz a szabály.": [
+"Easy level 12 (Belváros), sheet 1"
+],
+"BELVÁROS": [
+"Easy level 12 (Belváros), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"kevesebb szám": [
+"Easy level 12 (Belváros), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 12/15": [
+"Easy level 12 (Belváros), sheet 1"
+],
+"REV. 13 — Töltsd ki a formát az elemekkel. Húzd őket, koppintás: forgatás.": [
+"Easy level 13 (Torony), sheet 1",
+"Easy level 13 (Torony), sheet 2"
+],
+"TORONY": [
+"Easy level 13 (Torony), sheet 1",
+"Easy level 13 (Torony), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"hat elem": [
+"Easy level 13 (Torony), sheet 1",
+"Easy level 13 (Torony), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 13/15": [
+"Easy level 13 (Torony), sheet 1",
+"Easy level 13 (Torony), sheet 2"
+],
+"REV. 14 — Rakd ki a formát a lapokkal. Húzd őket, koppintás: forgatás.": [
+"Easy level 14 (Parketta), sheet 1",
+"Easy level 14 (Parketta), sheet 2"
+],
+"PARKETTA": [
+"Easy level 14 (Parketta), sheet 1",
+"Easy level 14 (Parketta), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"két nagy háromszög": [
+"Easy level 14 (Parketta), sheet 1",
+"Easy level 14 (Parketta), sheet 2",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 14/15": [
+"Easy level 14 (Parketta), sheet 1",
+"Easy level 14 (Parketta), sheet 2"
+],
+"WC": [
+"Easy level 15 (Fürdő), sheet 1"
+],
+"mosdó": [
+"Easy level 15 (Fürdő), sheet 1"
+],
+"zuhany": [
+"Easy level 15 (Fürdő), sheet 1"
+],
+"szennyes": [
+"Easy level 15 (Fürdő), sheet 1"
+],
+"WC és zuhany nem érintkezhet": [
+"Easy level 15 (Fürdő), sheet 1"
+],
+"WC, mosdó, zuhany kék körön": [
+"Easy level 15 (Fürdő), sheet 1"
+],
+"▮ falhoz · ◯ vizes pont": [
+"Easy level 15 (Fürdő), sheet 1"
+],
+"REV. 15 — A WC, a mosdó és a zuhany csak vizes pontra kerülhet (kék kör).": [
+"Easy level 15 (Fürdő), sheet 1"
+],
+"FÜRDŐ": [
+"Easy level 15 (Fürdő), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"víz csak a kék körnél": [
+"Easy level 15 (Fürdő), sheet 1",
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"PÁLYA 15/15": [
+"Easy level 15 (Fürdő), sheet 1"
+],
+"könnyű feladványok": [
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"0/15 ✓": [
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"0/15 KÉSZ": [
+"Contents sheet (easy)",
+"Reset progress popup",
+"Settings panel (in game)"
+],
+"!": [
+"Reset progress popup"
+],
+"Az előrehaladás törlődik.": [
+"Reset progress popup"
+],
+"Mit töröljünk? A NEHÉZ törlése a lakatot is visszazárja.": [
+"Reset progress popup"
+],
+"MINDENT": [
+"Reset progress popup"
+],
+"MÉGSE": [
+"Reset progress popup"
+]
+}

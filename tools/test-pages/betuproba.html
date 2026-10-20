@@ -1,0 +1,99 @@
+<title>Betűpróba</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=B612+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Space+Mono:wght@400;700&family=Red+Hat+Mono:wght@400;700&family=Roboto+Mono:wght@400;700&family=Source+Code+Pro:wght@400;700&family=Fira+Code:wght@400;700&family=DM+Mono:wght@400;500&family=Martian+Mono:wght@400;700&family=Atkinson+Hyperlegible+Mono:wght@400;700&family=Courier+Prime:wght@400;700&family=Spline+Sans+Mono:wght@400;700&family=Azeret+Mono:wght@400;700&family=Overpass+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: one column of specimen sheets, each a drafting-title-block card; single paper-white look by choice (e-ink). */
+:root{--paper:#fff;--ink:#141414;--rule:#141414;--miss:#c8231e;--ui:"B612 Mono",ui-monospace,"Courier New",monospace;color-scheme:light}
+html,body{background:var(--paper);color:var(--ink)}
+body{font-family:var(--ui);font-size:16px;line-height:1.35;padding-block:20px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1{margin:0;font-size:28px;text-wrap:balance}
+.lead{margin:0;font-size:15px}
+.ctl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;border:3px solid var(--rule);padding:12px}
+.ctl label{font-size:14px;font-weight:700;letter-spacing:.06em}
+.ctl input[type=range]{width:min(220px,50vw);accent-color:var(--ink)}
+button{font:inherit;font-size:15px;font-weight:700;min-height:46px;padding:0 14px;border:2.5px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:0}
+button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.card{border:2px solid var(--rule);display:flex;flex-direction:column}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 12px;padding:8px 12px;border-bottom:2px solid var(--rule);align-items:baseline}
+.head b{font-size:16px;letter-spacing:.04em}
+.tag{font-size:13px;font-weight:700}
+.tag.bad{color:var(--miss)}
+.cur{border:2px solid var(--ink);padding:1px 6px;font-size:12px;font-weight:700;margin-left:8px}
+.body{padding:12px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.s{margin:0;overflow-wrap:anywhere}
+.big{font-size:calc(var(--sz)*1.6px)}
+.mid{font-size:calc(var(--sz)*1px)}
+.small{font-size:12px}
+.miss{color:var(--miss);text-decoration:underline wavy}
+.n{font-variant-numeric:tabular-nums}
+</style>
+
+<main>
+  <h1>Betűpróba</h1>
+  <p class="lead">A jelenlegi betű és a tussal megrajzolható szűkített jelöltek. Minden lapon ugyanaz a szöveg; pirossal aláhúzva, ha a betűtípusból hiányzik a karakter és a böngésző mással pótolja.</p>
+
+  <div class="ctl">
+    <label for="sz">MÉRET <span id="szv" class="n">18</span> px</label>
+    <input id="sz" type="range" min="11" max="30" value="18">
+    <button id="w4" type="button" aria-pressed="false">Normál</button>
+    <button id="w7" type="button" aria-pressed="true">Félkövér</button>
+    <button id="all" type="button" aria-pressed="false">Mind a 15</button>
+  </div>
+
+  <div id="list"></div>
+</main>
+
+<script>
+(()=>{
+const FONTS=[
+  ['B612 Mono','pilótafülke-kijelzőkre tervezve',700],
+  ['IBM Plex Mono','műszaki, enyhén szögletes',700],
+  ['JetBrains Mono','nagy x-magasság, kódra',700],
+  ['Atkinson Hyperlegible Mono','gyengénlátóknak tervezve',700],
+  ['Red Hat Mono','kerek, nyugodt',700],
+  ['Martian Mono','széles, mérnöki',700],
+  ['Space Mono','retró-groteszk',700],
+  ['Roboto Mono','semleges, Androidon ismerős',700],
+  ['Source Code Pro','klasszikus kódbetű',700],
+  ['Fira Code','vastag vonás, jól bírja a ditheringet',700],
+  ['Spline Sans Mono','modern, szoros',700],
+  ['Azeret Mono','geometrikus, ritmusos',700],
+  ['Overpass Mono','útjelző-betű rokona',700],
+  ['DM Mono','vékony, elegáns (max. 500)',500],
+  ['Courier Prime','írógépes, talpas',700],
+];
+const T1='Árvíztűrő tükörfúrógép',T2='ÁRVÍZTŰRŐ TÜKÖRFÚRÓGÉP',
+  T3='PÁLYA 28/30 · REV. AB — Duplakerettel jelölve a falnál álló bútor.',
+  T4='0123456789 · őű ŐŰ íÍ áé óöú ü · M 1:50 · 45° · ☼ ✓ ✗';
+const CH='ÁÉÍÓÖŐÚÜŰáéíóöőúüű';
+const PICK=['B612 Mono','JetBrains Mono','Roboto Mono','Azeret Mono'];let size=18,weight=700,all=false;const miss={};
+const cv=document.createElement('canvas').getContext('2d');
+// a glyph is missing if its width changes when only the fallback family changes
+function missing(f,w){const out=[];for(const c of CH){cv.font=`${w} 40px "${f}", monospace`;const a=cv.measureText(c).width;
+  cv.font=`${w} 40px "${f}", serif`;const b=cv.measureText(c).width;if(Math.abs(a-b)>.5)out.push(c);}return out;}
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'})[c]);
+function mark(s,m){return [...s].map(c=>m.includes(c)?`<span class="miss">${esc(c)}</span>`:esc(c)).join('');}
+function draw(){
+  document.documentElement.style.setProperty('--sz',size);document.getElementById('szv').textContent=size;
+  document.getElementById('list').innerHTML=FONTS.filter(([f])=>all||PICK.includes(f)).sort((a,b)=>all?0:PICK.indexOf(a[0])-PICK.indexOf(b[0])).map(([f,d,maxW])=>{
+    const w=Math.min(weight,maxW),m=miss[f]||[],ff=`font-family:'${f}',monospace;font-weight:${w}`;
+    const tag=miss[f]==null?'<span class="tag">betöltés…</span>':m.length?`<span class="tag bad">hiányzik: ${esc(m.join(' '))}</span>`:'<span class="tag">minden magyar betű megvan</span>';
+    return `<section class="card" style="margin-bottom:14px"><div class="head"><span><b>${esc(f)}</b>${f==='B612 Mono'?'<span class="cur">MOST</span>':''}</span>${tag}</div>
+      <div class="body" style="${ff}"><p class="s big">${mark(T1,m)}</p><p class="s mid">${mark(T2,m)}</p>
+      <p class="s mid">${mark(T3,m)}</p><p class="s small n">${mark(T4,m)}</p><p class="s small" style="font-weight:400">${mark('normál 12 px: '+T1+' — '+T3,m)}</p></div></section>`;}).join('');
+}
+function setW(w){weight=w;document.getElementById('w4').setAttribute('aria-pressed',w===400);document.getElementById('w7').setAttribute('aria-pressed',w===700);draw();}
+document.getElementById('sz').addEventListener('input',e=>{size=+e.target.value;draw();});
+document.getElementById('w4').addEventListener('click',()=>setW(400));
+document.getElementById('w7').addEventListener('click',()=>setW(700));
+document.getElementById('all').addEventListener('click',e=>{all=!all;e.target.setAttribute('aria-pressed',all);draw();});
+draw();
+Promise.all(FONTS.flatMap(([f,,mw])=>[400,mw].map(w=>document.fonts.load(`${w} 20px "${f}"`,CH+T1).catch(()=>{}))))
+  .then(()=>document.fonts.ready).then(()=>{FONTS.forEach(([f,,mw])=>{miss[f]=missing(f,mw);});draw();});
+})();
+</script>

@@ -1,0 +1,99 @@
+<title>Kijelző-szonda</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=B612+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: single column of large label/value rows, readable on a 6" e-ink. Single paper-white theme by choice. */
+:root{--paper:#fff;--ink:#141414;--soft:#444;--rule:#141414;--mono:"B612 Mono",ui-monospace,"Courier New",monospace;color-scheme:light}
+html,body{background:var(--paper);color:var(--ink)}
+body{font-family:var(--mono);font-size:18px;line-height:1.4;
+  padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1{margin:0;font-size:26px;text-wrap:balance}
+p{margin:0;color:var(--soft);font-size:16px}
+.big{border:3px solid var(--rule);padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.big b{font-size:15px;letter-spacing:.08em}
+.big span{font-size:40px;font-weight:700}
+table{width:100%;border-collapse:collapse}
+td{border-top:1.5px solid var(--rule);padding:9px 4px;vertical-align:top}
+td:first-child{width:46%;color:var(--soft);font-size:16px}
+td:last-child{font-weight:700;word-break:break-word}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+button{font:inherit;font-size:17px;font-weight:700;min-height:52px;padding:0 18px;border:2.5px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:0}
+button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+#log{white-space:pre-wrap;font-size:15px;border:1.5px dashed var(--ink);padding:10px;min-height:2.6em}
+textarea{width:100%;min-height:9em;font:inherit;font-size:14px;border:1.5px solid var(--ink);box-sizing:border-box}
+</style>
+
+<main>
+  <h1>Kijelző-szonda</h1>
+  <p>Ezt jelenti a böngésző a kijelzőről. Nyisd meg a B6-on és egy telefonon is, és hasonlítsd össze.</p>
+
+  <div class="big"><b>UPDATE MÉDIALEKÉRDEZÉS</b><span id="upd">–</span></div>
+
+  <table id="tbl"></table>
+
+  <div class="row">
+    <button id="fpsBtn" type="button">Képfrissítés mérése (3 mp)</button>
+    <button id="copyBtn" type="button">Eredmény másolása</button>
+  </div>
+  <div id="log">Változásnapló: ha menet közben átváltod a B6 frissítési módját, itt megjelenik, ha a böngésző észreveszi.</div>
+  <textarea id="out" readonly aria-label="Másolható eredmény" hidden></textarea>
+</main>
+
+<script>
+(()=>{
+const mq=q=>{try{return matchMedia(q).matches}catch(e){return null}};
+const sup=name=>{try{return matchMedia(`(${name})`).media!=='not all'}catch(e){return false}};
+const pick=(name,vals)=>{if(!sup(name))return 'nem támogatott';const v=vals.find(v=>mq(`(${name}: ${v})`));return v===undefined?'egyik sem':v;};
+let fps='– (nyomd meg a gombot)';
+let hints='—';
+try{if(navigator.userAgentData&&navigator.userAgentData.getHighEntropyValues){navigator.userAgentData.getHighEntropyValues(['model','platformVersion']).then(h=>{hints=`${h.model||'(üres)'} · Android ${h.platformVersion||'?'}`;draw();},()=>{hints='nem elérhető';draw();});}else hints='nem támogatott';}catch(e){hints='hiba';}
+function rows(){
+  const ua=navigator.userAgent,chrome=(ua.match(/Chrome\/(\d+)/)||[])[1];
+  return [
+    ['update',pick('update',['slow','fast','none'])],
+    ['update támogatott?',sup('update')?'igen':'nem'],
+    ['monochrome (bit)',(()=>{for(let b=16;b>=1;b--)if(mq(`(monochrome: ${b})`))return b;return mq('(monochrome)')?'igen':'0 (színes kijelzőnek jelenti)';})()],
+    ['color (bit/csatorna)',(()=>{for(let b=16;b>=1;b--)if(mq(`(min-color: ${b})`))return b;return '0';})()],
+    ['color-gamut',pick('color-gamut',['rec2020','p3','srgb'])],
+    ['dynamic-range',pick('dynamic-range',['high','standard'])],
+    ['prefers-reduced-motion',pick('prefers-reduced-motion',['reduce','no-preference'])],
+    ['prefers-contrast',pick('prefers-contrast',['more','less','custom','no-preference'])],
+    ['prefers-color-scheme',pick('prefers-color-scheme',['dark','light'])],
+    ['képernyő (CSS px)',`${screen.width}×${screen.height}`],
+    ['ablak (CSS px)',`${innerWidth}×${innerHeight}`],
+    ['devicePixelRatio',String(devicePixelRatio)],
+    ['eszközpixel',`${Math.round(screen.width*devicePixelRatio)}×${Math.round(screen.height*devicePixelRatio)}`],
+    ['colorDepth',String(screen.colorDepth)],
+    ['mért képfrissítés',fps],
+    ['Chrome-verzió',chrome||'nem Chrome'],
+    ['típus (Client Hints)',hints],
+    ['userAgent',ua],
+  ];
+}
+function draw(){
+  const r=rows();document.getElementById('upd').textContent=r[0][1];
+  document.getElementById('tbl').innerHTML=r.map(([k,v])=>`<tr><td>${k}</td><td>${String(v).replace(/</g,'&lt;')}</td></tr>`).join('');
+}
+draw();
+// watch for changes (e.g. switching refresh mode on the device)
+const log=document.getElementById('log');let logged=false;
+['(update: slow)','(update: fast)','(update: none)','(monochrome)','(prefers-reduced-motion: reduce)'].forEach(q=>{
+  try{matchMedia(q).addEventListener('change',e=>{if(!logged){log.textContent='';logged=true;}
+    log.textContent+=`${new Date().toLocaleTimeString()}  ${q} → ${e.matches?'igaz':'hamis'}\n`;draw();});}catch(e){}
+});
+addEventListener('resize',draw);
+// requestAnimationFrame rate — draws nothing, so it does not trigger extra e-ink refreshes
+document.getElementById('fpsBtn').addEventListener('click',()=>{
+  fps='mérés…';draw();let n=0;const t0=performance.now();
+  const f=t=>{n++;if(t-t0<3000)requestAnimationFrame(f);else{fps=`${(n/((t-t0)/1000)).toFixed(1)} fps (rAF)`;draw();}};
+  requestAnimationFrame(f);
+});
+document.getElementById('copyBtn').addEventListener('click',()=>{
+  const text=rows().map(([k,v])=>`${k}: ${v}`).join('\n')+(logged?'\n--- változások ---\n'+log.textContent:'');
+  const out=document.getElementById('out');out.value=text;out.hidden=false;
+  const done=()=>{document.getElementById('copyBtn').textContent='Kimásolva';};
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(done,()=>{out.select();});else out.select();
+});
+})();
+</script>

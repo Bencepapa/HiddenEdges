@@ -1,0 +1,632 @@
+<title>Tusrajz próbalap</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=B612:wght@400;700&family=B612+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: full-bleed canvas "paper sheet" with a bottom drawer of square, ink-on-paper controls.
+   Deliberately single-theme: e-ink is paper white, so the page stays light in every viewer theme. */
+:root{
+  --paper:#ffffff;
+  --ink:#141414;
+  --ink-soft:#5a5a5a;
+  --rule:#141414;
+  --hint:#e9e9e6;
+  --ui:"B612", "Trebuchet MS", system-ui, sans-serif;
+  --mono:"B612 Mono", ui-monospace, "Courier New", monospace;
+  color-scheme:light;
+}
+html,body{height:100%;background:var(--paper);color:var(--ink)}
+body{overflow:hidden;font-family:var(--ui)}
+#cv{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);bottom:env(safe-area-inset-bottom,0px);
+  width:100%;height:calc(100% - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));
+  image-rendering:pixelated;image-rendering:crisp-edges;touch-action:none;background:var(--paper);display:block}
+#flash{position:fixed;inset:0;z-index:30;pointer-events:none}
+.panel{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--paper);border-top:2px solid var(--rule);
+  padding-block:10px calc(12px + env(safe-area-inset-bottom,0px));
+  padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px));
+  max-height:58%;overflow-y:auto;display:flex;flex-direction:column;gap:8px}
+.panel[hidden],.tag[hidden]{display:none}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.head b{font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+.head span{font-family:var(--mono);font-size:12px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.lab{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button,.stepper button{font:inherit;font-size:13px;min-height:40px;padding:0 10px;border:1.5px solid var(--ink);
+  background:var(--paper);color:var(--ink);border-radius:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chips button:focus-visible,.stepper button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.two{display:flex;flex-wrap:wrap;gap:14px 24px}
+.stepper{display:flex;align-items:center;gap:6px}
+.stepper button{min-width:42px;padding:0}
+.stepper output{font-family:var(--mono);font-size:15px;min-width:52px;text-align:center;font-variant-numeric:tabular-nums}
+.hint{margin:0;font-size:12px;color:var(--ink-soft);line-height:1.45}
+.tag{position:fixed;z-index:19;top:calc(env(safe-area-inset-top,0px) + 8px);right:max(10px, env(safe-area-inset-right,0px));
+  font-family:var(--mono);font-size:11px;color:var(--ink-soft);background:var(--paper);padding:2px 6px;border:1px solid var(--hint);pointer-events:none}
+</style>
+
+<canvas id="cv" aria-label="E-ink tesztlap rajzfelülete"></canvas>
+<div id="flash" hidden></div>
+<div class="tag" id="tag" hidden></div>
+
+<div class="panel" id="panel">
+  <div class="head"><b>E-ink próbalap</b><span id="info">–</span></div>
+  <div><div class="lab">Teszt</div><div class="chips" id="tests"></div></div>
+  <div><div class="lab">Megjelenítés</div><div class="chips" id="modes"></div></div>
+  <div class="two">
+    <div><div class="lab">Pixelnagyítás</div><div class="chips" id="scales"></div></div>
+    <div><div class="lab">Vonalvastagság</div>
+      <div class="stepper"><button id="mMinus" aria-label="Vékonyabb">−</button><output id="mOut">×1.0</output><button id="mPlus" aria-label="Vastagabb">+</button></div>
+    </div>
+  </div>
+  <div><div class="lab">Kapcsolók</div><div class="chips" id="toggles"></div></div>
+  <p class="hint">Koppintás a lap közepén: menü elrejtése / előhozása. Bal vagy jobb szél, illetve húzás: előző / következő lap.</p>
+</div>
+
+<script>
+(()=>{
+const PAGE={W:600,H:800};
+const INK='#141414';
+const ACC={red:'#c4372b',blue:'#2f5f9e',ochre:'#c9962e',green:'#3f7d4e',cyan:'#2a8fa3',violet:'#6a4c93'};
+const C30=Math.cos(Math.PI/6);
+
+const MODES=[['raw','Nyers'],['g16','Szürke 16'],['g4','Szürke 4'],['bw','1-bit küszöb'],['b4','Bayer 4×4'],['b8','Bayer 8×8'],['fs','Floyd–Steinberg'],['kal','Kaleido szín']];
+const TOGGLES=[['grid','Milliméterpapír'],['tone','E-ink tónus'],['flash','Villanás lapváltáskor'],['ghost','Szellemkép']];
+
+const state={test:0,mode:'g16',scale:1,mult:1,grid:false,tone:false,flash:true,ghost:false,ui:true};
+try{const s=JSON.parse(localStorage.getItem('tusrajz-v1')||'null'); if(s) Object.assign(state,s,{ui:true});}catch(e){}
+function save(){try{localStorage.setItem('tusrajz-v1',JSON.stringify(state));}catch(e){}}
+
+const cv=document.getElementById('cv');
+const ctx=cv.getContext('2d',{willReadFrequently:true});
+const G={k:1};
+let shownFrame=null, ghostFrame=null, lastMs=0;
+
+/* ---------- drawing helpers ---------- */
+const px=p=>p/G.k;
+const LW=()=>({thick:1.5*state.mult, med:1.0*state.mult, thin:0.55*state.mult});
+const gray=p=>{const v=Math.round(255*(1-p));return `rgb(${v},${v},${v})`;};
+function pen(w,dash,color){ctx.lineWidth=w;ctx.setLineDash(dash||[]);ctx.lineDashOffset=0;ctx.strokeStyle=color||INK;}
+function seg(x1,y1,x2,y2){ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();}
+function poly(pts,close=true){ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));if(close)ctx.closePath();}
+function path2d(pts,close=true){const p=new Path2D();pts.forEach((q,i)=>i?p.lineTo(q[0],q[1]):p.moveTo(q[0],q[1]));if(close)p.closePath();return p;}
+function rectPath(x,y,w,h){const p=new Path2D();p.rect(x,y,w,h);return p;}
+function bboxOf(pts){let a=1e9,b=1e9,c=-1e9,d=-1e9;for(const[x,y]of pts){a=Math.min(a,x);b=Math.min(b,y);c=Math.max(c,x);d=Math.max(d,y);}return[a,b,c-a,d-b];}
+function txt(s,x,y,size=9,align='left',weight=400,color=INK,base='alphabetic'){
+  ctx.font=`${weight} ${size}px "B612 Mono", ui-monospace, "Courier New", monospace`;
+  ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline=base;ctx.fillText(s,x,y);}
+function hatch(clip,b,ang,sp,lw,color=INK,dash){
+  ctx.save();ctx.clip(clip);pen(lw,dash,color);
+  const cx=b[0]+b[2]/2,cy=b[1]+b[3]/2,R=Math.hypot(b[2],b[3])/2+sp;
+  const a=ang*Math.PI/180,dx=Math.cos(a),dy=Math.sin(a),nx=-dy,ny=dx;
+  ctx.beginPath();
+  for(let t=-R;t<=R;t+=sp){const x0=cx+nx*t,y0=cy+ny*t;ctx.moveTo(x0-dx*R,y0-dy*R);ctx.lineTo(x0+dx*R,y0+dy*R);}
+  ctx.stroke();ctx.restore();}
+function arrow(x,y,ang,len=6,wid=1.7,color=INK){
+  ctx.save();ctx.translate(x,y);ctx.rotate(ang);ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(-len,-wid);ctx.lineTo(-len,wid);ctx.closePath();ctx.fillStyle=color;ctx.fill();ctx.restore();}
+function dimH(x1,x2,ya,yb,yd,label){
+  const t=LW().thin;pen(t);const g=Math.sign(yd-ya)||1;
+  seg(x1,ya+g*2,x1,yd+g*3);seg(x2,yb+g*2,x2,yd+g*3);seg(x1,yd,x2,yd);
+  arrow(x1,yd,Math.PI);arrow(x2,yd,0);txt(label,(x1+x2)/2,yd-2.4,8,'center');}
+function dimV(y1,y2,xa,xb,xd,label){
+  const t=LW().thin;pen(t);const g=Math.sign(xd-xa)||1;
+  seg(xa+g*2,y1,xd+g*3,y1);seg(xb+g*2,y2,xd+g*3,y2);seg(xd,y1,xd,y2);
+  arrow(xd,y1,-Math.PI/2);arrow(xd,y2,Math.PI/2);
+  ctx.save();ctx.translate(xd-2.4,(y1+y2)/2);ctx.rotate(-Math.PI/2);txt(label,0,0,8,'center');ctx.restore();}
+function fillFace(p,b,st){
+  ctx.fillStyle=st.fill||'#fff';ctx.fill(p);
+  if(st.hatch) hatch(p,b,st.hatch[0],st.hatch[1],st.hatch[2]||LW().thin,st.color||INK);}
+function cubeFaces(cx,cy,a){const c=C30*a,h=a/2;return{
+  top:[[cx,cy-a],[cx+c,cy-h],[cx,cy],[cx-c,cy-h]],
+  right:[[cx,cy],[cx+c,cy-h],[cx+c,cy+h],[cx,cy+a]],
+  left:[[cx-c,cy-h],[cx,cy],[cx,cy+a],[cx-c,cy+h]]};}
+const CUBE=()=>({top:{fill:'#fff'},left:{fill:'#fff',hatch:[90,3.2]},right:{fill:gray(.45)}});
+function isoCube(cx,cy,a,st=CUBE(),which=['top','left','right'],lw){
+  const F=cubeFaces(cx,cy,a);
+  for(const f of which){const pts=F[f],p=path2d(pts);fillFace(p,bboxOf(pts),st[f]);pen(lw||LW().med);ctx.stroke(p);}}
+function rng(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+
+/* ---------- sheet frame ---------- */
+function drawFrame(t,i){
+  const L=LW();
+  pen(L.thin);ctx.strokeRect(8,8,584,784);
+  pen(L.thick);ctx.strokeRect(18,18,564,764);
+  pen(L.thin);
+  for(let c=1;c<6;c++){const x=18+c*564/6;seg(x,8,x,18);seg(x,782,x,792);}
+  for(let r=1;r<8;r++){const y=18+r*764/8;seg(8,y,18,y);seg(582,y,592,y);}
+  for(let c=0;c<6;c++){const x=18+(c+.5)*94;txt(String(c+1),x,13,6.5,'center',400,INK,'middle');txt(String(c+1),x,787,6.5,'center',400,INK,'middle');}
+  'ABCDEFGH'.split('').forEach((ch,r)=>{const y=18+(r+.5)*95.5;txt(ch,13,y,6.5,'center',400,INK,'middle');txt(ch,587,y,6.5,'center',400,INK,'middle');});
+  txt(String(i+1).padStart(2,'0'),30,52,24,'left',700);
+  txt(t.name.toUpperCase(),70,46,13,'left',700);
+  txt(t.sub,70,59,7.5,'left',400,'#4a4a4a');
+  pen(L.med);seg(30,68,570,68);
+  // title block
+  const x0=330,y0=724,x1=582,y1=782,xm=x0+150;
+  pen(L.thick);ctx.strokeRect(x0,y0,x1-x0,y1-y0);
+  pen(L.thin);seg(x0,y0+20,x1,y0+20);seg(x0,y0+39,x1,y0+39);seg(xm,y0,xm,y1);
+  const mode=MODES.find(m=>m[0]===state.mode)[1];
+  txt('PULI·GAMES — E-INK',x0+5,y0+14,8,'left',700);
+  txt(`LAP ${String(i+1).padStart(2,'0')}/${String(TESTS.length).padStart(2,'0')}`,x1-5,y0+14,8,'right',700);
+  txt('MÓD',x0+5,y0+27,5.5,'left',400,'#555');txt(mode,x0+5,y0+35.5,8);
+  txt('NAGYÍTÁS',xm+5,y0+27,5.5,'left',400,'#555');txt(state.scale+'× · vonal ×'+state.mult.toFixed(1),xm+5,y0+35.5,8);
+  txt('FELBONTÁS',x0+5,y0+46,5.5,'left',400,'#555');txt(`${cv.width}×${cv.height} px`,x0+5,y0+54.5,8);
+  txt('1 EGYSÉG',xm+5,y0+46,5.5,'left',400,'#555');txt(`${G.k.toFixed(2)} px`,xm+5,y0+54.5,8);
+  // notes
+  (t.notes||[]).forEach((n,j)=>txt(n,30,732+j*11,7,'left',j===0?700:400,j===0?INK:'#333'));
+}
+function drawGrid(){
+  ctx.save();ctx.beginPath();ctx.rect(18,18,564,764);ctx.clip();
+  pen(.35,null,'#a9d0dc');ctx.beginPath();
+  for(let x=18;x<=582;x+=5){ctx.moveTo(x,18);ctx.lineTo(x,782);} for(let y=18;y<=782;y+=5){ctx.moveTo(18,y);ctx.lineTo(582,y);} ctx.stroke();
+  pen(.7,null,'#6fa9bb');ctx.beginPath();
+  for(let x=18;x<=582;x+=25){ctx.moveTo(x,18);ctx.lineTo(x,782);} for(let y=18;y<=782;y+=25){ctx.moveTo(18,y);ctx.lineTo(582,y);} ctx.stroke();
+  ctx.restore();
+}
+
+/* ---------- 01 lines ---------- */
+function tLines(){
+  const L=LW();
+  txt('VASTAGSÁG × SZÖG',30,86,8,'left',700);txt('valódi eszközpixelben, szorzó nélkül',140,86,7,'left',400,'#555');
+  const angs=[0,3,15,30,45,60,90],ws=[0.5,1,1.5,2,3,4];
+  const x0=112,cw=66,y0=98,rh=34;
+  angs.forEach((a,j)=>txt(a+'°',x0+j*cw,104,7.5,'center'));
+  ws.forEach((w,i)=>{
+    const cy=y0+rh*(i+.5)+12;
+    txt(w+' px',30,cy+3,7.5);
+    angs.forEach((a,j)=>{const cx=x0+j*cw,t=-a*Math.PI/180;const r=Math.min(26,(rh/2-4)/Math.max(Math.abs(Math.sin(t)),.01));
+      pen(px(w));ctx.lineCap='butt';seg(cx-Math.cos(t)*r,cy-Math.sin(t)*r,cx+Math.cos(t)*r,cy+Math.sin(t)*r);});
+  });
+  pen(L.thin);seg(30,320,570,320);
+  // line types
+  txt('VONALFAJTÁK · ISO 128',30,338,8,'left',700);
+  const rows=[
+    ['Folytonos vastag','látható kontúr',L.thick,[]],
+    ['Folytonos vékony','méret-, segédvonal',L.thin,[]],
+    ['Szaggatott','takart él',L.med,[5,2.5]],
+    ['Pontvonal','szimmetriatengely',L.thin,[16,3,2,3]],
+    ['Kétpontvonal','fantom, mozgáshelyzet',L.thin,[16,3,2,3,2,3]],
+    ['Metszősík','vékony + vastag vég','cut',null],
+    ['Hullámvonal','szabadkézi törés','wave',null],
+    ['Cikkcakk','hosszú törés','zig',null]];
+  rows.forEach((r,i)=>{
+    const y=356+i*22,xa=30,xb=200;
+    if(r[2]==='cut'){pen(L.thin,[16,3,2,3]);seg(xa+12,y,xb-12,y);pen(L.thick);seg(xa,y,xa+12,y);seg(xb-12,y,xb,y);
+      pen(L.thin);seg(xa+1,y,xa+1,y-9);arrow(xa+1,y-11,-Math.PI/2,5,1.5);seg(xb-1,y,xb-1,y-9);arrow(xb-1,y-11,-Math.PI/2,5,1.5);
+      txt('A',xa+7,y-6,7,'left',700);txt('A',xb-7,y-6,7,'right',700);}
+    else if(r[2]==='wave'){pen(L.thin);ctx.beginPath();for(let x=xa;x<=xb;x+=1){const yy=y+2.6*Math.sin(x*.21)+.8*Math.sin(x*.53);x===xa?ctx.moveTo(x,yy):ctx.lineTo(x,yy);}ctx.stroke();}
+    else if(r[2]==='zig'){pen(L.thin);poly([[xa,y],[110,y],[113,y-6],[119,y+6],[122,y],[xb,y]],false);ctx.stroke();}
+    else{pen(r[2],r[3]);seg(xa,y,xb,y);}
+    txt(r[0],212,y+1,7.5,'left',700);txt(r[1],212,y+9.5,6.5,'left',400,'#555');
+  });
+  // fan
+  txt('MOIRÉ-LEGYEZŐ',352,338,8,'left',700);txt('1 px, 3°-onként',440,338,7,'left',400,'#555');
+  const fx=360,fy=530,R=200;pen(px(1));
+  for(let a=0;a<=90;a+=3){const t=-a*Math.PI/180;seg(fx,fy,fx+Math.cos(t)*R,fy+Math.sin(t)*R*0.88);}
+  pen(L.thin);ctx.beginPath();ctx.ellipse(fx,fy,R,R*.88,0,-Math.PI/2,0);ctx.stroke();
+  pen(L.thin);seg(30,546,570,546);
+  // lettering
+  txt('FELIRAT · ISO 3098 B',30,562,8,'left',700);
+  [[6,574],[8,588],[10,604],[14,624],[20,650]].forEach(([s,y])=>txt(`Ø16 R8 45° 1:2 A–A ${s}`,30,y,s,'left',s>=14?700:400));
+  pen(L.thick);ctx.fillStyle='#fff';ctx.fillRect(40,664,180,20);ctx.strokeRect(40,664,180,20);
+  pen(L.thin,[16,3,2,3]);seg(130,658,130,690);
+  dimH(40,220,684,684,702,'72');
+  pen(L.thin);seg(220,672,242,692);seg(242,692,300,692);ctx.fillStyle=INK;ctx.beginPath();ctx.arc(220,672,1.4,0,Math.PI*2);ctx.fill();
+  txt('0,5×45°',246,689,8);
+  // circles
+  txt('KÖRÖK · élsimítás',360,562,8,'left',700);
+  for(let r=8,i=0;r<=72;r+=8,i++){pen(i%2?L.thick:L.thin);ctx.beginPath();ctx.arc(468,636,r,0,Math.PI*2);ctx.stroke();}
+  pen(L.thin,[16,3,2,3]);seg(388,636,548,636);seg(468,560,468,712);
+}
+
+/* ---------- tokens ---------- */
+function wanderer(cx,cy,s=1){
+  const L=LW();ctx.save();ctx.translate(cx,cy);ctx.scale(s,s);
+  ctx.fillStyle=gray(.22);ctx.beginPath();ctx.ellipse(0,25,17,5,0,0,Math.PI*2);ctx.fill();
+  const body=new Path2D();body.moveTo(-4,-12);body.lineTo(4,-12);body.lineTo(15,23);body.quadraticCurveTo(0,30,-15,23);body.closePath();
+  ctx.fillStyle='#fff';ctx.fill(body);
+  ctx.save();ctx.clip(body);hatch(rectPath(1,-20,20,52),[1,-20,20,52],-60,2.4,L.thin/s);ctx.restore();
+  pen(L.thick/s);ctx.stroke(body);
+  pen(L.thick/s);seg(-14,-26,-14,27);ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(-14,-28,2.6,0,Math.PI*2);ctx.fill();ctx.stroke();
+  ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(0,-19,7,0,Math.PI*2);ctx.fill();ctx.stroke();
+  pen(L.med/s);seg(1,-20,6,-20);
+  ctx.restore();
+}
+function crate(cx,cy,a){
+  const st={top:{fill:'#fff'},left:{fill:'#fff',hatch:[90,3]},right:{fill:gray(.32)}};
+  isoCube(cx,cy,a,st,undefined,LW().thick);
+  const F=cubeFaces(cx,cy,a).right;pen(LW().med);seg(F[0][0],F[0][1],F[2][0],F[2][1]);seg(F[1][0],F[1][1],F[3][0],F[3][1]);
+  const T=cubeFaces(cx,cy,a).top;pen(LW().thin);
+  for(let k=1;k<3;k++){const t=k/3;seg(T[0][0]+(T[3][0]-T[0][0])*t,T[0][1]+(T[3][1]-T[0][1])*t,T[1][0]+(T[2][0]-T[1][0])*t,T[1][1]+(T[2][1]-T[1][1])*t);}
+}
+function keyIcon(cx,cy){
+  const L=LW();ctx.save();ctx.translate(cx,cy);
+  pen(L.thick);ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(-22,0,13,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.beginPath();ctx.arc(-22,0,5,0,Math.PI*2);ctx.stroke();
+  ctx.fillStyle=INK;ctx.fillRect(-9,-2.2,40,4.4);ctx.fillRect(18,0,5,9);ctx.fillRect(26,0,5,6);
+  ctx.restore();
+}
+function gate(cx,cy){
+  const L=LW();ctx.save();ctx.translate(cx,cy);
+  const outer=rectPath(-30,-34,60,62);
+  const hole=new Path2D();hole.moveTo(-14,28);hole.lineTo(-14,-6);hole.arc(0,-6,14,Math.PI,0);hole.lineTo(14,28);hole.closePath();
+  ctx.fillStyle='#fff';ctx.fill(outer);
+  ctx.save();const both=new Path2D();both.addPath(outer);both.addPath(hole);ctx.clip(both,'evenodd');
+  pen(L.thin);for(let y=-34,r=0;y<28;y+=8,r++){seg(-30,y,30,y);for(let x=-30+(r%2?8:0);x<30;x+=16)seg(x,y,x,y+8);}
+  ctx.restore();
+  ctx.fillStyle=INK;ctx.fill(hole);pen(L.thick);ctx.stroke(outer);ctx.stroke(hole);
+  pen(L.med);seg(-36,28,36,28);seg(-40,33,40,33);
+  ctx.restore();
+}
+function target(cx,cy,col=ACC.red){
+  const L=LW();ctx.save();ctx.translate(cx,cy);
+  const ring=new Path2D();ring.arc(0,0,24,0,Math.PI*2);ring.arc(0,0,15,0,Math.PI*2,true);
+  ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(0,0,24,0,Math.PI*2);ctx.fill();
+  hatch(ring,[-24,-24,48,48],-45,3,L.thin,col);
+  pen(L.thick,null,col);[24,15,6].forEach(r=>{ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.stroke();});
+  pen(L.thin,[10,2,2,2],INK);seg(-34,0,34,0);seg(0,-34,0,34);
+  ctx.restore();
+}
+function gem(cx,cy,col=ACC.blue){
+  const L=LW();ctx.save();ctx.translate(cx,cy);
+  const o=[[0,-30],[18,-15],[18,15],[0,30],[-18,15],[-18,-15]],i=[[0,-14],[8,-7],[8,7],[0,14],[-8,7],[-8,-7]];
+  const fills=['#fff','#cfdcec',col,'#9db6d6','#fff','#e8eef6'];
+  for(let k=0;k<6;k++){const p=path2d([o[k],o[(k+1)%6],i[(k+1)%6],i[k]]);ctx.fillStyle=fills[k];ctx.fill(p);pen(L.thin);ctx.stroke(p);}
+  ctx.fillStyle='#e8eef6';ctx.fill(path2d(i));pen(L.thin);ctx.stroke(path2d(i));
+  pen(L.thick);poly(o);ctx.stroke();
+  ctx.restore();
+}
+
+/* ---------- 02 shapes ---------- */
+function tShapes(){
+  const L=LW(),R=28,names=['kör','négyzet','háromszög','hatszög','lekerekített','félkör'];
+  txt('KONTÚR',30,86,8,'left',700);
+  names.forEach((n,i)=>{
+    const cx=75+i*90,cy=124;pen(L.thick);ctx.fillStyle='#fff';ctx.beginPath();
+    if(i===0)ctx.arc(cx,cy,R,0,Math.PI*2);
+    if(i===1)ctx.rect(cx-R,cy-R,2*R,2*R);
+    if(i===2){ctx.moveTo(cx,cy-R);ctx.lineTo(cx+R*1.05,cy+R*.8);ctx.lineTo(cx-R*1.05,cy+R*.8);ctx.closePath();}
+    if(i===3)for(let k=0;k<6;k++){const a=Math.PI/6+k*Math.PI/3;k?ctx.lineTo(cx+Math.cos(a)*R,cy+Math.sin(a)*R):ctx.moveTo(cx+Math.cos(a)*R,cy+Math.sin(a)*R);}
+    if(i===4)ctx.roundRect(cx-R,cy-R,2*R,2*R,10);
+    if(i===5){ctx.arc(cx,cy+R*.4,R,Math.PI,0);ctx.closePath();}
+    if(i===3)ctx.closePath();
+    ctx.fill();ctx.stroke();txt(n,cx,166,7,'center');
+  });
+  txt('SZÜRKE KITÖLTÉS · festékfedés',30,186,8,'left',700);
+  [10,25,40,55,70,90].forEach((p,i)=>{const cx=75+i*90,cy=222;ctx.fillStyle=gray(p/100);ctx.beginPath();ctx.arc(cx,cy,26,0,Math.PI*2);ctx.fill();pen(L.thin);ctx.stroke();txt(p+' %',cx,262,7,'center');});
+  txt('VONALAS KITÖLTÉS',30,284,8,'left',700);
+  const hs=[['45° / 6',b=>hatch(b.p,b.b,-45,6,L.thin)],['45° / 3',b=>hatch(b.p,b.b,-45,3,L.thin)],['kereszt',b=>{hatch(b.p,b.b,-45,6,L.thin);hatch(b.p,b.b,45,6,L.thin);}],
+    ['pontrács',b=>{ctx.save();ctx.clip(b.p);ctx.fillStyle=INK;for(let y=b.b[1]+2;y<b.b[1]+b.b[3];y+=4.5)for(let x=b.b[0]+2+((y/4.5|0)%2)*2.25;x<b.b[0]+b.b[2];x+=4.5){ctx.beginPath();ctx.arc(x,y,.75,0,7);ctx.fill();}ctx.restore();}],
+    ['vízszintes / 4',b=>hatch(b.p,b.b,0,4,L.thin)],['átmenet',b=>{const g=ctx.createLinearGradient(b.b[0],0,b.b[0]+b.b[2],0);g.addColorStop(0,'#fff');g.addColorStop(1,INK);ctx.fillStyle=g;ctx.fill(b.p);}]];
+  hs.forEach(([n,f],i)=>{const cx=75+i*90,cy=318,bb=[cx-28,cy-26,56,52],p=rectPath(...bb);ctx.fillStyle='#fff';ctx.fill(p);f({p,b:bb});pen(L.thick);ctx.stroke(p);txt(n,cx,356,7,'center');});
+  pen(L.thin);seg(30,370,570,370);
+  txt('JÁTÉKELEMEK',30,388,8,'left',700);
+  const tok=[['vándor',(x,y)=>wanderer(x,y+2,1.25)],['láda',(x,y)=>crate(x,y+6,34)],['kulcs',(x,y)=>keyIcon(x+4,y)],
+    ['kapu',(x,y)=>gate(x,y)],['cél',(x,y)=>target(x,y)],['kristály',(x,y)=>gem(x,y)]];
+  tok.forEach(([n,f],i)=>{const cx=[120,300,480][i%3],cy=[455,620][i/3|0];f(cx,cy);txt(n.toUpperCase(),cx,cy+64,7.5,'center',700);});
+}
+
+/* ---------- 03 technical drawing ---------- */
+function tTech(){
+  const L=LW(),S=2.4;
+  const FX=x=>60+x*S,FZ=z=>232-z*S,TY=y=>296+y*S,SY=y=>338+y*S;
+  txt('ELÖLNÉZET',FX(0),FZ(40)-32,7,'left',700);
+  txt('FELÜLNÉZET',FX(0),TY(50)+40,7,'left',700);
+  // centre lines
+  pen(L.thin,[14,3,2,3]);
+  seg(FX(25),FZ(40)-8,FX(25),FZ(0)+8);
+  seg(FX(17)-7,TY(25),FX(33)+7,TY(25));
+  seg(SY(25),FZ(40)-8,SY(25),FZ(0)+8);
+  // front view
+  pen(L.thick);poly([[0,0],[80,0],[80,20],[50,20],[50,40],[0,40]].map(([x,z])=>[FX(x),FZ(z)]));ctx.stroke();
+  pen(L.med,[5,2.5]);seg(FX(17),FZ(40),FX(17),FZ(0));seg(FX(33),FZ(40),FX(33),FZ(0));
+  // top view
+  pen(L.thick);ctx.strokeRect(FX(0),TY(0),80*S,50*S);seg(FX(50),TY(0),FX(50),TY(50));
+  ctx.beginPath();ctx.arc(FX(25),TY(25),8*S,0,Math.PI*2);ctx.stroke();
+  // cutting plane A–A on top view
+  const cx=FX(25),ya=TY(0)-16,yb=TY(50)+16;
+  pen(L.thin,[14,3,2,3]);seg(cx,ya+10,cx,TY(17)-2);seg(cx,TY(33)+2,cx,yb-10);
+  pen(L.thick);seg(cx,ya,cx,ya+10);seg(cx,yb-10,cx,yb);
+  pen(L.thin);seg(cx,ya,cx+12,ya);arrow(cx+15,ya,0,5,1.6);seg(cx,yb,cx+12,yb);arrow(cx+15,yb,0,5,1.6);
+  txt('A',cx-5,ya+3,9,'right',700);txt('A',cx-5,yb+3,9,'right',700);
+  // section A–A
+  [[0,17],[33,50]].forEach(([a,b])=>{const p=rectPath(SY(a),FZ(40),(b-a)*S,40*S);ctx.fillStyle='#fff';ctx.fill(p);hatch(p,[SY(a),FZ(40),(b-a)*S,40*S],-45,4,L.thin);pen(L.thick);ctx.stroke(p);});
+  pen(L.thick);seg(SY(17),FZ(40),SY(33),FZ(40));seg(SY(17),FZ(0),SY(33),FZ(0));
+  txt('A–A',SY(25),FZ(0)+30,11,'center',700);
+  // dimensions
+  dimH(FX(0),FX(80),FZ(40),FZ(20),FZ(40)-16,'80');
+  dimH(FX(50),FX(80),FZ(20),FZ(20),FZ(20)-12,'30');
+  dimV(FZ(40),FZ(0),FX(0),FX(0),FX(0)-14,'40');
+  dimV(FZ(20),FZ(0),FX(80),FX(80),FX(80)+13,'20');
+  dimV(TY(0),TY(50),FX(0),FX(0),FX(0)-14,'50');
+  dimH(FX(0),FX(25),TY(50),TY(33)+10,TY(50)+14,'25');
+  dimH(SY(0),SY(50),FZ(0),FZ(0),FZ(0)+13,'50');
+  // Ø leader
+  const ang=40*Math.PI/180,r=8*S,ex=FX(25)+Math.cos(ang)*r,ey=TY(25)+Math.sin(ang)*r;
+  pen(L.thin);seg(ex,ey,FX(25)+52,TY(50)+22);seg(FX(25)+52,TY(50)+22,FX(25)+80,TY(50)+22);arrow(ex,ey,ang+Math.PI,6,1.7);
+  txt('Ø16 átmenő',FX(25)+54,TY(50)+19,8);
+  // iso view
+  isoPart(480,545,1.45);
+  txt('AXONOMETRIA',405,452,7,'left',700);
+  // notes & projection symbol
+  txt('MEGJEGYZÉSEK',30,530,8,'left',700);
+  ['1. Nem jelölt élek 0,5×45° letörve.','2. Felületi érdesség Ra 3,2.','3. Tűrés ISO 2768-m.','4. Vetítés: európai (E) rendszer.'].forEach((s,i)=>txt(s,30,546+i*12,7.5));
+  const sx=60,sy=640;pen(L.thick);poly([[sx-18,sy-7],[sx+12,sy-14],[sx+12,sy+14],[sx-18,sy+7]]);ctx.stroke();
+  ctx.beginPath();ctx.arc(sx+44,sy,14,0,7);ctx.stroke();ctx.beginPath();ctx.arc(sx+44,sy,7,0,7);ctx.stroke();
+  pen(L.thin,[8,2,1.5,2]);seg(sx-24,sy,sx+64,sy);seg(sx+44,sy-19,sx+44,sy+19);
+  txt('E vetítés',sx+70,sy+3,7.5);
+}
+function isoPart(cx,cy,s){
+  const L=LW(),c=C30,ox=cx-(15*c*s),oy=cy-(65*.5*s-20*s);
+  const P=(x,y,z)=>[ox+(x-y)*c*s,oy+(x+y)*.5*s-z*s];
+  const face=(pts,st)=>{const q=pts.map(p=>P(...p)),p=path2d(q);fillFace(p,bboxOf(q),st);pen(L.med);ctx.stroke(p);};
+  face([[0,50,0],[80,50,0],[80,50,20],[50,50,20],[50,50,40],[0,50,40]],{fill:'#fff',hatch:[90,3]});
+  face([[80,0,0],[80,50,0],[80,50,20],[80,0,20]],{fill:gray(.4)});
+  face([[50,0,20],[50,50,20],[50,50,40],[50,0,40]],{fill:gray(.4)});
+  face([[50,0,20],[80,0,20],[80,50,20],[50,50,20]],{fill:'#fff'});
+  face([[0,0,40],[50,0,40],[50,50,40],[0,50,40]],{fill:'#fff'});
+  const h=[];for(let k=0;k<40;k++){const a=k/40*Math.PI*2;h.push(P(25+8*Math.cos(a),25+8*Math.sin(a),40));}
+  ctx.fillStyle=INK;poly(h);ctx.fill();
+}
+
+/* ---------- 04 impossible ---------- */
+function penrose(ox,oy,s,n){
+  const c=C30,P=(x,y,z)=>[ox+(x-y)*c*s,oy+(x+y)*s/2-z*s];
+  const cubes=[];for(let i=0;i<=n;i++)cubes.push([i,0,0]);for(let j=1;j<=n;j++)cubes.push([n,j,0]);for(let k=1;k<n;k++)cubes.push([n,n,k]);
+  cubes.sort((a,b)=>(a[0]+a[1]+a[2])-(b[0]+b[1]+b[2]));
+  for(const q of cubes){const[x,y]=P(...q);isoCube(x,y,s);}
+  // the impossible joint: the x-beam passes in front, the column ends under the first cube
+  const[x1,y1]=P(1,0,0);isoCube(x1,y1,s,CUBE(),['left']);
+  const[x0,y0]=P(0,0,0);isoCube(x0,y0,s,CUBE(),['top','left']);
+}
+function necker(x,y,a,hidden){
+  const L=LW(),d=[a*.42,-a*.34];
+  const F=[[x,y],[x+a,y],[x+a,y+a],[x,y+a]],B=F.map(p=>[p[0]+d[0],p[1]+d[1]]);
+  const edges=[[F[0],F[1]],[F[1],F[2]],[F[2],F[3]],[F[3],F[0]],[B[0],B[1]],[B[1],B[2]],[B[2],B[3]],[B[3],B[0]],[F[0],B[0]],[F[1],B[1]],[F[2],B[2]],[F[3],B[3]]];
+  const hid=[6,7,11];
+  edges.forEach((e,i)=>{if(hidden&&hid.includes(i))pen(L.med,[5,2.5]);else pen(L.thick);seg(e[0][0],e[0][1],e[1][0],e[1][1]);});
+}
+function blivet(x,y,s=1){
+  const L=LW();ctx.save();ctx.translate(x,y);ctx.scale(s,s);pen(L.thick/s);
+  [-20,0,20].forEach(cy=>{ctx.fillStyle='#fff';ctx.beginPath();ctx.ellipse(0,cy,3.2,7,0,0,Math.PI*2);ctx.fill();ctx.stroke();});
+  [-27,-13,-7,7,13,27].forEach(yy=>seg(0,yy,70,yy));
+  [-27,-7,7,27].forEach(yy=>seg(70,yy,150,yy));
+  seg(150,-27,150,-7);seg(150,7,150,27);
+  seg(150,-27,156,-31);seg(156,-31,156,-11);seg(156,-11,150,-7);
+  seg(150,7,156,3);seg(156,3,156,23);seg(156,23,150,27);
+  ctx.restore();
+}
+function tImpossible(){
+  const L=LW();
+  txt('PENROSE-HÁROMSZÖG KOCKÁKBÓL',30,86,8,'left',700);
+  txt('a (4,4,4) pont pontosan az origóra vetül, a rajzolási sorrend dönt',30,97,7,'left',400,'#555');
+  penrose(235,150,36,4);
+  pen(L.thin);seg(30,384,570,384);
+  txt('NECKER-KOCKA',30,402,8,'left',700);
+  necker(46,442,80,false);necker(186,442,80,true);
+  txt('kétértelmű',86,548,7,'center');txt('takart élekkel',226,548,7,'center');
+  txt('LEHETETLEN VILLA',360,402,8,'left',700);
+  blivet(372,488,1.18);
+  txt('3 henger → 2 hasáb',462,548,7,'center');
+  pen(L.thin);seg(30,566,570,566);
+  txt('MIÉRT JÓ EZ EGY JÁTÉKHOZ',30,584,8,'left',700);
+  ['Izometrikus vetítésben a nézet irányával párhuzamos utak egy pontba esnek.','Ha a játék a képet hiszi el, nem a térbeli koordinátát, két távoli kocka',
+   'szomszéddá válik. Egy forgatás vagy egy átfordított kocka új utat nyit.','Statikus kép, nulla animáció: a felismerés a játékos fejében történik.']
+   .forEach((s,i)=>txt(s,30,600+i*13,7.5));
+  // tiny demo: aligned columns
+  const s=16,c=C30,ox=468,oy=650,P=(x,y,z)=>[ox+(x-y)*c*s,oy+(x+y)*s/2-z*s];
+  const list=[[0,0,0],[1,0,0],[2,0,0],[2,1,0],[2,2,0],[2,2,1],[2,2,2]].sort((a,b)=>(a[0]+a[1]+a[2])-(b[0]+b[1]+b[2]));
+  list.forEach(q=>{const[x,y]=P(...q);isoCube(x,y,s,CUBE(),undefined,L.thin*1.4);});
+  wanderer(...P(0,0,0.1).map((v,i)=>i?v-s*1.05:v),.42);
+}
+
+/* ---------- 05 hatch patterns ---------- */
+function tPatterns(){
+  const L=LW();
+  const pats=[
+    ['45° · fém (ANSI31)',b=>hatch(b.p,b.b,-45,6,L.thin)],
+    ['kereszt (ANSI37)',b=>{hatch(b.p,b.b,-45,7,L.thin);hatch(b.p,b.b,45,7,L.thin);}],
+    ['45° sűrű · 3',b=>hatch(b.p,b.b,-45,3,L.thin)],
+    ['45° vastag · 10',b=>hatch(b.p,b.b,-45,10,L.thick)],
+    ['víz',b=>{ctx.save();ctx.clip(b.p);pen(L.thin,[12,6]);for(let y=b.b[1]+5,i=0;y<b.b[1]+b.b[3];y+=7,i++){ctx.lineDashOffset=i%2?9:0;seg(b.b[0],y,b.b[0]+b.b[2],y);}ctx.restore();}],
+    ['beton',b=>{const r=rng(7);ctx.save();ctx.clip(b.p);ctx.fillStyle=INK;for(let i=0;i<170;i++){ctx.beginPath();ctx.arc(b.b[0]+r()*b.b[2],b.b[1]+r()*b.b[3],.5+r()*.6,0,7);ctx.fill();}
+      pen(L.thin);for(let i=0;i<16;i++){const x=b.b[0]+r()*b.b[2],y=b.b[1]+r()*b.b[3],a=r()*7,k=4+r()*3;poly([0,1,2].map(j=>[x+Math.cos(a+j*2.1)*k,y+Math.sin(a+j*2.1)*k]));ctx.stroke();}ctx.restore();}],
+    ['tégla',b=>{ctx.save();ctx.clip(b.p);pen(L.thin);for(let y=b.b[1],r=0;y<b.b[1]+b.b[3];y+=10,r++){seg(b.b[0],y,b.b[0]+b.b[2],y);for(let x=b.b[0]+(r%2?12:0);x<b.b[0]+b.b[2];x+=24)seg(x,y,x,y+10);}ctx.restore();}],
+    ['fa',b=>{ctx.save();ctx.clip(b.p);pen(L.thin);const cx=b.b[0]+b.b[2]*.25,cy=b.b[1]+b.b[3]*1.25;for(let r=6;r<230;r+=6+(r%4)){ctx.beginPath();for(let a=-Math.PI;a<=0;a+=.04){const w=1+.05*Math.sin(a*9+r);const x=cx+Math.cos(a)*r*2*w,y=cy+Math.sin(a)*r*w;a===-Math.PI?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.stroke();}ctx.restore();}],
+    ['talaj',b=>{hatch(b.p,b.b,-45,5,L.thin,INK,[7,4]);ctx.save();ctx.clip(b.p);pen(L.thick*1.4);seg(b.b[0],b.b[1]+1,b.b[0]+b.b[2],b.b[1]+1);ctx.restore();}],
+    ['pontozás',b=>{const r=rng(3);ctx.save();ctx.clip(b.p);ctx.fillStyle=INK;for(let i=0;i<650;i++){const y=b.b[1]+Math.pow(r(),.7)*b.b[3];ctx.beginPath();ctx.arc(b.b[0]+r()*b.b[2],y,.55,0,7);ctx.fill();}ctx.restore();}],
+    ['négyzetháló',b=>{hatch(b.p,b.b,0,8,L.thin);hatch(b.p,b.b,90,8,L.thin);}],
+    ['szigetelés',b=>{ctx.save();ctx.clip(b.p);pen(L.thin);for(let cy=b.b[1]+18;cy<b.b[1]+b.b[3]+10;cy+=30){ctx.beginPath();for(let t=0;t<60;t+=.1){const x=b.b[0]-10+t*4.2+8*Math.cos(t),y=cy+10*Math.sin(t);t===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.stroke();seg(b.b[0],cy-11,b.b[0]+b.b[2],cy-11);}ctx.restore();}]];
+  pats.forEach(([n,f],i)=>{
+    const col=i%3,row=i/3|0,x=30+col*186,y=82+row*126,w=168,h=100,bb=[x,y,w,h],p=rectPath(...bb);
+    ctx.fillStyle='#fff';ctx.fill(p);f({p,b:bb});pen(L.thick);ctx.stroke(p);txt(n,x,y+h+11,7.5);
+  });
+  txt('SZÜRKESKÁLA · 17 lépcső',30,596,8,'left',700);
+  const sw=540/17;
+  for(let i=0;i<17;i++){ctx.fillStyle=gray(i/16);ctx.fillRect(30+i*sw,604,sw,30);}
+  pen(L.thin);ctx.strokeRect(30,604,540,30);
+  [0,4,8,12,16].forEach(i=>txt(Math.round(i/16*100)+' %',30+(i+.5)*sw,645,6.5,'center'));
+  txt('KALEIDO TINTÁK · tömör és vonalas',30,666,8,'left',700);
+  const cols=[['piros',ACC.red],['kék',ACC.blue],['okker',ACC.ochre],['zöld',ACC.green],['cián',ACC.cyan],['ibolya',ACC.violet]];
+  cols.forEach(([n,cl],i)=>{const x=30+i*91,y=674;ctx.fillStyle=cl;ctx.fillRect(x,y,84,16);const p=rectPath(x,y+16,84,16);ctx.fillStyle='#fff';ctx.fill(p);hatch(p,[x,y+16,84,16],-45,3.5,L.med,cl);
+    pen(L.thin);ctx.strokeRect(x,y,84,32);txt(n,x+42,y+43,7,'center');});
+}
+
+/* ---------- 06 level mock ---------- */
+const LV=["2100002","1000000","0000110","0000100","0000000","1000001","2210012"];
+function tLevel(){
+  const L=LW(),s=30,c=C30,OX=300,OY=150,P=(x,y,z)=>[OX+(x-y)*c*s,OY+(x+y)*s/2-z*s];
+  txt('AXONOMETRIA',30,86,8,'left',700);
+  // slab sides
+  const sideY=[P(0,7,0),P(7,7,0),P(7,7,-.45),P(0,7,-.45)],sideX=[P(7,0,0),P(7,7,0),P(7,7,-.45),P(7,0,-.45)];
+  let p=path2d(sideY);fillFace(p,bboxOf(sideY),{fill:'#fff',hatch:[-45,3.4]});pen(L.thick);ctx.stroke(p);
+  p=path2d(sideX);fillFace(p,bboxOf(sideX),{fill:gray(.45)});pen(L.thick);ctx.stroke(p);
+  const top=[P(0,0,0),P(7,0,0),P(7,7,0),P(0,7,0)];ctx.fillStyle='#fff';poly(top);ctx.fill();
+  pen(L.thin);for(let i=1;i<7;i++){seg(...P(i,0,0),...P(i,7,0));seg(...P(0,i,0),...P(7,i,0));}
+  pen(L.thick);poly(top);ctx.stroke();
+  // goal on floor
+  const g=[];for(let k=0;k<48;k++){const a=k/48*Math.PI*2;g.push(P(5.5+.34*Math.cos(a),4.5+.34*Math.sin(a),0));}
+  const gi=[];for(let k=0;k<48;k++){const a=k/48*Math.PI*2;gi.push(P(5.5+.16*Math.cos(a),4.5+.16*Math.sin(a),0));}
+  pen(L.thick,null,ACC.red);poly(g);ctx.stroke();poly(gi);ctx.stroke();
+  pen(L.thin,[6,2,1.5,2],INK);seg(...P(5.05,4.5,0),...P(5.95,4.5,0));seg(...P(5.5,4.05,0),...P(5.5,4.95,0));
+  // objects
+  const objs=[];
+  LV.forEach((row,y)=>row.split('').forEach((ch,x)=>{for(let z=0;z<+ch;z++)objs.push({d:x+y+z,f:()=>{const[cx,cy]=P(x+.5,y+.5,z+.5);isoCube(cx,cy+s*.5-s*.5,s);}});}));
+  objs.push({d:2+3+.1,f:()=>{const[cx,cy]=P(2.5,3.5,.42);crate(cx,cy,s*.42);}});
+  objs.push({d:1+4+.5,f:()=>{const[cx,cy]=P(1.5,4.5,0);wanderer(cx,cy-s*.72,.6);}});
+  objs.sort((a,b)=>a.d-b.d).forEach(o=>o.f());
+  // level markers
+  [[0,'±0,00',P(0,7,0)],[1,'+1,00',P(0,7,1)],[2,'+2,00',P(0,7,2)]].forEach(([z,l,[x,y]])=>{
+    pen(L.thin);seg(36,y,x-4,y);ctx.fillStyle=INK;poly([[84,y],[79,y-6],[89,y-6]]);ctx.fill();txt(l,36,y-3,7.5);});
+  // north arrow
+  const nx=540,ny=112;pen(L.thin);ctx.beginPath();ctx.arc(nx,ny,15,0,7);ctx.stroke();
+  const dir=[-c,-.5];ctx.fillStyle=INK;poly([[nx+dir[0]*15,ny+dir[1]*15],[nx+4,ny-3],[nx-1,ny+5]]);ctx.fill();txt('É',nx-22,ny-12,8,'center',700);
+  pen(L.thin);seg(30,412,570,412);
+  // plan view
+  const cs=22,X0=70,Y0=444;
+  txt('FELÜLNÉZET · 1:50',30,430,8,'left',700);
+  for(let y=0;y<7;y++)for(let x=0;x<7;x++){
+    const h=+LV[y][x],bx=X0+x*cs,by=Y0+y*cs,pp=rectPath(bx,by,cs,cs);
+    if(h===1)hatch(pp,[bx,by,cs,cs],-45,3,L.thin);
+    if(h===2){hatch(pp,[bx,by,cs,cs],-45,3,L.thin);hatch(pp,[bx,by,cs,cs],45,3,L.thin);}
+  }
+  pen(L.thin);for(let i=1;i<7;i++){seg(X0+i*cs,Y0,X0+i*cs,Y0+7*cs);seg(X0,Y0+i*cs,X0+7*cs,Y0+i*cs);}
+  pen(L.thick);ctx.strokeRect(X0,Y0,7*cs,7*cs);
+  for(let i=0;i<7;i++){txt('abcdefg'[i],X0+(i+.5)*cs,Y0-4,7,'center');txt(String(i+1),X0-8,Y0+(i+.5)*cs+2.5,7,'center');}
+  const sym=(kind,cx,cy,r=8)=>{
+    if(kind==='crate'){pen(L.med);ctx.fillStyle='#fff';ctx.fillRect(cx-r,cy-r,2*r,2*r);ctx.strokeRect(cx-r,cy-r,2*r,2*r);seg(cx-r,cy-r,cx+r,cy+r);seg(cx+r,cy-r,cx-r,cy+r);}
+    if(kind==='goal'){pen(L.med,null,ACC.red);ctx.beginPath();ctx.arc(cx,cy,r,0,7);ctx.stroke();ctx.beginPath();ctx.arc(cx,cy,r*.4,0,7);ctx.stroke();}
+    if(kind==='me'){ctx.fillStyle=INK;ctx.beginPath();ctx.arc(cx,cy,r*.7,0,7);ctx.fill();pen(L.med);seg(cx,cy,cx+r*1.2,cy);arrow(cx+r*1.35,cy,0,4,1.6);}
+    if(kind==='w1'||kind==='w2'){const pp=rectPath(cx-r,cy-r,2*r,2*r);ctx.fillStyle='#fff';ctx.fill(pp);hatch(pp,[cx-r,cy-r,2*r,2*r],-45,3,L.thin);if(kind==='w2')hatch(pp,[cx-r,cy-r,2*r,2*r],45,3,L.thin);pen(L.med);ctx.stroke(pp);}
+  };
+  sym('crate',X0+2.5*cs,Y0+3.5*cs);sym('goal',X0+5.5*cs,Y0+4.5*cs);sym('me',X0+1.5*cs,Y0+4.5*cs);
+  dimH(X0,X0+7*cs,Y0+7*cs,Y0+7*cs,Y0+7*cs+16,'7 × 1,00');
+  // legend
+  txt('JELMAGYARÁZAT',290,430,8,'left',700);
+  [['w1','Fal, +1,00'],['w2','Fal, +2,00'],['crate','Láda · tolható'],['goal','Cél · ide kerül a láda'],['me','Vándor · nézési irány']]
+   .forEach(([k,l],i)=>{const y=452+i*26;sym(k,300,y);txt(l,320,y+3,8);});
+  // HUD mock
+  const hy=650;pen(L.thick);ctx.fillStyle='#fff';ctx.fillRect(30,hy,540,50);ctx.strokeRect(30,hy,540,50);
+  pen(L.thin);seg(200,hy,200,hy+50);seg(370,hy,370,hy+50);seg(470,hy,470,hy+50);
+  txt('LÉPÉS',42,hy+18,6.5,'left',400,'#555');txt('012',42,hy+40,18,'left',700);
+  txt('PÁLYA',212,hy+18,6.5,'left',400,'#555');txt('03 / 24',212,hy+40,18,'left',700);
+  const undo=(x,y,flip)=>{pen(L.thick);ctx.beginPath();ctx.arc(x,y,10,flip?-.4:Math.PI+.4,flip?Math.PI*1.25:-.2*Math.PI,flip);ctx.stroke();};
+  pen(L.thick);ctx.beginPath();ctx.arc(420,hy+25,11,Math.PI*1.1,Math.PI*2.75);ctx.stroke();arrow(410,hy+19,-Math.PI*.35,6,2.4);
+  txt('VISSZA',420,hy+46,5.5,'center');
+  ctx.beginPath();ctx.arc(520,hy+25,11,Math.PI*1.25,Math.PI*2.9);ctx.stroke();arrow(511,hy+16,-Math.PI*.1,6,2.4);
+  txt('ÚJRA',520,hy+46,5.5,'center');
+}
+
+const TESTS=[
+  {name:'Vonalak',sub:'vastagság, szög, vonalfajta, felirat, élsimítás',draw:tLines,notes:['MIRE FIGYELJ','0,5–1 px ferdén: lépcsőzés és szakadás 1-bitben.','Legyező: moiré a közös pontnál.','Szürke 16 vs Bayer: hol tűnik el a vékony vonal?']},
+  {name:'Alakzatok',sub:'kontúr, szürke és vonalas kitöltés, játékelemek',draw:tShapes,notes:['MIRE FIGYELJ','Szürke körök: küszöbölve 50 % alatt eltűnnek.','Vonalas kitöltés minden módban stabil.','Játékelemek kis méretben is olvashatók?']},
+  {name:'Műszaki nézet',sub:'elöl- és felülnézet, A–A metszet, méretezés',draw:tTech,notes:['L-TÖMB FURATTAL · 1:2','Vastag kontúr, vékony méretvonal,','szaggatott takart él, pontvonalas tengely,','45°-os metszet-sraffozás.']},
+  {name:'Lehetetlen ábrák',sub:'Penrose, Necker, lehetetlen villa',draw:tImpossible,notes:['MIRE FIGYELJ','A Penrose-kocka illúziója a 3 lapárnyalaton múlik:','fehér felső, vonalas bal, szürke jobb lap.','1-bitben is működik az árnyalás?']},
+  {name:'Sraffozás',sub:'anyagjelölések, szürkeskála, Kaleido tinták',draw:tPatterns,notes:['MIRE FIGYELJ','Sűrű 45°: moiré a kijelző rácsával.','Szürkeskála: hány lépcső különül el?','Kaleido: a színréteg fele akkora felbontású.']},
+  {name:'Pálya-vázlat',sub:'izometrikus pálya, felülnézet, kezelőfelület',draw:tLevel,notes:['MIRE FIGYELJ','Egy lépés = egy állókép.','Melyik nézetből olvasható jobban a pálya?','Piros cél: Kaleidón szín, másutt szürke.']},
+];
+
+/* ---------- post-processing ---------- */
+function bayer(n){let m=[[0]];while(m.length<n){const s=m.length,r=[];for(let y=0;y<2*s;y++){r.push([]);for(let x=0;x<2*s;x++)r[y].push(m[y%s][x%s]*4+[0,2,3,1][(y<s?0:2)+(x<s?0:1)]);}m=r;}return m;}
+const B4=bayer(4),B8=bayer(8);
+function post(w,h){
+  const m=state.mode;if(m==='raw'&&!state.tone)return;
+  const img=ctx.getImageData(0,0,w,h),d=img.data,N=w*h;
+  const lum=i=>.299*d[i]+.587*d[i+1]+.114*d[i+2];
+  const set=(i,v)=>{d[i]=d[i+1]=d[i+2]=v;};
+  if(m==='g16'||m==='g4'){const st=m==='g16'?17:85;for(let i=0;i<4*N;i+=4)set(i,Math.round(lum(i)/st)*st);}
+  else if(m==='bw'){for(let i=0;i<4*N;i+=4)set(i,lum(i)<128?0:255);}
+  else if(m==='b4'||m==='b8'){const M=m==='b4'?B4:B8,n=M.length,q=n*n;
+    for(let y=0;y<h;y++){const row=M[y%n];for(let x=0;x<w;x++){const i=4*(y*w+x);set(i,lum(i)>(row[x%n]+.5)/q*255?255:0);}}}
+  else if(m==='fs'){const f=new Float32Array(N);for(let k=0;k<N;k++)f[k]=lum(4*k);
+    for(let y=0;y<h;y++)for(let x=0;x<w;x++){const k=y*w+x,o=f[k],nv=o<128?0:255,e=o-nv;set(4*k,nv);
+      if(x<w-1)f[k+1]+=e*7/16;if(y<h-1){if(x>0)f[k+w-1]+=e*3/16;f[k+w]+=e*5/16;if(x<w-1)f[k+w+1]+=e/16;}}}
+  else if(m==='kal'){
+    const q=v=>v<0?0:v>255?255:Math.round(v/17)*17;
+    for(let by=0;by<h;by+=2)for(let bx=0;bx<w;bx+=2){
+      let r=0,g=0,b=0,n=0;
+      for(let dy=0;dy<2;dy++)for(let dx=0;dx<2;dx++){const x=bx+dx,y=by+dy;if(x<w&&y<h){const i=4*(y*w+x);r+=d[i];g+=d[i+1];b+=d[i+2];n++;}}
+      r/=n;g/=n;b/=n;const l=.299*r+.587*g+.114*b,cr=(r-l)*.6,cg=(g-l)*.6,cb=(b-l)*.6;
+      for(let dy=0;dy<2;dy++)for(let dx=0;dx<2;dx++){const x=bx+dx,y=by+dy;if(x<w&&y<h){const i=4*(y*w+x),L=Math.round(lum(i)/17)*17;d[i]=q(L+cr);d[i+1]=q(L+cg);d[i+2]=q(L+cb);}}
+    }
+  }
+  if(state.tone||m==='kal'){
+    const P=m==='kal'?[226,224,215]:[233,233,228],K=m==='kal'?[40,40,44]:[26,26,28];
+    for(let i=0;i<4*N;i+=4){d[i]=K[0]+(P[0]-K[0])*d[i]/255;d[i+1]=K[1]+(P[1]-K[1])*d[i+1]/255;d[i+2]=K[2]+(P[2]-K[2])*d[i+2]/255;}
+  }
+  ctx.putImageData(img,0,0);
+}
+
+/* ---------- render ---------- */
+function render(){
+  const t0=performance.now(),w=cv.width,h=cv.height;
+  ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);
+  const k=Math.min(w/PAGE.W,h/PAGE.H),ox=(w-PAGE.W*k)/2,oy=(h-PAGE.H*k)/2;G.k=k;
+  ctx.setTransform(k,0,0,k,ox,oy);ctx.lineCap='butt';ctx.lineJoin='miter';ctx.miterLimit=4;
+  if(state.grid)drawGrid();
+  const t=TESTS[state.test];t.draw();ctx.setLineDash([]);drawFrame(t,state.test);
+  if(state.ghost&&ghostFrame&&ghostFrame.width===w&&ghostFrame.height===h){
+    ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=.14;ctx.globalCompositeOperation='multiply';ctx.drawImage(ghostFrame,0,0);
+    ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';}
+  ctx.setTransform(1,0,0,1,0,0);
+  post(w,h);
+  if(!shownFrame||shownFrame.width!==w||shownFrame.height!==h){shownFrame=document.createElement('canvas');shownFrame.width=w;shownFrame.height=h;}
+  shownFrame.getContext('2d').drawImage(cv,0,0);
+  lastMs=performance.now()-t0;updateInfo();
+}
+function resize(){
+  const r=cv.getBoundingClientRect(),dpr=window.devicePixelRatio||1;
+  cv.width=Math.max(1,Math.round(r.width*dpr/state.scale));cv.height=Math.max(1,Math.round(r.height*dpr/state.scale));
+  render();
+}
+function updateInfo(){
+  document.getElementById('info').textContent=`${cv.width}×${cv.height} px · dpr ${(window.devicePixelRatio||1).toFixed(2)} · ${lastMs.toFixed(0)} ms`;
+}
+
+/* ---------- navigation ---------- */
+const flashEl=document.getElementById('flash'),tagEl=document.getElementById('tag');
+let busy=false;
+function go(dir){if(busy)return;setTest((state.test+dir+TESTS.length)%TESTS.length);}
+function setTest(i){
+  if(i===state.test)return;
+  if(shownFrame){ghostFrame=document.createElement('canvas');ghostFrame.width=shownFrame.width;ghostFrame.height=shownFrame.height;ghostFrame.getContext('2d').drawImage(shownFrame,0,0);}
+  state.test=i;save();syncUI();
+  if(state.flash&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    busy=true;flashEl.hidden=false;flashEl.style.background=INK;
+    setTimeout(()=>{flashEl.style.background='#fff';render();setTimeout(()=>{flashEl.hidden=true;busy=false;},90);},120);
+  }else render();
+}
+function updTag(){tagEl.textContent=`${String(state.test+1).padStart(2,'0')} · ${MODES.find(m=>m[0]===state.mode)[1]}`;}
+function toggleUI(){state.ui=!state.ui;document.getElementById('panel').hidden=!state.ui;tagEl.hidden=state.ui;updTag();}
+let down=null;
+cv.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY};});
+cv.addEventListener('pointerup',e=>{
+  if(!down)return;const dx=e.clientX-down.x,dy=e.clientY-down.y;down=null;
+  const r=cv.getBoundingClientRect(),fx=(e.clientX-r.left)/r.width;
+  if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.3){go(dx<0?1:-1);return;}
+  if(Math.hypot(dx,dy)<14){if(fx<.18)go(-1);else if(fx>.82)go(1);else toggleUI();}
+});
+cv.addEventListener('pointercancel',()=>{down=null;});
+addEventListener('keydown',e=>{const onBtn=e.target.closest&&e.target.closest('button');
+  if(e.key==='ArrowRight')go(1);else if(e.key==='ArrowLeft')go(-1);else if(e.key===' '&&!onBtn){e.preventDefault();toggleUI();}});
+
+/* ---------- UI ---------- */
+function chips(id,items,isOn,onTap){
+  const el=document.getElementById(id);el.innerHTML='';
+  items.forEach(([v,l])=>{const b=document.createElement('button');b.type='button';b.textContent=l;b.dataset.v=v;b.id=id+'-'+v;
+    b.addEventListener('click',()=>onTap(v));el.appendChild(b);});
+  el._sync=()=>el.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',isOn(b.dataset.v)?'true':'false'));
+}
+chips('tests',TESTS.map((t,i)=>[String(i),String(i+1).padStart(2,'0')+' '+t.name]),v=>+v===state.test,v=>setTest(+v));
+chips('modes',MODES,v=>v===state.mode,v=>{state.mode=v;save();syncUI();render();});
+chips('scales',[['1','1×'],['2','2×'],['3','3×']],v=>+v===state.scale,v=>{state.scale=+v;save();syncUI();resize();});
+chips('toggles',TOGGLES,v=>!!state[v],v=>{state[v]=!state[v];if(v==='ghost'&&!state.ghost)ghostFrame=null;save();syncUI();render();});
+function syncUI(){updTag();['tests','modes','scales','toggles'].forEach(id=>document.getElementById(id)._sync());document.getElementById('mOut').textContent='×'+state.mult.toFixed(1);}
+document.getElementById('mMinus').addEventListener('click',()=>{state.mult=Math.max(.5,+(state.mult-.1).toFixed(1));save();syncUI();render();});
+document.getElementById('mPlus').addEventListener('click',()=>{state.mult=Math.min(2.5,+(state.mult+.1).toFixed(1));save();syncUI();render();});
+
+syncUI();
+new ResizeObserver(()=>resize()).observe(cv);
+resize();
+if(document.fonts){Promise.all([document.fonts.load('400 12px "B612 Mono"'),document.fonts.load('700 12px "B612 Mono"'),document.fonts.load('400 14px "B612"')]).then(render).catch(()=>{});document.fonts.ready.then(render);}
+})();
+</script>
