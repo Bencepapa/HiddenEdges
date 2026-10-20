@@ -2276,6 +2276,13 @@
    "it": "Specchiato sull'asse orizzontale"
   },
   {
+   "hu": "a kért nézet négy rajz közül",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "the asked view among four drawings",
+   "de": "die gesuchte Ansicht unter vier Zeichnungen",
+   "it": "la vista richiesta tra quattro disegni"
+  },
+  {
    "hu": "PÉLDA",
    "ctx": "Appears on: Easy level 12 (Belváros), sheet 1; Easy level 2 (Látkép), sheet 1 (+1 more).",
    "en": "EXAMPLE",

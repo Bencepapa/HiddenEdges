@@ -42,7 +42,7 @@ Progress and settings are kept in the browser's `localStorage`.
 
 **EASY (15):** key copying, skyline (visible-tower clues), view picker, tile shapes with triangles, furnishing by simple placement rules.
 
-**RANDOM:** puzzles generated in the browser from a seed (shown as `#seed`; › makes a new one). Generators so far: line weight, height map, key copying, skyline (unique 4×4 Latin squares), shadow, painted shadow, revision log, dimension chains (blurred while a solver still finds exactly one drawing), tetromino and triangle tile shapes. Still to come: drill holes, construction, furnishing, overlays, cube nets.
+**RANDOM:** puzzles generated in the browser from a seed (shown as `#seed`; › makes a new one). Generators so far: view picker, height map, key copying, skyline (unique 4×4 Latin squares), shadow, painted shadow, revision log, dimension chains (blurred while a solver still finds exactly one drawing), tetromino and triangle tile shapes. Still to come: drill holes, construction, furnishing, overlays, cube nets.
 
 ## Languages
 

@@ -2305,6 +2305,13 @@ body{overflow:hidden}
    "it": "Specchiato sull'asse orizzontale"
   },
   {
+   "hu": "a kért nézet négy rajz közül",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "the asked view among four drawings",
+   "de": "die gesuchte Ansicht unter vier Zeichnungen",
+   "it": "la vista richiesta tra quattro disegni"
+  },
+  {
    "hu": "PÉLDA",
    "ctx": "Appears on: Easy level 12 (Belváros), sheet 1; Easy level 2 (Látkép), sheet 1 (+1 more).",
    "en": "EXAMPLE",
@@ -3793,7 +3800,7 @@ const ty0=()=>650;
 
 /* ---------- title screen, contents sheets, popups ---------- */
 // the generator-friendly puzzle families shown in the unlocked RANDOM folder
-const GEN_TYPES=[['Vonalvastagság','vonalvastagság-kalibráció'],['Furatok','metszetek és furatmélységek'],['Szerkesztés','harmadik nézet szerkesztővonalakkal'],
+const GEN_TYPES=[['Nézetválasztó','a kért nézet négy rajz közül'],['Furatok','metszetek és furatmélységek'],['Szerkesztés','harmadik nézet szerkesztővonalakkal'],
   ['Árnyék','45°-os árnyékszerkesztés'],['Lakberendezés','napjárás szerint vagy szabályok alapján'],['Revíziók','módosítási napló végrehajtása'],
   ['Fólia','forgatott, tükrözött kitűzési fóliák'],['Magasságtérkép','elöl- és oldalnézetből felülnézet'],['Méretlánc','fal/üres láncok, egyedi megoldás'],
   ['Kockaháló','hálóról a látható lapok'],['Árnyékfestmény','festett árnyékból a magasságok'],['Látkép','magasságok a látható házak számából'],['Kulcsmásolás','recék a mintakulcsról'],['Elemek','tetris-elemekből egy forma'],['Csempe','háromszögekből, négyzetekből forma']];
@@ -4143,6 +4150,14 @@ function fromTemplate(t,extra){return{name:t.name,sub:t.sub,rev:t.rev,...extra};
 
 function genWalls(r){const N=5;let w;do{w=[...Array(N)].map(()=>[...Array(N)].map(()=>r()<.45?1:0));}while(w.flat().filter(v=>v).length<6||w.flat().filter(v=>!v).length<6);
   const t=tmplOf(LEVELS,'Szigetelés');return{...fromTemplate(t),N,maxH:1,sheets:['wires','plan'],wall:w,check(g){return g.every((row,y)=>row.every((v,x)=>v===1-this.wall[y][x]));}};}
+function genView(r){
+  for(let k=0;k<200;k++){const N=ri(r,3,4),ask=pickR(r,['A','B','top']),g=[...Array(N)].map(()=>[...Array(N)].map(()=>r()<.25?0:ri(r,1,3)));
+    if(Math.max(...g.flat())<2||g.flat().filter(v=>v).length<N+2)continue;
+    const t=tmplOf(EASY,ask==='A'?'Nézetválasztó':ask==='B'?'Oldalról':'Felülről'),l=viewLevel({...fromTemplate(t),N,ask,g});
+    // four different drawings, and the answer sits in a random box
+    if(new Set(l.opts.map(o=>JSON.stringify(o.v))).size!==4)continue;
+    const order=shuffleR(r,[0,1,2,3]);l.opts=order.map(i=>l.opts[i]);l.ans=l.opts.findIndex(o=>o.ok);return l;}
+  return null;}
 function genHeights(r){const N=ri(r,3,4);let g;
   // both views must have some relief, otherwise the top view is a guess
   const varied=a=>new Set(a).size>=3;
@@ -4212,7 +4227,7 @@ function genTiles(r,kind){const names=kind==='tet'?shuffleR(r,['I','O','T','L','
   const target=best.us.map(([x,y,q])=>[x-best.mx,y-best.my,q]),sol=best.sol.map(([n,ri_,dx,dy])=>[n,ri_,dx-best.mx,dy-best.my]);
   const t=tmplOf(EASY,kind==='tet'?'Burkolat':'Parketta');
   const l=tileLevel({...fromTemplate(t),kind,pieces:names,target,sol});l.sheets=['tile'];return l;}   // RANDOM is the hard folder: no colour sheet
-const GENERATORS={'Vonalvastagság':genWalls,'Magasságtérkép':genHeights,'Kulcsmásolás':genKey,'Látkép':genSky,'Árnyék':r=>genShadow(r,false),
+const GENERATORS={'Nézetválasztó':genView,'Magasságtérkép':genHeights,'Kulcsmásolás':genKey,'Látkép':genSky,'Árnyék':r=>genShadow(r,false),
   'Árnyékfestmény':r=>genShadow(r,true),'Revíziók':genLog,'Méretlánc':genChain,'Elemek':r=>genTiles(r,'tet'),'Csempe':r=>genTiles(r,'tan')};
 function openRandom(ti,seed){const[name]=GEN_TYPES[ti],gen=GENERATORS[name];if(!gen){S.popup='A generátor hamarosan érkezik.';render();return;}
   seed=seed||((Math.random()*1e6)|0)+1;const l=gen(rng(seed));if(!l){openRandom(ti,seed+1);return;}
