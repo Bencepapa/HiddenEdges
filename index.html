@@ -2312,6 +2312,27 @@ body{overflow:hidden}
    "it": "la vista richiesta tra quattro disegni"
   },
   {
+   "hu": "{a} és {b} egymás mellett",
+   "ctx": "random furnishing rule: two pieces must touch; {a},{b} are furniture names",
+   "en": "{a} and {b} side by side",
+   "de": "{a} und {b} nebeneinander",
+   "it": "{a} e {b} affiancati"
+  },
+  {
+   "hu": "bútorok szabályok alapján",
+   "ctx": "subtitle of generated furnishing puzzles without sun rules",
+   "en": "furniture by the rules",
+   "de": "Möbel nach Regeln",
+   "it": "arredi secondo le regole"
+  },
+  {
+   "hu": "REV. R1 — Rendezd be a hálószobát a napjárás szerint.",
+   "ctx": "instruction of a generated bedroom puzzle with sun rules",
+   "en": "REV. R1 — Furnish the bedroom by the sun's path.",
+   "de": "REV. R1 — Richte das Schlafzimmer nach dem Sonnenlauf ein.",
+   "it": "REV. R1 — Arreda la camera seguendo il percorso del sole."
+  },
+  {
    "hu": "PÉLDA",
    "ctx": "Appears on: Easy level 12 (Belváros), sheet 1; Easy level 2 (Látkép), sheet 1 (+1 more).",
    "en": "EXAMPLE",
@@ -3264,10 +3285,14 @@ function sheetChain(){
 function drillGeo(){const N=L().N,cell=Math.floor(200/N);return{GX:60,GY:380,cell,FB:270,SX:330,hz:30};}
 function profilePts(vals,x0,cell,FB,hz){
   const pts=[[x0,FB]];vals.forEach((v,i)=>{pts.push([x0+i*cell,FB-v*hz],[x0+(i+1)*cell,FB-v*hz]);});pts.push([x0+vals.length*cell,FB]);return pts;}
-function drawElev(vals,holeSets,x0,labels,title){
+function drawElev(vals,holeSets,x0,labels,title,depth){
   const{cell,FB,hz}=drillGeo();
   txt(title,x0,FB-110,10.5);
   const pts=profilePts(vals,x0,cell,FB,hz);ctx.fillStyle='#fff';poly(pts);ctx.fill();pen(LW.thick);ctx.stroke();
+  // lower steps behind or in front of the silhouette: their top edge is a line, dashed when a taller part stands in front
+  (depth||[]).forEach((line,i)=>{[...new Set(line)].filter(h=>h<vals[i]).forEach(h=>{
+    const vis=line.some((v,k)=>v===h&&line.slice(0,k).every(u=>u<=h)),y=FB-h*hz;
+    if(vis)pen(LW.thick);else pen(LW.med,[5,3]);seg(x0+i*cell,y,x0+(i+1)*cell,y);ctx.setLineDash([]);});});
   holeSets.forEach((set,i)=>{const cx=x0+(i+.5)*cell,r=cell*.22;
     [...set].forEach(k=>{const[h,d]=k.split(',').map(Number),top=FB-h*hz,bot=FB-(h-d)*hz;
       pen(LW.med,[5,3]);seg(cx-r,top,cx-r,bot);seg(cx+r,top,cx+r,bot);if(d<h)seg(cx-r,bot,cx+r,bot);
@@ -3295,8 +3320,9 @@ function sheetDrill(){
   const fr=[],sd=[];for(let i=0;i<N;i++){fr.push(new Set());sd.push(new Set());}
   for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(l.sol[y][x]){const k=l.hgt[y][x]+','+l.sol[y][x];fr[x].add(k);sd[y].add(k);}
   const colMax=[...Array(N)].map((_,x)=>Math.max(...l.hgt.map(r=>r[x]))),rowMax=l.hgt.map(r=>Math.max(...r));
-  drawElev(colMax,fr,GX,[...Array(N)].map((_,i)=>'abcdefg'[i]),'ELÖLNÉZET');
-  drawElev(rowMax,sd,SX,[...Array(N)].map((_,i)=>String(i+1)),'OLDALNÉZET');
+  // front view looks from the south (row N first), side view from the west (column a first)
+  drawElev(colMax,fr,GX,[...Array(N)].map((_,i)=>'abcdefg'[i]),'ELÖLNÉZET',[...Array(N)].map((_,x)=>l.hgt.map(r=>r[x]).reverse()));
+  drawElev(rowMax,sd,SX,[...Array(N)].map((_,i)=>String(i+1)),'OLDALNÉZET',l.hgt.map(r=>r.slice()));
   pen(LW.thin);for(let z=1;z<=3;z++){seg(GX-14,FB-z*hz,GX-8,FB-z*hz);txt(String(z),GX-17,FB-z*hz+4,9,'right',400);}
   // plan with the player's holes
   txt('FELÜLNÉZET · koppints: mélység',GX,GY-24,10.5);
@@ -3761,11 +3787,12 @@ function sheetRoom(){
       txt(label,58,y,10.5,'left',700,ok?INK:COL.red,'alphabetic',500);};
     const seen=reachable();line('ajtótól elérhető',S.room.every(o=>accessOk(o,seen)));
     (l.apart||[]).forEach(([a,b])=>{const A=l.items.find(o=>o.id===a),B=l.items.find(o=>o.id===b);line(T('{a} és {b} nem érintkezhet').replace('{a}',T(A.name)).replace('{b}',T(B.name)),pairOk(a,b));});
-    (l.near||[]).forEach(([a,b,label])=>line(label,!pairOk(a,b)));
+    (l.near||[]).forEach(([a,b,label])=>{const A=l.items.find(o=>o.id===a),B=l.items.find(o=>o.id===b);
+      line(label||T('{a} és {b} egymás mellett').replace('{a}',T(A.name)).replace('{b}',T(B.name)),!pairOk(a,b));});
     if(l.water)line('WC, mosdó, zuhany kék körön',waterOk());
     // legend drawn with the real symbols
     y+=34;ctx.fillStyle='#fff';pen(LW.thick);ctx.strokeRect(30,y-17,44,24);pen(LW.thin);ctx.strokeRect(35,y-12,34,14);txt('falhoz álló bútor',84,y,9.5,'left',400);
-    if(l.water){const lx=250;pen(3,null,COL.blue);ctx.beginPath();ctx.arc(lx+11,y-5,9,0,7);ctx.stroke();txt('vizes pont',lx+28,y,9.5,'left',400);}
+    if(l.water){const lx=Math.max(250,84+ctx.measureText(T('falhoz álló bútor')).width+30);pen(3,null,COL.blue);ctx.beginPath();ctx.arc(lx+11,y-5,9,0,7);ctx.stroke();txt('vizes pont',lx+28,y,9.5,'left',400);}
     if(S.anim&&S.anim.p>=1)stamp(300,g.RY+l.H*g.C/2);noteLine(l);return;}
   // requirement table
   const g=roomGeo(),tx=30,ty=g.RY+l.H*g.C+g.T+38,cw=[150,110,110,110],rh=28;txt('KÖVETELMÉNYEK',tx,ty-10,10.5);
@@ -4246,8 +4273,186 @@ function genTiles(r,kind){const names=kind==='tet'?shuffleR(r,['I','O','T','L','
   const target=best.us.map(([x,y,q])=>[x-best.mx,y-best.my,q]),sol=best.sol.map(([n,ri_,dx,dy])=>[n,ri_,dx-best.mx,dy-best.my]);
   const t=tmplOf(EASY,kind==='tet'?'Burkolat':'Parketta');
   const l=tileLevel({...fromTemplate(t),kind,pieces:names,target,sol});l.sheets=['tile'];return l;}   // RANDOM is the hard folder: no colour sheet
+// ---- drill holes: the two views must pin down every hole (solver counts drillings with the same views)
+function drillViews(H,hgt,N){const fr=[...Array(N)].map(()=>new Set()),sd=[...Array(N)].map(()=>new Set());
+  for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(H[y][x]){const k=hgt[y][x]+','+H[y][x];fr[x].add(k);sd[y].add(k);}return{fr,sd};}
+function drillCount(hgt,sol,N,cap=2){const{fr,sd}=drillViews(sol,hgt,N),cells=[],opts=[];
+  for(let x=0;x<N;x++)for(let y=0;y<N;y++){if(!fr[x].size||!sd[y].size)continue;const h=hgt[y][x],o=[0];
+    for(let d=1;d<=h;d++)if(fr[x].has(h+','+d)&&sd[y].has(h+','+d))o.push(d);if(o.length>1){cells.push([x,y]);opts.push(o);}}
+  const H=[...Array(N)].map(()=>Array(N).fill(0));let n=0,nodes=0;
+  const same=(a,b)=>a.size===b.size&&[...a].every(k=>b.has(k));
+  const colDone=x=>{const s=new Set();for(let y=0;y<N;y++)if(H[y][x])s.add(hgt[y][x]+','+H[y][x]);return same(s,fr[x]);};
+  (function rec(i){if(n>=cap||++nodes>2e5)return;
+    if(i===cells.length){const v=drillViews(H,hgt,N);if(v.fr.every((s,k)=>same(s,fr[k]))&&v.sd.every((s,k)=>same(s,sd[k])))n++;return;}
+    const[x,y]=cells[i];for(const d of opts[i]){H[y][x]=d;
+      if(i+1===cells.length||cells[i+1][0]!==x){if(!colDone(x))continue;}rec(i+1);}H[y][x]=0;})(0);
+  return nodes>2e5?cap:n;}
+function genDrill(r){const N=4;
+  for(let k=0;k<400;k++){
+    const kind=ri(r,0,2),a=ri(r,1,3),b=pickR(r,[1,2,3].filter(v=>v!==a)),cut=ri(r,1,N-1);
+    const hgt=[...Array(N)].map((_,y)=>[...Array(N)].map((_,x)=>kind===0?(x<cut?a:b):kind===1?(y<cut?a:b):((x<2)===(y<2)?a:b)));
+    const sol=hgt.map(row=>row.map(()=>0)),n=ri(r,3,5);
+    for(let i=0;i<n;i++){const x=ri(r,0,N-1),y=ri(r,0,N-1);sol[y][x]=ri(r,1,hgt[y][x]);}
+    const holes=sol.flat().filter(v=>v).length;if(holes<3)continue;
+    if(!sol.some((row,y)=>row.some((v,x)=>v&&v<hgt[y][x])))continue;   // at least one blind hole
+    if(drillCount(hgt,sol,N)!==1)continue;
+    return drillLevel({...fromTemplate(tmplOf(LEVELS,'Furatok')),N,cuts:0,hgt,sol});}
+  return null;}
+
+// ---- construction: a prism with a stepped profile; front and top views must fix the side view
+function consViews(hs){const D=hs.length,Z=4,front=[[0,0,5,0],[5,0,5,Z],[5,Z,0,Z],[0,Z,0,0]],top=[[0,0,5,0],[5,0,5,D],[5,D,0,D],[0,D,0,0]];
+  const lv={};hs.forEach((h,i)=>{if(h>=Z)return;const hid=Math.max(0,...hs.slice(0,i))>h;lv[h]=lv[h]===false?false:hid;});
+  Object.keys(lv).map(Number).sort((a,b)=>a-b).forEach(h=>front.push(lv[h]?[0,h,5,h,1]:[0,h,5,h]));
+  for(let i=1;i<D;i++)if(hs[i]!==hs[i-1])top.push([0,i,5,i]);
+  return{front,top};}
+function consSide(hs){const D=hs.length;let p=[[0,0],[D,0]];for(let i=D-1;i>=0;i--)p.push([i+1,hs[i]],[i,hs[i]]);
+  p=p.filter((q,i)=>{const o=p[(i+1)%p.length];return q[0]!==o[0]||q[1]!==o[1];});
+  return p.filter((q,i)=>{const a=p[(i-1+p.length)%p.length],b=p[(i+1)%p.length];return (q[0]-a[0])*(b[1]-q[1])-(q[1]-a[1])*(b[0]-q[0])!==0;});}
+function genCons(r){const D=4;
+  for(let k=0;k<300;k++){const hs=[...Array(D)].map(()=>ri(r,1,4));
+    if(Math.max(...hs)!==4||new Set(hs).size<2||hs.every((h,i)=>!i||h===hs[i-1]))continue;
+    const v=consViews(hs),key=w=>JSON.stringify(w);
+    if(!v.front.some(l=>l[4]))continue;                       // keep a hidden edge in the front view
+    const levels=[...new Set(hs)];let same=0;
+    const rec=(i,a)=>{if(i===D){const w=consViews(a);if(key(w)===key(v))same++;return;}for(const h of levels)rec(i+1,a.concat(h));};rec(0,[]);
+    if(same!==1)continue;
+    return consLevel({...fromTemplate(tmplOf(LEVELS,'Szerkesztés')),mitre:true,front:v.front,top:v.top,side:consSide(hs)});}
+  return null;}
+
+// ---- overlays: each foil's two typed marks fit the printed marks in exactly one way
+function genFoil(r){const N=5,xor=r()<.4;
+  for(let k=0;k<400;k++){const nf=xor?2:ri(r,1,2),foils=[];
+    for(let i=0;i<nf;i++){const w=ri(r,2,4),h=ri(r,2,4),pos=[ri(r,0,N-w),ri(r,0,N-h)],cells=[];
+      for(let y=0;y<h;y++)for(let x=0;x<w;x++)cells.push([x,y]);
+      const dots=shuffleR(r,cells).slice(0,ri(r,Math.max(2,Math.ceil(cells.length*.35)),Math.ceil(cells.length*.65)));
+      let r0,r1;do{r0=[ri(r,0,w),ri(r,0,h)];r1=[ri(r,0,w),ri(r,0,h)];}while(r0[0]===r1[0]&&r0[1]===r1[1]);
+      const f={id:'AB'[i],w,h,pos,rot0:ri(r,1,3),dots,regs:[r0,r1]};
+      if(nf===2)Object.assign(f,i?{dotStyle:xor?'ring':undefined,dotColor:xor?COL.red:COL.blue}:{dotStyle:xor?'disk':undefined,dotColor:xor?COL.blue:undefined});
+      foils.push(f);}
+    const P=[];foils.forEach(f=>f.regs.forEach(([x,y],t)=>P.push([f.pos[0]+x,f.pos[1]+y,t])));
+    if(new Set(P.map(p=>p[0]+','+p[1])).size!==P.length)continue;
+    // a foil fits where some rotation of its mark vector equals a printed circle→square vector
+    const fits=f=>{let v=[f.regs[1][0]-f.regs[0][0],f.regs[1][1]-f.regs[0][1]],n=0;
+      for(let q=0;q<4;q++){for(const a of P)for(const b of P)if(a[2]===0&&b[2]===1&&b[0]-a[0]===v[0]&&b[1]-a[1]===v[1])n++;v=[-v[1],v[0]];}return n;};
+    if(foils.some(f=>fits(f)!==1))continue;
+    if(nf===2){const A=foils[0],B=foils[1],ov=(f,X,Y)=>X>=f.pos[0]&&X<f.pos[0]+f.w&&Y>=f.pos[1]&&Y<f.pos[1]+f.h;
+      let both=0;for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(ov(A,x,y)&&ov(B,x,y))both++;if(!both)continue;
+      if(xor&&!A.dots.some(([x,y])=>B.dots.some(([u,v])=>A.pos[0]+x===B.pos[0]+u&&A.pos[1]+y===B.pos[1]+v)))continue;}
+    const l=foilLevel({...fromTemplate(tmplOf(LEVELS,xor?'Kettős fedés':'Fólia')),N,mode:xor?'xor':'dots',foils});
+    const on=l.solution.flat().filter(v=>v).length;if(on<3)continue;
+    return l;}
+  return null;}
+
+// ---- cube nets: the folded picture must point to one triple of net cells only
+const CUBE_NETS=[["#...","####","#..."],[".#..","####","#..."],["..#.","####","#..."],["...#","####","#..."],[".#..","####",".#.."],["..#.","####",".#.."],
+  ["##..",".###",".#.."],["##..",".###","..#."],["##..",".###","...#"],["##..",".##.","..##"],["###..","..###"]];
+const ROT24=(()=>{const out=[],P=[[0,1,2],[0,2,1],[1,0,2],[1,2,0],[2,0,1],[2,1,0]];
+  for(const p of P)for(let s=0;s<8;s++){const M=[0,1,2].map(i=>{const r=[0,0,0];r[p[i]]=(s>>i&1)?-1:1;return r;});
+    const det=M[0][0]*(M[1][1]*M[2][2]-M[1][2]*M[2][1])-M[0][1]*(M[1][0]*M[2][2]-M[1][2]*M[2][0])+M[0][2]*(M[1][0]*M[2][1]-M[1][1]*M[2][0]);if(det===1)out.push(M);}return out;})();
+function genFold(r){
+  for(let k=0;k<400;k++){let g=pickR(r,CUBE_NETS).map(s=>s.split(''));
+    for(let t=ri(r,0,3);t>0;t--)g=g[0].map((_,x)=>g.map(row=>row[x]).reverse());if(r()<.5)g=g.map(row=>row.reverse());
+    const net=g.map(row=>row.join('').replace(/#/g,'X')),cellsL=[];net.forEach((row,y)=>[...row].forEach((c,x)=>{if(c!=='.')cellsL.push(x+','+y);}));
+    const pool=shuffleR(r,['arrow','tri',...shuffleR(r,FSYM).slice(0,1)]).slice(0,ri(r,2,3)),spec={};
+    cellsL.forEach(c=>spec[c]=[pickR(r,pool),ri(r,0,3)]);
+    const names=Object.values(spec).map(s=>s[0]);if(names.some(s=>names.filter(t=>t===s).length<2))continue;
+    if(!names.some(s=>s==='arrow'||s==='tri'))continue;
+    const base=foldLevel({net,spec,M:[[1,0,0],[0,1,0],[0,0,1]],vis:[]}),VIEW=['0,0,1','1,0,0','0,1,0'];
+    const look=M=>{const vis=[],key=[];for(const vn of VIEW){const c=Object.keys(base.cells).find(c=>mulM(M,base.cells[c].n).join(',')===vn);
+        const f=base.cells[c],[s,rr]=spec[c],b=rotBasis({u:f.u,v:f.v},rr);vis.push(c);key.push(s+(FSYM.includes(s)&&s!=='tri'?'':':'+mulM(M,b.v).join(',')));}
+      return{vis,key:key.join('|')};};
+    const M=pickR(r,ROT24),want=look(M),vs=want.vis.slice().sort().join(' ');
+    if(ROT24.some(R=>{const o=look(R);return o.key===want.key&&o.vis.slice().sort().join(' ')!==vs;}))continue;
+    const t=tmplOf(LEVELS,'Hajtogatás');
+    return foldLevel({...fromTemplate(t),net,spec,M,vis:want.vis.map(c=>c.split(',').map(Number))});}
+  return null;}
+
+// ---- furnishing: a layout is planted first, the rules are read off it, then a solver keeps the rules tight
+function withLvl(l,fn){const keep={pack:S.pack,rnd:S.rnd,lvl:S.lvl,room:S.room};S.pack='random';S.rnd={...(S.rnd||{}),level:l};S.lvl=0;
+  try{return fn();}finally{S.pack=keep.pack;S.rnd=keep.rnd;S.lvl=keep.lvl;S.room=keep.room;}}
+function roomCands(l,it){const out=[];S.room=[];
+  for(const rr of (it.w===it.h?[0]:[0,1]))for(let y=0;y<l.H;y++)for(let x=0;x<l.W;x++){const o={...it,x,y,r:rr};if(!placeOk(o,x,y))continue;
+    if(!l.noSun&&![0,1,2].every(k=>ruleState(o,k)))continue;
+    if(l.water&&it.water&&!itemCells(o).some(c=>l.water.some(w=>w[0]===c[0]&&w[1]===c[1])))continue;
+    out.push({o,keys:itemCells(o).map(c=>c+'')});}
+  return out;}
+function roomCount(l,cap){return withLvl(l,()=>{const C=l.items.map(it=>roomCands(l,it)),order=C.map((_,i)=>i).sort((a,b)=>C[a].length-C[b].length);
+  const pairs=[...(l.apart||[]).map(p=>[p[0],p[1],0]),...(l.near||[]).map(p=>[p[0],p[1],1])];
+  if(l.items.some(i=>i.id==='table'))['sink','stove'].forEach(s=>pairs.push(['table',s,0]));
+  const ch=[],used=new Set();let n=0,nodes=0;
+  const okPairs=()=>pairs.every(([a,b,t])=>{const A=ch.find(o=>o&&o.id===a),B=ch.find(o=>o&&o.id===b);return!(A&&B)||touching(A,B)===!!t;});
+  (function rec(k){if(n>=cap||++nodes>4e4)return;
+    if(k===order.length){S.room=ch.slice();if(roomSolved())n++;return;}
+    const i=order[k];for(const c of C[i]){if(c.keys.some(q=>used.has(q)))continue;ch[i]=c.o;if(okPairs()){c.keys.forEach(q=>used.add(q));rec(k+1);c.keys.forEach(q=>used.delete(q));}ch[i]=null;}})(0);
+  return nodes>4e4?-1:n;});}
+const ROOM_THEMES={
+  kitchen:{sun:true,name:'Konyha',items:[{id:'sink',name:'mosogató',w:2,h:1,wall:true},{id:'stove',name:'tűzhely',w:2,h:1,wall:true},{id:'fridge',name:'hűtő',w:1,h:1,wall:true},
+    {id:'table',name:'asztal',w:2,h:1,wall:false},{id:'pantry',name:'kamra',w:1,h:1,wall:true},{id:'chair',name:'szék',w:1,h:1,wall:false}]},
+  bedroom:{sun:true,name:'Hálószoba',items:[{id:'bed',name:'ágy',w:2,h:3,wall:false},{id:'desk',name:'szgép',w:2,h:1,wall:true},{id:'wardrobe',name:'szekrény',w:1,h:2,wall:true},
+    {id:'plant',name:'növény',w:1,h:1,wall:false},{id:'night',name:'éjjeli',w:1,h:1,wall:false},{id:'mirror',name:'tükör',w:1,h:1,wall:true}]},
+  living:{sun:true,name:'Nappali',items:[{id:'tv',name:'tévé',w:2,h:1,wall:true},{id:'sofa',name:'kanapé',w:3,h:1,wall:true,back:true},{id:'chair',name:'fotel',w:1,h:1,wall:false},
+    {id:'shelf',name:'polc',w:1,h:2,wall:true},{id:'piano',name:'zongora',w:2,h:1,wall:true},{id:'palm',name:'pálma',w:1,h:1,wall:false,free:true}]},
+  room:{name:'Szoba',items:[{id:'bed',name:'ágy',w:2,h:3,wall:false},{id:'wardrobe',name:'szekrény',w:1,h:2,wall:true},{id:'desk',name:'íróasztal',w:2,h:1,wall:true},
+    {id:'chair',name:'szék',w:1,h:1,wall:false},{id:'shelf',name:'polc',w:1,h:2,wall:true},{id:'plant',name:'növény',w:1,h:1,wall:false}]},
+  office:{name:'Iroda',items:[{id:'desk1',kind:'desk',name:'asztal 1',w:2,h:1,wall:true},{id:'desk2',kind:'desk',name:'asztal 2',w:2,h:1,wall:true},{id:'printer',name:'nyomtató',w:1,h:1,wall:true},
+    {id:'meet',name:'tárgyaló',w:2,h:2,wall:false},{id:'shelf',name:'polc',w:1,h:2,wall:true},{id:'plant',name:'növény',w:1,h:1,wall:false}]},
+  bath:{name:'Fürdő',items:[{id:'wc',name:'WC',w:1,h:1,wall:true,water:true},{id:'basin',name:'mosdó',w:1,h:1,wall:true,water:true},{id:'shower',name:'zuhany',w:2,h:2,wall:true,water:true},
+    {id:'cab',name:'szekrény',w:1,h:2,wall:true},{id:'laundry',name:'szennyes',w:1,h:1,wall:false}]}};
+function plantRoom(r,l,tries=3000){return withLvl(l,()=>{
+  for(let t=0;t<tries;t++){S.room=[];let ok=true;
+    for(const it of l.items){let placed=false;for(let q=0;q<30&&!placed;q++){const rr=it.w===it.h?0:ri(r,0,1),o={...it,r:rr,x:ri(r,0,l.W-1),y:ri(r,0,l.H-1)};
+        if(placeOk(o,o.x,o.y)){S.room.push(o);placed=true;}}if(!placed){ok=false;break;}}
+    if(ok)return S.room.map(o=>({...o}));}
+  return null;});}
+function genRoom(r){const sun=r()<.5;
+  for(let k=0;k<60;k++){
+    const th=sun?pickR(r,['kitchen','bedroom','living']):pickR(r,['room','office','bath']),T0=ROOM_THEMES[th];
+    const W=ri(r,5,7),H=th==='bath'?4:ri(r,4,5),sides=['N','E','W','S'];
+    const dside=sun?pickR(r,['N','E','W']):pickR(r,sides),dlen=dside==='N'||dside==='S'?W:H;
+    const door={side:dside,a:ri(r,0,dlen-2),hinge:pickR(r,['L','R'])},windows=[];
+    if(sun){const a=ri(r,0,W-2);windows.push({side:'S',a,b:a+ri(r,0,1),dbl:true});
+      if(r()<.7){const s=pickR(r,['E','W'].filter(v=>v!==dside)),a2=ri(r,0,H-2);windows.push({side:s,a:a2,b:a2+ri(r,0,1)});}}
+    else{const s=pickR(r,sides.filter(v=>v!==dside)),n=s==='N'||s==='S'?W:H,a=ri(r,0,n-2);windows.push({side:s,a,b:a+ri(r,0,1),dbl:r()<.5});}
+    const items=T0.items.map(it=>({...it,rule:'---'})),l={name:'Lakberendezés',W,H,windows,door,chimney:null,items};
+    if(sun)Object.assign(l,{sheets:['room','sunM','sunN','sunA']});else l.noSun=true;
+    l.check=()=>roomSolved();l.N=1;l.maxH=1;l.sheets=sun?['room','sunM','sunN','sunA']:['room'];
+    if(th!=='bath'&&r()<.7){const bl=withLvl(l,()=>blocked());let c;do{c=[ri(r,0,W-1),ri(r,0,H-1)];}while(bl.has(c+''));l.chimney=c;}
+    // a layout that already meets the fixed rules (access, table, tv, palm)
+    let plant=null;for(let t=0;t<40&&!plant;t++){const p=plantRoom(r,l,200);if(p&&withLvl(l,()=>{S.room=p;return roomSolved();}))plant=p;}
+    if(!plant)continue;
+    if(sun){
+      withLvl(l,()=>{plant.forEach(o=>{const cs=itemCells(o);o.rule=[0,1,2].map(q=>{const n=cs.filter(([a,b])=>lit(SUNKEYS[q],a,b)).length;return n*2>=cs.length?'L':n===0?'D':'-';}).join('');});});
+      items.forEach((it,i)=>it.rule=plant[i].rule);
+      if(items.filter(it=>it.rule.includes('L')).length<2)continue;
+      let c=roomCount(l,9);if(c<1||c>8)continue;
+      // blank rules while the room stays tight
+      for(const[i,q]of shuffleR(r,items.flatMap((_,i)=>[0,1,2].map(q=>[i,q])))){const it=items[i];if(it.rule[q]==='-')continue;const old=it.rule;
+        it.rule=old.slice(0,q)+'-'+old.slice(q+1);const n=roomCount(l,5);if(n<1||n>4)it.rule=old;}
+      if(items.filter(it=>it.rule.includes('L')).length<1)continue;
+      Object.assign(l,fromTemplate({name:'Lakberendezés',sub:'bútorok a napjárás szerint',rev:th==='kitchen'?'REV. AB — Rendezd be a konyhát. Duplakerettel jelölve a falnál álló bútor.':
+        th==='bedroom'?'REV. R1 — Rendezd be a hálószobát a napjárás szerint.':'REV. AD — A kanapé háttal a falnak álljon, és lássák róla a tévét.'}));
+    }else{
+      const touch=(a,b)=>withLvl(l,()=>touching(a,b)),P=[];
+      for(let i=0;i<plant.length;i++)for(let j=i+1;j<plant.length;j++)P.push([plant[i],plant[j]]);
+      l.apart=shuffleR(r,P.filter(([a,b])=>!touch(a,b))).slice(0,th==='bath'?1:ri(r,1,3)).map(([a,b])=>[a.id,b.id]);
+      const nb=shuffleR(r,P.filter(([a,b])=>touch(a,b)))[0];
+      if(nb&&th!=='bath'&&r()<.6)l.near=[[nb[0].id,nb[1].id]];
+      if(th==='bath'){l.water=plant.filter(o=>o.water).map(o=>pickR(r,withLvl(l,()=>itemCells(o))));
+        if(new Set(l.water.map(c=>c+'')).size<l.water.length)continue;}
+      const n=roomCount(l,40);if(n===0)continue;
+      const t=tmplOf(EASY,th==='room'?'Szoba':th==='office'?'Iroda':'Fürdő');Object.assign(l,fromTemplate(t));l.sub='bútorok szabályok alapján';
+    }
+    // start: every piece inside the room, but the rules are not met yet
+    let st=null;for(let t=0;t<60&&!st;t++){const p=plantRoom(r,l,200);if(p&&!withLvl(l,()=>{S.room=p;return roomSolved();})
+      &&!(l.water||[]).some(w=>p.some(o=>withLvl(l,()=>itemCells(o)).some(c=>c[0]===w[0]&&c[1]===w[1]))))st=p;}   // water points stay in sight
+    if(!st)continue;
+    items.forEach((it,i)=>it.at=[st[i].x,st[i].y,st[i].r]);l.plant=plant.map(o=>[o.x,o.y,o.r]);
+    return l;}
+  return null;}
+
 const GENERATORS={'Nézetválasztó':genView,'Magasságtérkép':genHeights,'Kulcsmásolás':genKey,'Látkép':genSky,'Árnyék':r=>genShadow(r,false),
-  'Árnyékfestmény':r=>genShadow(r,true),'Revíziók':genLog,'Méretlánc':genChain,'Elemek':r=>genTiles(r,'tet'),'Csempe':r=>genTiles(r,'tan')};
+  'Árnyékfestmény':r=>genShadow(r,true),'Revíziók':genLog,'Méretlánc':genChain,'Elemek':r=>genTiles(r,'tet'),'Csempe':r=>genTiles(r,'tan'),
+  'Furatok':genDrill,'Szerkesztés':genCons,'Fólia':genFoil,'Kockaháló':genFold,'Lakberendezés':genRoom};
 function openRandom(ti,seed){const[name]=GEN_TYPES[ti],gen=GENERATORS[name];if(!gen){S.popup='A generátor hamarosan érkezik.';render();return;}
   seed=seed||((Math.random()*1e6)|0)+1;const l=gen(rng(seed));if(!l){openRandom(ti,seed+1);return;}
   l.name=name;l.sub='#'+seed;l.gen=true;S.rnd={ti,seed,level:l};S.pack='random';S.screen='game';S.settings=false;startLevel(0);}
@@ -4503,6 +4708,6 @@ function checkWin(){
 startLevel(S.lvl);
 new ResizeObserver(()=>resize()).observe(cv);
 if(document.fonts){document.fonts.load('700 12px "Roboto Mono"').then(render).catch(()=>{});document.fonts.ready.then(render);}
-window.__takart={S,LEVELS,EASY,startLevel,goSheet,render,checkWin,openToc,openGame,T,openRandom,GEN_TYPES,qrots,PLIB,isoVisibility};
+window.__takart={S,roomSolved,consSolved,foldSolved,CSX,CU,CFZ,LEVELS,EASY,startLevel,goSheet,render,checkWin,openToc,openGame,T,openRandom,GEN_TYPES,qrots,PLIB,isoVisibility};
 })();
 </script>

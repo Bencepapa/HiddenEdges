@@ -26,6 +26,9 @@ NEW = {
 "HANG":("SOUND","TON","SUONO"),
 "VÉLETLEN":("RANDOM","ZUFALL","CASUALE"),"„{c}” oszlop törölve":("column “{c}” cleared","Spalte „{c}“ geleert","colonna «{c}» svuotata"),"Tükrözve a vízszintes tengelyre":("Mirrored on the horizontal axis","An der waagerechten Achse gespiegelt","Specchiato sull'asse orizzontale"),
 "a kért nézet négy rajz közül":("the asked view among four drawings","die gesuchte Ansicht unter vier Zeichnungen","la vista richiesta tra quattro disegni"),
+"{a} és {b} egymás mellett":("{a} and {b} side by side","{a} und {b} nebeneinander","{a} e {b} affiancati"),
+"bútorok szabályok alapján":("furniture by the rules","Möbel nach Regeln","arredi secondo le regole"),
+"REV. R1 — Rendezd be a hálószobát a napjárás szerint.":("REV. R1 — Furnish the bedroom by the sun's path.","REV. R1 — Richte das Schlafzimmer nach dem Sonnenlauf ein.","REV. R1 — Arreda la camera seguendo il percorso del sole."),
 "PÉLDA":("EXAMPLE","BEISPIEL","ESEMPIO"),
 "a 2-es és a 3-as látszik, az 1-es takarva":("the 2 and the 3 are seen, the 1 is hidden","die 2 und die 3 sind sichtbar, die 1 ist verdeckt","si vedono il 2 e il 3, l'1 è nascosto"),
 "SZÍNES LAP · így áll össze":("COLOUR SHEET · how it fits","FARBBLATT · so passt es","FOGLIO A COLORI · come si incastra"),
@@ -73,6 +76,9 @@ NEW = {
 "mosdó":("washbasin","Waschb.","lavabo"),"zuhany":("shower","Dusche","doccia"),"szennyes":("laundry","Wäsche","bucato"),
 }
 CTX_NEW = {
+"{a} és {b} egymás mellett":"random furnishing rule: two pieces must touch; {a},{b} are furniture names",
+"bútorok szabályok alapján":"subtitle of generated furnishing puzzles without sun rules",
+"REV. R1 — Rendezd be a hálószobát a napjárás szerint.":"instruction of a generated bedroom puzzle with sun rules",
 "szellemkép":"Small second line under the CLEAN button in the header: the button wipes the e-ink ghost image off the screen.",
 "{a} és {b} nem érintkezhet":"Easy room rules list: two furniture names that must not touch; {a} and {b} are furniture names.",
 "ELŐREHALADÁS TÖRLÉSE":"Button in Settings and on the contents sheet that opens the reset-progress popup.",

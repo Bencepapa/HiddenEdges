@@ -2283,6 +2283,27 @@
    "it": "la vista richiesta tra quattro disegni"
   },
   {
+   "hu": "{a} és {b} egymás mellett",
+   "ctx": "random furnishing rule: two pieces must touch; {a},{b} are furniture names",
+   "en": "{a} and {b} side by side",
+   "de": "{a} und {b} nebeneinander",
+   "it": "{a} e {b} affiancati"
+  },
+  {
+   "hu": "bútorok szabályok alapján",
+   "ctx": "subtitle of generated furnishing puzzles without sun rules",
+   "en": "furniture by the rules",
+   "de": "Möbel nach Regeln",
+   "it": "arredi secondo le regole"
+  },
+  {
+   "hu": "REV. R1 — Rendezd be a hálószobát a napjárás szerint.",
+   "ctx": "instruction of a generated bedroom puzzle with sun rules",
+   "en": "REV. R1 — Furnish the bedroom by the sun's path.",
+   "de": "REV. R1 — Richte das Schlafzimmer nach dem Sonnenlauf ein.",
+   "it": "REV. R1 — Arreda la camera seguendo il percorso del sole."
+  },
+  {
    "hu": "PÉLDA",
    "ctx": "Appears on: Easy level 12 (Belváros), sheet 1; Easy level 2 (Látkép), sheet 1 (+1 more).",
    "en": "EXAMPLE",
