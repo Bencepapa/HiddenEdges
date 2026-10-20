@@ -3293,6 +3293,12 @@ function drawElev(vals,holeSets,x0,labels,title,depth){
   (depth||[]).forEach((line,i)=>{[...new Set(line)].filter(h=>h<vals[i]).forEach(h=>{
     const vis=line.some((v,k)=>v===h&&line.slice(0,k).every(u=>u<=h)),y=FB-h*hz;
     if(vis)pen(LW.thick);else pen(LW.med,[5,3]);seg(x0+i*cell,y,x0+(i+1)*cell,y);ctx.setLineDash([]);});});
+  // vertical edges where two neighbouring positions differ in height somewhere along the depth
+  if(depth)for(let i=0;i+1<depth.length;i++){const A=depth[i],B=depth[i+1],X=x0+(i+1)*cell;
+    for(let k=0;k<Math.max(vals[i],vals[i+1]);k++){let st=0;
+      A.forEach((a,j)=>{const b=B[j];if(Math.min(a,b)>k||Math.max(a,b)<k+1)return;
+        const cov=A.slice(0,j).some((u,q)=>u>k&&B[q]>k);st=Math.max(st,cov?1:2);});
+      if(!st)continue;if(st===2)pen(LW.thick);else pen(LW.med,[5,3]);seg(X,FB-k*hz,X,FB-(k+1)*hz);ctx.setLineDash([]);}}
   holeSets.forEach((set,i)=>{const cx=x0+(i+.5)*cell,r=cell*.22;
     [...set].forEach(k=>{const[h,d]=k.split(',').map(Number),top=FB-h*hz,bot=FB-(h-d)*hz;
       pen(LW.med,[5,3]);seg(cx-r,top,cx-r,bot);seg(cx+r,top,cx+r,bot);if(d<h)seg(cx-r,bot,cx+r,bot);
