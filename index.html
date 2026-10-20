@@ -3022,9 +3022,9 @@ function foilRect(f){
 /* ---------- state ---------- */
 const S={lvl:0,sheet:0,grid:null,undo:[],solved:{},anim:null,ghosts:[],settings:false,
   set:{mult:1,mode:'raw',kal:false,tone:false,refresh:'ghost',font:null,lang:'hu',sound:true}};
-S.screen='title';S.toc={kind:'hard',page:0};S.popup=null;S.pack='hard';
-try{const s=JSON.parse(localStorage.getItem('takart-el-v1')||'null');if(s){S.lvl=s.lvl|0;S.pack=s.pack==='easy'?'easy':'hard';S.solved=s.solved||{};S.unlocked=!!s.unlocked;Object.assign(S.set,s.set||{});}}catch(e){}
-function save(){try{localStorage.setItem('takart-el-v1',JSON.stringify({lvl:S.lvl,pack:S.pack,solved:S.solved,set:S.set,unlocked:!!S.unlocked}));}catch(e){}}
+S.screen='title';S.toc={kind:'hard',page:0};S.popup=null;S.pack='hard';S.favs={};
+try{const s=JSON.parse(localStorage.getItem('takart-el-v1')||'null');if(s){S.lvl=s.lvl|0;S.favs=s.favs||{};S.pack=s.pack==='easy'?'easy':'hard';S.solved=s.solved||{};S.unlocked=!!s.unlocked;Object.assign(S.set,s.set||{});}}catch(e){}
+function save(){try{localStorage.setItem('takart-el-v1',JSON.stringify({lvl:S.lvl,pack:S.pack,favs:S.favs,solved:S.solved,set:S.set,unlocked:!!S.unlocked}));}catch(e){}}
 const PACK=()=>S.pack==='easy'?EASY:S.pack==='random'&&S.rnd?[S.rnd.level]:LEVELS;
 const L=()=>PACK()[S.lvl];
 const sk=i=>S.pack==='random'&&S.rnd?'r'+S.rnd.ti+'_'+S.rnd.seed:(S.pack==='easy'?'e':'')+i;
@@ -3066,8 +3066,9 @@ function drawFrame(){
   // level arrows
   button(262,26,98,36,'TISZTÍT',false,()=>{S.settings=false;S.ghosts=[];S.cleaned=true;SFX.play('whoosh');flash(render,true);},'szellemkép');
   navButton('list',()=>turn(()=>openToc(S.pack)));
-  button(366,26,44,36,'‹',false,()=>turn(()=>S.pack==='random'||S.lvl===0?openToc(S.pack):startLevel(S.lvl-1)));
-  button(416,26,44,36,'›',false,()=>turn(()=>S.pack==='random'?openRandom(S.rnd.ti):S.lvl===PACK().length-1?openToc(S.pack):startLevel(S.lvl+1)));
+  if(S.pack==='random'){const on=!!S.favs[S.rnd.ti];button(366,26,44,36,'',on,()=>{toggleFav(S.rnd.ti);render();});star(388,44,11,on?'#fff':INK,on);}
+  else arrowButton(366,'<',()=>turn(()=>S.lvl===0?openToc(S.pack):startLevel(S.lvl-1)));
+  arrowButton(416,'>',()=>turn(()=>S.pack==='random'?openRandom(S.rnd.ti):S.lvl===PACK().length-1?openToc(S.pack):startLevel(S.lvl+1)));
   // settings: a gear in the title block
   button(522,26,44,36,'',S.settings,()=>{S.settings=!S.settings;render();});gear(544,44,11,S.settings?'#fff':INK);
   txt((S.pack==='random'?T('VÉLETLEN')+' #'+S.rnd.seed:T(`PÁLYA ${S.lvl+1}/${PACK().length}`))+(S.solved[sk(S.lvl)]?'  ✓':''),566,76,9.5,'right',700);
@@ -3818,6 +3819,12 @@ function openTitle(){S.screen='title';S.settings=false;S.ghosts=[];render();}
 function navButton(kind,fn){button(468,26,48,36,'',false,fn);const cx=492,cy=44;ctx.fillStyle=INK;
   if(kind==='home'){poly([[cx,cy-12],[cx+13,cy-1],[cx-13,cy-1]]);ctx.fill();ctx.fillRect(cx-9,cy-2,18,13);ctx.fillStyle='#fff';ctx.fillRect(cx-3,cy+3,6,8);}
   else{for(let i=0;i<3;i++){ctx.fillRect(cx-12,cy-9+i*8,4,4);ctx.fillRect(cx-5,cy-8+i*8,17,2.4);}}}
+// big chevrons inside the arrow buttons, and the favourite star
+function arrowButton(x,dir,fn){button(x,26,44,36,'',false,fn);const cx=x+22,cy=44,w=7,h=11;pen(3.4);ctx.lineJoin='round';ctx.beginPath();
+  if(dir==='<'){ctx.moveTo(cx+w/2,cy-h);ctx.lineTo(cx-w,cy);ctx.lineTo(cx+w/2,cy+h);}else{ctx.moveTo(cx-w/2,cy-h);ctx.lineTo(cx+w,cy);ctx.lineTo(cx-w/2,cy+h);}ctx.stroke();ctx.lineJoin='miter';}
+function star(cx,cy,r,col,filled){ctx.beginPath();for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,R=i%2?r*.45:r;ctx.lineTo(cx+Math.cos(a)*R,cy+Math.sin(a)*R);}ctx.closePath();
+  if(filled){ctx.fillStyle=col;ctx.fill();}pen(LW.thick,null,col);ctx.stroke();}
+function toggleFav(ti){S.favs[ti]=!S.favs[ti];if(!S.favs[ti])delete S.favs[ti];save();SFX.play('tick');}
 function gearButton(){button(522,26,44,36,'',S.settings,()=>{S.settings=!S.settings;render();});gear(544,44,11,S.settings?'#fff':INK);}
 function sheetBorder(){pen(LW.thin);ctx.strokeRect(8,8,584,784);pen(LW.thick);ctx.strokeRect(18,18,564,764);
   for(let c=1;c<6;c++){const x=18+c*94;pen(LW.thin);seg(x,8,x,18);seg(x,782,x,792);}}
@@ -3825,17 +3832,18 @@ function drawToc(){
   const E=tocEntries(),pages=tocPages(),pg=Math.min(S.toc.page,pages-1),kind=S.toc.kind,hard=kind!=='random';
   sheetBorder();
   txt('00',30,56,28,'left',700);txt('TARTALOMJEGYZÉK',80,48,16,'left',700,INK,'alphabetic',170);txt(kind==='easy'?'könnyű feladványok':kind==='hard'?'nehéz feladványok':'generálható feladattípusok',80,75,10.5,'left',400,INK,'alphabetic',222);
-  button(366,26,44,36,'‹',false,()=>turn(openTitle));button(416,26,44,36,'›',false,()=>turn(()=>hard?openGame(0,kind):openTitle()));navButton('home',()=>turn(openTitle));gearButton();
+  arrowButton(366,'<',()=>turn(openTitle));arrowButton(416,'>',()=>turn(()=>hard?openGame(0,kind):openTitle()));navButton('home',()=>turn(openTitle));gearButton();
   const done=E.filter(e=>e.done).length;txt(hard?`${done}/${E.length} ✓`:'',566,76,9.5,'right',700);
   pen(LW.med);seg(30,82,570,82);
   // the table: tick box, number, title, note
   const X=[30,64,112,300,570],TY=94,RH=30;pen(LW.thick);ctx.strokeRect(30,TY,540,RH*(TOC_ROWS+1));
-  ['SZ.','MEGNEVEZÉS','MEGJEGYZÉS'].forEach((h,i)=>txt(h,X[i+1]+8,TY+21,9.5,'left',700));txt('✓',47,TY+21,10,'center',700);
+  ['SZ.','MEGNEVEZÉS','MEGJEGYZÉS'].forEach((h,i)=>txt(h,X[i+1]+8,TY+21,9.5,'left',700));if(kind==='random')star(47,TY+15,7,INK,true);else txt('✓',47,TY+21,10,'center',700);
   pen(LW.med);seg(30,TY+RH,570,TY+RH);
   for(let r=1;r<=TOC_ROWS;r++){pen(LW.thin);seg(30,TY+RH*(r+1),570,TY+RH*(r+1));}
   X.slice(1,4).forEach(x=>{pen(LW.thin);seg(x,TY,x,TY+RH*(TOC_ROWS+1));});
   E.slice(pg*TOC_ROWS,pg*TOC_ROWS+TOC_ROWS).forEach((e,j)=>{const y=TY+RH*(j+1),cur=hard&&kind===S.pack&&e.no-1===S.lvl;
-    pen(LW.med);ctx.strokeRect(39,y+7,16,16);if(e.done){pen(2.6);ctx.beginPath();ctx.moveTo(42,y+15);ctx.lineTo(46,y+20);ctx.lineTo(53,y+10);ctx.stroke();}
+    if(kind==='random'){const on=!!S.favs[e.no-1];star(47,y+15,9,INK,on);hit(30,y,34,RH,()=>{toggleFav(e.no-1);render();});}
+    else{pen(LW.med);ctx.strokeRect(39,y+7,16,16);if(e.done){pen(2.6);ctx.beginPath();ctx.moveTo(42,y+15);ctx.lineTo(46,y+20);ctx.lineTo(53,y+10);ctx.stroke();}}
     txt(String(e.no).padStart(2,'0'),X[1]+8,y+21,11,'left',700);
     txt(e.name.toUpperCase(),X[2]+8,y+21,10.5,'left',700,INK,'alphabetic',X[3]-X[2]-16);
     txt(e.note,X[3]+8,y+20,9,'left',400,INK,'alphabetic',X[4]-X[3]-16);
