@@ -3085,7 +3085,7 @@ function drawFrame(){
   txt(l.name.toUpperCase(),80,48,16,'left',700,INK,'alphabetic',174);
   txt(l.sub,80,75,10.5,'left',400,INK,'alphabetic',370);
   // level arrows
-  button(262,26,98,36,'TISZTÍT',false,()=>{S.settings=false;S.ghosts=[];S.cleaned=true;SFX.play('whoosh');flash(render,true);},'szellemkép');
+  button(262,26,98,36,'TISZTÍT',false,()=>{S.settings=false;S.ghosts=[];S.cleaned=true;SFX.play('silent');flash(render,true);},'szellemkép');
   navButton('list',()=>turn(()=>openToc(S.pack)));
   if(S.pack==='random'){const on=!!S.favs[S.rnd.ti];button(366,26,44,36,'',on,()=>{toggleFav(S.rnd.ti);render();});star(388,44,11,on?'#fff':INK,on);}
   else arrowButton(366,'<',()=>turn(()=>S.lvl===0?openToc(S.pack):startLevel(S.lvl-1)));
@@ -4481,10 +4481,11 @@ const SFX=(()=>{let ac=null,master=null,noise=null;
     g.gain.setValueAtTime(gain,now);g.gain.exponentialRampToValueAtTime(.0008,now+dur);o.connect(g);g.connect(master);o.start(now);o.stop(now+dur+.02);}
   const r=(a,b)=>a+Math.random()*(b-a);
   const LIB={
+    silent:()=>{},   // a button that should make no sound at all (CLEAN): it only cancels the tap
     // a soft fingertip tap on paper
     tick:()=>{hiss({dur:.035,f0:1700,q:1.4,gain:.2,att:.002});tone({dur:.03,f0:900,f1:700,gain:.04});},
-    // a sheet turned over: a rising, then fading rustle of air, no click at the end
-    page:()=>{hiss({dur:.24,f0:r(450,550),f1:1700,type:'lowpass',gain:.13,att:.07});hiss({t:.03,dur:.19,f0:r(2200,2600),f1:1400,q:.8,gain:.04,att:.06});},
+    // a sheet turned over: the soft rising rush of air, kept very quiet
+    page:()=>hiss({dur:.3,f0:300,f1:2400,type:'lowpass',gain:.06,att:.12}),
     foilFlip:()=>{for(let i=0;i<4;i++)hiss({t:i*r(.022,.035),dur:.03,f0:r(4200,6500),type:'highpass',gain:.2,att:.001});tone({t:.1,dur:.05,f0:210,f1:150,gain:.18});},
     drop:()=>{hiss({dur:.04,f0:1100,type:'lowpass',gain:.35,att:.002});tone({dur:.06,f0:260,f1:180,gain:.16});},
     slide:()=>hiss({dur:.16,f0:700,f1:420,type:'lowpass',gain:.3,att:.02,trem:38,tremDepth:.5}),
@@ -4492,7 +4493,6 @@ const SFX=(()=>{let ac=null,master=null,noise=null;
     line:()=>hiss({dur:.34,f0:2000,f1:3400,q:2.5,gain:.3,att:.03,trem:46,tremDepth:.35}),
     erase:()=>hiss({dur:.2,f0:1000,f1:800,q:1.2,gain:.32,att:.02,trem:15,tremDepth:.9}),
     key:()=>{hiss({dur:.07,f0:4200,f1:3600,q:6,gain:.3,att:.003,trem:60,tremDepth:.6});tone({dur:.04,f0:2300,gain:.05});},
-    whoosh:()=>{hiss({dur:.3,f0:300,f1:2400,type:'lowpass',gain:.3,att:.12});},
     stamp:()=>{tone({dur:.16,f0:110,f1:52,gain:.5});hiss({dur:.07,f0:900,type:'lowpass',gain:.45,att:.002});hiss({t:.05,dur:.04,f0:2500,type:'highpass',gain:.12,att:.002});},
     error:()=>{tone({dur:.07,f0:150,type:'square',gain:.07});tone({t:.11,dur:.09,f0:120,type:'square',gain:.07});},
     // a key turned in a drawer lock: two clicks, the bolt's thunk and a short ring of the metal
