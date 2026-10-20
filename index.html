@@ -3844,7 +3844,7 @@ function tocEntries(){const k=S.toc.kind;if(k!=='random'){const P=k==='easy'?EAS
 const TOC_ROWS=15;
 function tocPages(){return Math.max(1,Math.ceil(tocEntries().length/TOC_ROWS));}
 // any jump between levels or screens: in NORMAL page-turn mode it flashes like a sheet change
-function turn(fn){SFX.play('page');if(S.set.refresh==='full'){S.settings=false;flash(fn,true);}else fn();}
+function turn(fn){if(S.set.refresh==='full'){S.settings=false;flash(fn,true);}else fn();}
 function openToc(kind){S.screen='toc';S.settings=false;S.ghosts=[];S.toc={kind,page:kind===S.pack&&kind!=='random'?Math.min(Math.floor(S.lvl/TOC_ROWS),1):0};render();}
 function openGame(i,pack){S.pack=pack==='easy'?'easy':'hard';S.screen='game';S.settings=false;startLevel(i);}
 function openTitle(){S.screen='title';S.settings=false;S.ghosts=[];render();}
