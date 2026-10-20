@@ -67,7 +67,7 @@ index.html                 the game
 i18n/                      exported language table
 tools/i18n/                translation sources and build.py (writes the table into index.html and i18n/)
 tools/generators/          Python solvers and generators used to design and verify levels
-tools/test-pages/          line/hatch test sheet, display probe, font comparison page
+tools/test-pages/          line/hatch test sheet, display probe, font comparison page, sound test page
 ```
 
 `tools/generators` holds the scripts that check that levels can be solved and, where it matters, have a unique solution:

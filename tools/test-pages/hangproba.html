@@ -1,0 +1,102 @@
+<title>Hangpróba</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: one column of drawing-sheet cards, like the game's own sheets; a single paper-white look on purpose (e-ink). */
+:root{--paper:#fff;--ink:#141414;--rule:#141414;--soft:#5b6068;--blue:#2f5f9e;--mono:"Roboto Mono",ui-monospace,"Courier New",monospace;color-scheme:light}
+html,body{background:var(--paper);color:var(--ink)}
+body{font-family:var(--mono);font-size:15px;line-height:1.4;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+h1{margin:0;font-size:26px;text-wrap:balance}
+.lead{margin:0;max-width:62ch}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;border:3px solid var(--rule);padding:12px}
+.bar label{font-weight:700;letter-spacing:.06em;font-size:13px}
+.bar input{width:min(220px,50vw);accent-color:var(--ink)}
+.card{border:2px solid var(--rule)}
+.head{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;padding:8px 12px;border-bottom:2px solid var(--rule)}
+.head b{font-size:16px;letter-spacing:.04em}
+code{font-family:var(--mono);font-size:12px;color:var(--soft)}
+.tag{margin-left:auto;font-size:11px;font-weight:700;border:2px solid var(--blue);color:var(--blue);padding:0 6px;letter-spacing:.06em}
+.body{padding:10px 12px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.body p{margin:0}
+.where{font-size:13px;color:var(--soft)}
+.lab{font-weight:700;color:var(--ink);letter-spacing:.06em}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;font-size:14px;font-weight:700;min-height:44px;padding:0 14px;border:2.5px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:0;cursor:pointer}
+button.old{border-style:dashed;color:var(--soft);border-color:var(--soft)}
+button:active,button.on{background:var(--ink);color:var(--paper)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+</style>
+<main>
+<h1>Hangpróba · Takart élek</h1>
+<p class="lead">Minden hangeffekt kódból szól (Web Audio), hangfájl nélkül. A három átdolgozott hangnál a régi is meghallgatható.</p>
+<div class="bar"><label for="vol">HANGERŐ</label><input id="vol" type="range" min="0" max="100" value="55"><button type="button" id="all">▶ MIND SORBAN</button></div>
+<section class="card"><div class="head"><b>Gombnyomás</b><code>tick</code><span class="tag">ÚJ HANG</span></div><div class="body"><p class="what">Puha ujjkoppintás a papíron.</p><p class="where"><span class="lab">HOL:</span> Minden gomb és fül, a kedvenc csillag, a felugró ablakok gombjai. Ha a gomb maga is ad hangot (lapozás, törlés), a koppintás elmarad.</p><div class="btns"><button type="button" class="play" data-k="tick" aria-label="Gombnyomás lejátszása">▶ ÚJ</button><button type="button" class="play old" data-o="tick" aria-label="Gombnyomás régi hangja">▶ RÉGI</button></div></div></section><section class="card"><div class="head"><b>Lapozás</b><code>page</code><span class="tag">ÚJ HANG</span></div><div class="body"><p class="what">Felfelé ívelő, majd elhaló papírsuhogás, a végén nincs kattanás.</p><p class="where"><span class="lab">HOL:</span> Lapfülek, lapváltás oldalra húzással, ‹ › pályaváltás, tartalomjegyzék, címlap, mappák, RANDOM új feladat.</p><div class="btns"><button type="button" class="play" data-k="page" aria-label="Lapozás lejátszása">▶ ÚJ</button><button type="button" class="play old" data-o="page" aria-label="Lapozás régi hangja">▶ RÉGI</button></div></div></section><section class="card"><div class="head"><b>Menügomb lapozással</b><code>menu</code><span class="tag">ÚJ HANG</span></div><div class="body"><p class="what">Az új hang csak lapozás, a régi koppintás + lapozás volt egyszerre.</p><p class="where"><span class="lab">HOL:</span> Pl. ‹ › gomb, lista és ház ikon, mappák a címlapon.</p><div class="btns"><button type="button" class="play" data-k="menu" aria-label="Menügomb lapozással lejátszása">▶ ÚJ</button><button type="button" class="play old" data-o="menu" aria-label="Menügomb lapozással régi hangja">▶ RÉGI</button></div></div></section><section class="card"><div class="head"><b>Feloldás</b><code>unlock</code><span class="tag">ÚJ HANG</span></div><div class="body"><p class="what">Kulcs a fiók zárjában: két kattanás, a retesz tompa puffanása, rövid fémes cseng.</p><p class="where"><span class="lab">HOL:</span> Helyes jelszó a RANDOM mappa zárolt ablakában.</p><div class="btns"><button type="button" class="play" data-k="unlock" aria-label="Feloldás lejátszása">▶ ÚJ</button><button type="button" class="play old" data-o="unlock" aria-label="Feloldás régi hangja">▶ RÉGI</button></div></div></section><section class="card"><div class="head"><b>Fólia forgatás</b><code>foilFlip</code></div><div class="body"><p class="what">Gyors, száraz pergés és egy halk koppanás.</p><p class="where"><span class="lab">HOL:</span> Fólia forgatása és ÁTFORDÍT; csempe- és tetriselem forgatása.</p><div class="btns"><button type="button" class="play" data-k="foilFlip" aria-label="Fólia forgatás lejátszása">▶ LEJÁTSZ</button></div></div></section><section class="card"><div class="head"><b>Letevés</b><code>drop</code></div><div class="body"><p class="what">Tompa koppanás, ahogy a lap az asztalra kerül.</p><p class="where"><span class="lab">HOL:</span> Fólia letétele a rajzra, csempe letétele, rácsfólia ráhelyezése.</p><div class="btns"><button type="button" class="play" data-k="drop" aria-label="Letevés lejátszása">▶ LEJÁTSZ</button></div></div></section><section class="card"><div class="head"><b>Csúsztatás</b><code>slide</code></div><div class="body"><p class="what">Halk, recés súrlódás.</p><p class="where"><span class="lab">HOL:</span> Bútor áthelyezése és forgatása az alaprajzon, rácsfólia elhúzása.</p><div class="btns"><button type="button" class="play" data-k="slide" aria-label="Csúsztatás lejátszása">▶ LEJÁTSZ</button></div></div></section><section class="card"><div class="head"><b>Ceruzajel</b><code>scribble</code></div><div class="body"><p class="what">Rövid ceruzasercegés.</p><p class="where"><span class="lab">HOL:</span> Cella jelölése a felülnézeten (húzáskor is, ritkítva), kockaháló lapjának kijelölése, tus első pontja, hang bekapcsolása.</p><div class="btns"><button type="button" class="play" data-k="scribble" aria-label="Ceruzajel lejátszása">▶ LEJÁTSZ</button></div></div></section><section class="card"><div class="head"><b>Vonalhúzás</b><code>line</code></div><div class="body"><p class="what">Hosszabb, egyenletes vonalzós húzás.</p><p class="where"><span class="lab">HOL:</span> Szerkesztés: segédvonal, tus kontúr szakasza és lezárása, takart él.</p><div class="btns"><button type="button" class="play" data-k="line" aria-label="Vonalhúzás lejátszása">▶ LEJÁTSZ</button></div></div></section><section class="card"><div class="head"><b>Radír</b><code>erase</code></div><div class="body"><p class="what">Ritmusos radírozás.</p><p class="where"><span class="lab">HOL:</span> VISSZA és TÖRÖL, haladás törlése a beállításokban.</p><div class="btns"><button type="button" class="play" data-k="erase" aria-label="Radír lejátszása">▶ LEJÁTSZ</button></div></div></section><section class="card"><div class="head"><b>Kulcsreszelés</b><code>key</code></div><div class="body"><p class="what">Fémes, magas reszelés.</p><p class="where"><span class="lab">HOL:</span> Kulcsmásolás: egy recemélység állítása.</p><div class="btns"><button type="button" class="play" data-k="key" aria-label="Kulcsreszelés lejátszása">▶ LEJÁTSZ</button></div></div></section><section class="card"><div class="head"><b>Tisztítás</b><code>whoosh</code></div><div class="body"><p class="what">Erősödő légsuhogás.</p><p class="where"><span class="lab">HOL:</span> TISZTÍT gomb: a szellemkép törlése.</p><div class="btns"><button type="button" class="play" data-k="whoosh" aria-label="Tisztítás lejátszása">▶ LEJÁTSZ</button></div></div></section><section class="card"><div class="head"><b>Pecsét</b><code>stamp</code></div><div class="body"><p class="what">Mély puffanás és a pecsét koppanása.</p><p class="where"><span class="lab">HOL:</span> Megoldott feladat: JÓVÁHAGYVA pecsét.</p><div class="btns"><button type="button" class="play" data-k="stamp" aria-label="Pecsét lejátszása">▶ LEJÁTSZ</button></div></div></section><section class="card"><div class="head"><b>Hiba</b><code>error</code></div><div class="body"><p class="what">Két mély, rövid zümmögés.</p><p class="where"><span class="lab">HOL:</span> Rossz jelszó, rossz rajz a nézetválasztóban, bútor nem tehető oda.</p><div class="btns"><button type="button" class="play" data-k="error" aria-label="Hiba lejátszása">▶ LEJÁTSZ</button></div></div></section>
+</main>
+<script>
+const S={set:{sound:true}};
+const SFX=(()=>{let ac=null,master=null,noise=null;
+  function init(){if(ac)return true;const A=window.AudioContext||window.webkitAudioContext;if(!A)return false;
+    ac=new A();master=ac.createGain();master.gain.value=document.getElementById('vol').value/100;window.__m=master;master.connect(ac.destination);
+    noise=ac.createBuffer(1,ac.sampleRate,ac.sampleRate);const d=noise.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;return true;}
+  // band-passed noise with an attack/decay envelope; optional frequency sweep and tremolo (pencil grain)
+  function hiss({t=0,dur=.1,f0=2000,f1=f0,q=1,type='bandpass',gain=.5,att=.005,trem=0,tremDepth=.7}){
+    const now=ac.currentTime+t,src=ac.createBufferSource();src.buffer=noise;src.loop=true;
+    const flt=ac.createBiquadFilter();flt.type=type;flt.Q.value=q;flt.frequency.setValueAtTime(f0,now);flt.frequency.exponentialRampToValueAtTime(Math.max(40,f1),now+dur);
+    const g=ac.createGain();g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(gain,now+att);g.gain.exponentialRampToValueAtTime(.0008,now+dur);
+    let out=g;if(trem){const tg=ac.createGain(),lfo=ac.createOscillator(),ld=ac.createGain();tg.gain.value=1-tremDepth/2;lfo.frequency.value=trem;ld.gain.value=tremDepth/2;
+      lfo.connect(ld);ld.connect(tg.gain);g.connect(tg);out=tg;lfo.start(now);lfo.stop(now+dur+.05);}
+    src.connect(flt);flt.connect(g);out.connect(master);src.start(now,Math.random()*.5);src.stop(now+dur+.05);}
+  function tone({t=0,dur=.08,f0=300,f1=f0,type='sine',gain=.3}){const now=ac.currentTime+t,o=ac.createOscillator(),g=ac.createGain();
+    o.type=type;o.frequency.setValueAtTime(f0,now);o.frequency.exponentialRampToValueAtTime(Math.max(20,f1),now+dur);
+    g.gain.setValueAtTime(gain,now);g.gain.exponentialRampToValueAtTime(.0008,now+dur);o.connect(g);g.connect(master);o.start(now);o.stop(now+dur+.02);}
+  const r=(a,b)=>a+Math.random()*(b-a);
+  const LIB={
+    // a soft fingertip tap on paper
+    tick:()=>{hiss({dur:.035,f0:1700,q:1.4,gain:.2,att:.002});tone({dur:.03,f0:900,f1:700,gain:.04});},
+    // a sheet turned over: a rising, then fading rustle of air, no click at the end
+    page:()=>{hiss({dur:.24,f0:r(450,550),f1:1700,type:'lowpass',gain:.3,att:.07});hiss({t:.03,dur:.19,f0:r(2200,2600),f1:1400,q:.8,gain:.09,att:.06});},
+    foilFlip:()=>{for(let i=0;i<4;i++)hiss({t:i*r(.022,.035),dur:.03,f0:r(4200,6500),type:'highpass',gain:.2,att:.001});tone({t:.1,dur:.05,f0:210,f1:150,gain:.18});},
+    drop:()=>{hiss({dur:.04,f0:1100,type:'lowpass',gain:.35,att:.002});tone({dur:.06,f0:260,f1:180,gain:.16});},
+    slide:()=>hiss({dur:.16,f0:700,f1:420,type:'lowpass',gain:.3,att:.02,trem:38,tremDepth:.5}),
+    scribble:()=>hiss({dur:r(.08,.13),f0:r(2600,3400),f1:r(2200,3800),q:2.2,gain:.38,att:.006,trem:r(24,34),tremDepth:.8}),
+    line:()=>hiss({dur:.34,f0:2000,f1:3400,q:2.5,gain:.3,att:.03,trem:46,tremDepth:.35}),
+    erase:()=>hiss({dur:.2,f0:1000,f1:800,q:1.2,gain:.32,att:.02,trem:15,tremDepth:.9}),
+    key:()=>{hiss({dur:.07,f0:4200,f1:3600,q:6,gain:.3,att:.003,trem:60,tremDepth:.6});tone({dur:.04,f0:2300,gain:.05});},
+    whoosh:()=>{hiss({dur:.3,f0:300,f1:2400,type:'lowpass',gain:.3,att:.12});},
+    stamp:()=>{tone({dur:.16,f0:110,f1:52,gain:.5});hiss({dur:.07,f0:900,type:'lowpass',gain:.45,att:.002});hiss({t:.05,dur:.04,f0:2500,type:'highpass',gain:.12,att:.002});},
+    error:()=>{tone({dur:.07,f0:150,type:'square',gain:.07});tone({t:.11,dur:.09,f0:120,type:'square',gain:.07});},
+    // a key turned in a drawer lock: two clicks, the bolt's thunk and a short ring of the metal
+    unlock:()=>{hiss({dur:.025,f0:2800,q:5,gain:.35,att:.001});hiss({t:.11,dur:.03,f0:2200,q:5,gain:.4,att:.001});
+      tone({t:.11,dur:.12,f0:160,f1:90,gain:.35});hiss({t:.12,dur:.3,f0:3100,q:18,gain:.25,att:.002});},
+  };
+  let last={},tk=0;
+  // a button tap plays a tick unless the button's own action makes a sound in the same moment (a page turn, say)
+  return{LIB,play(name,minGap=0){if(!S.set.sound||!init())return;if(ac.state==='suspended')ac.resume();const n=performance.now();
+      if(name==='tick'){clearTimeout(tk);tk=setTimeout(()=>{tk=0;try{LIB.tick();}catch(e){}},0);return;}
+      if(tk){clearTimeout(tk);tk=0;}
+      if(minGap&&last[name]&&n-last[name]<minGap)return;last[name]=n;try{LIB[name]();}catch(e){}},
+    unlock(){if(S.set.sound&&init()&&ac.state==='suspended')ac.resume();}};})();
+let AC=null,M=null,NZ=null;
+function ctx0(){if(AC)return;AC=new (window.AudioContext||window.webkitAudioContext)();M=AC.createGain();M.connect(AC.destination);setVol();
+  NZ=AC.createBuffer(1,AC.sampleRate,AC.sampleRate);const d=NZ.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;}
+function setVol(){const v=document.getElementById('vol').value/100;if(M)M.gain.value=v;if(window.__m)window.__m.gain.value=v;}
+function H({t=0,dur=.1,f0=2000,f1=f0,q=1,type='bandpass',gain=.5,att=.005}){const now=AC.currentTime+t,src=AC.createBufferSource();src.buffer=NZ;src.loop=true;
+  const f=AC.createBiquadFilter();f.type=type;f.Q.value=q;f.frequency.setValueAtTime(f0,now);f.frequency.exponentialRampToValueAtTime(Math.max(40,f1),now+dur);
+  const g=AC.createGain();g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(gain,now+att);g.gain.exponentialRampToValueAtTime(.0008,now+dur);
+  src.connect(f);f.connect(g);g.connect(M);src.start(now,Math.random()*.5);src.stop(now+dur+.05);}
+function Tn({t=0,dur=.08,f0=300,f1=f0,type='sine',gain=.3}){const now=AC.currentTime+t,o=AC.createOscillator(),g=AC.createGain();o.type=type;
+  o.frequency.setValueAtTime(f0,now);o.frequency.exponentialRampToValueAtTime(Math.max(20,f1),now+dur);g.gain.setValueAtTime(gain,now);g.gain.exponentialRampToValueAtTime(.0008,now+dur);
+  o.connect(g);g.connect(M);o.start(now);o.stop(now+dur+.02);}
+const OLD={
+  tick:()=>H({dur:.018,f0:5200,type:'highpass',gain:.22,att:.001}),
+  page:()=>{H({dur:.26,f0:2600+Math.random()*600,f1:700,q:.7,gain:.32,att:.04});H({t:.2,dur:.03,f0:1800,type:'highpass',gain:.12,att:.002});},
+  unlock:()=>{H({dur:.02,f0:5000,type:'highpass',gain:.3,att:.001});H({t:.09,dur:.03,f0:3200,type:'highpass',gain:.35,att:.001});Tn({t:.15,dur:.25,f0:520,f1:1040,type:'triangle',gain:.12});},
+  menu:()=>{OLD.tick();OLD.page();}};
+const NEW=k=>k==='menu'?()=>{SFX.play('tick');SFX.play('page');}:()=>SFX.play(k);
+document.getElementById('vol').addEventListener('input',()=>{setVol();});
+function flashBtn(b){b.classList.add('on');setTimeout(()=>b.classList.remove('on'),180);}
+document.querySelectorAll('button.play').forEach(b=>b.addEventListener('click',()=>{ctx0();if(AC.state==='suspended')AC.resume();flashBtn(b);
+  if(b.dataset.o)OLD[b.dataset.o]();else NEW(b.dataset.k)();}));
+document.getElementById('all').addEventListener('click',()=>{ctx0();[...document.querySelectorAll('button.play:not(.old)')].forEach((b,i)=>setTimeout(()=>{flashBtn(b);NEW(b.dataset.k)();},i*800));});
+</script>

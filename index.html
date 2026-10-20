@@ -4481,8 +4481,10 @@ const SFX=(()=>{let ac=null,master=null,noise=null;
     g.gain.setValueAtTime(gain,now);g.gain.exponentialRampToValueAtTime(.0008,now+dur);o.connect(g);g.connect(master);o.start(now);o.stop(now+dur+.02);}
   const r=(a,b)=>a+Math.random()*(b-a);
   const LIB={
-    tick:()=>hiss({dur:.018,f0:5200,type:'highpass',gain:.22,att:.001}),
-    page:()=>{hiss({dur:.26,f0:r(2600,3200),f1:700,q:.7,gain:.32,att:.04});hiss({t:.2,dur:.03,f0:1800,type:'highpass',gain:.12,att:.002});},
+    // a soft fingertip tap on paper
+    tick:()=>{hiss({dur:.035,f0:1700,q:1.4,gain:.2,att:.002});tone({dur:.03,f0:900,f1:700,gain:.04});},
+    // a sheet turned over: a rising, then fading rustle of air, no click at the end
+    page:()=>{hiss({dur:.24,f0:r(450,550),f1:1700,type:'lowpass',gain:.3,att:.07});hiss({t:.03,dur:.19,f0:r(2200,2600),f1:1400,q:.8,gain:.09,att:.06});},
     foilFlip:()=>{for(let i=0;i<4;i++)hiss({t:i*r(.022,.035),dur:.03,f0:r(4200,6500),type:'highpass',gain:.2,att:.001});tone({t:.1,dur:.05,f0:210,f1:150,gain:.18});},
     drop:()=>{hiss({dur:.04,f0:1100,type:'lowpass',gain:.35,att:.002});tone({dur:.06,f0:260,f1:180,gain:.16});},
     slide:()=>hiss({dur:.16,f0:700,f1:420,type:'lowpass',gain:.3,att:.02,trem:38,tremDepth:.5}),
@@ -4493,10 +4495,15 @@ const SFX=(()=>{let ac=null,master=null,noise=null;
     whoosh:()=>{hiss({dur:.3,f0:300,f1:2400,type:'lowpass',gain:.3,att:.12});},
     stamp:()=>{tone({dur:.16,f0:110,f1:52,gain:.5});hiss({dur:.07,f0:900,type:'lowpass',gain:.45,att:.002});hiss({t:.05,dur:.04,f0:2500,type:'highpass',gain:.12,att:.002});},
     error:()=>{tone({dur:.07,f0:150,type:'square',gain:.07});tone({t:.11,dur:.09,f0:120,type:'square',gain:.07});},
-    unlock:()=>{hiss({dur:.02,f0:5000,type:'highpass',gain:.3,att:.001});hiss({t:.09,dur:.03,f0:3200,type:'highpass',gain:.35,att:.001});tone({t:.15,dur:.25,f0:520,f1:1040,type:'triangle',gain:.12});},
+    // a key turned in a drawer lock: two clicks, the bolt's thunk and a short ring of the metal
+    unlock:()=>{hiss({dur:.025,f0:2800,q:5,gain:.35,att:.001});hiss({t:.11,dur:.03,f0:2200,q:5,gain:.4,att:.001});
+      tone({t:.11,dur:.12,f0:160,f1:90,gain:.35});hiss({t:.12,dur:.3,f0:3100,q:18,gain:.25,att:.002});},
   };
-  let last={};
-  return{play(name,minGap=0){if(!S.set.sound||!init())return;if(ac.state==='suspended')ac.resume();const n=performance.now();
+  let last={},tk=0;
+  // a button tap plays a tick unless the button's own action makes a sound in the same moment (a page turn, say)
+  return{LIB,play(name,minGap=0){if(!S.set.sound||!init())return;if(ac.state==='suspended')ac.resume();const n=performance.now();
+      if(name==='tick'){clearTimeout(tk);tk=setTimeout(()=>{tk=0;try{LIB.tick();}catch(e){}},0);return;}
+      if(tk){clearTimeout(tk);tk=0;}
       if(minGap&&last[name]&&n-last[name]<minGap)return;last[name]=n;try{LIB[name]();}catch(e){}},
     unlock(){if(S.set.sound&&init()&&ac.state==='suspended')ac.resume();}};})();
 
