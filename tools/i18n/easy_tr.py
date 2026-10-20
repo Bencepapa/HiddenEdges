@@ -23,6 +23,7 @@ NEW = {
 "TEST":("SOLID","KÖRPER","SOLIDO"),"Melyik a felülnézet?":("Which one is the top view?","Welche ist die Draufsicht?","Qual è la pianta?"),
 "Melyik az A nézet?":("Which one is view A?","Welche ist Ansicht A?","Qual è la vista A?"),"Melyik a B nézet?":("Which one is view B?","Welche ist Ansicht B?","Qual è la vista B?"),
 "szellemkép":("ghosting","Geisterbild","fantasmi"),
+"HANG":("SOUND","TON","SUONO"),
 "PÉLDA":("EXAMPLE","BEISPIEL","ESEMPIO"),
 "a 2-es és a 3-as látszik, az 1-es takarva":("the 2 and the 3 are seen, the 1 is hidden","die 2 und die 3 sind sichtbar, die 1 ist verdeckt","si vedono il 2 e il 3, l'1 è nascosto"),
 "SZÍNES LAP · így áll össze":("COLOUR SHEET · how it fits","FARBBLATT · so passt es","FOGLIO A COLORI · come si incastra"),

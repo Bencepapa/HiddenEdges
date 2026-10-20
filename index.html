@@ -2277,6 +2277,13 @@ body{overflow:hidden}
    "it": "fantasmi"
   },
   {
+   "hu": "HANG",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "SOUND",
+   "de": "TON",
+   "it": "SUONO"
+  },
+  {
    "hu": "PÉLDA",
    "ctx": "Appears on: Easy level 12 (Belváros), sheet 1; Easy level 2 (Látkép), sheet 1 (+1 more).",
    "en": "EXAMPLE",
@@ -2986,7 +2993,7 @@ function foilRect(f){
 
 /* ---------- state ---------- */
 const S={lvl:0,sheet:0,grid:null,undo:[],solved:{},anim:null,ghosts:[],settings:false,
-  set:{mult:1,mode:'raw',kal:false,tone:false,refresh:'ghost',font:null,lang:'hu'}};
+  set:{mult:1,mode:'raw',kal:false,tone:false,refresh:'ghost',font:null,lang:'hu',sound:true}};
 S.screen='title';S.toc={kind:'hard',page:0};S.popup=null;S.pack='hard';
 try{const s=JSON.parse(localStorage.getItem('takart-el-v1')||'null');if(s){S.lvl=s.lvl|0;S.pack=s.pack==='easy'?'easy':'hard';S.solved=s.solved||{};S.unlocked=!!s.unlocked;Object.assign(S.set,s.set||{});}}catch(e){}
 function save(){try{localStorage.setItem('takart-el-v1',JSON.stringify({lvl:S.lvl,pack:S.pack,solved:S.solved,set:S.set,unlocked:!!S.unlocked}));}catch(e){}}
@@ -3029,7 +3036,7 @@ function drawFrame(){
   txt(l.name.toUpperCase(),80,48,16,'left',700,INK,'alphabetic',174);
   txt(l.sub,80,75,10.5,'left',400,INK,'alphabetic',370);
   // level arrows
-  button(262,26,98,36,'TISZTÍT',false,()=>{S.settings=false;S.ghosts=[];S.cleaned=true;flash(render,true);},'szellemkép');
+  button(262,26,98,36,'TISZTÍT',false,()=>{S.settings=false;S.ghosts=[];S.cleaned=true;SFX.play('whoosh');flash(render,true);},'szellemkép');
   navButton('list',()=>turn(()=>openToc(S.pack)));
   button(366,26,44,36,'‹',false,()=>turn(()=>S.lvl===0?openToc(S.pack):startLevel(S.lvl-1)));
   button(416,26,44,36,'›',false,()=>turn(()=>S.lvl===PACK().length-1?openToc(S.pack):startLevel(S.lvl+1)));
@@ -3139,7 +3146,7 @@ function sheetFoil(){
   if(l.tools){
     const t=l.tools,sf=S.selFoil;let bx=330;const by=GY+82;
     txt('KIJELÖLT FÓLIA: '+(sf?sf.id:'—'),330,by-8,9.5,'left',700);
-    if(t.includes('flip')){button(bx,by,112,46,'ÁTFORDÍT',false,()=>{if(sf){sf.flip=!sf.flip;render();}});bx+=120;}
+    if(t.includes('flip')){button(bx,by,112,46,'ÁTFORDÍT',false,()=>{if(sf){sf.flip=!sf.flip;SFX.play('foilFlip');render();}});bx+=120;}
     if(t.includes('scale')){button(bx,by,112,46,'LÉPTÉK',false,()=>{if(sf){sf.scl={0.5:1,1:2,2:.5}[sf.scl];sf.at=null;render();}},sf?'M 1:'+({0.5:100,1:50,2:25})[sf.scl]:'');}
     if(t.includes('scale'))txt('LAP: M 1:50',GX+W,GY+W+22,10.5,'right',700);
   }
@@ -3321,17 +3328,17 @@ function consTap(p){
   if(C.tool==='dash'){
     if(!C.segA){C.segA=q;C.hist.push('segA');render();return;}
     if(Math.hypot(C.segA[0]-q[0],C.segA[1]-q[1])<1)return;
-    C.segs.push([C.segA,q]);C.segA=null;C.hist.push('seg');render();checkWin();return;}
+    C.segs.push([C.segA,q]);C.segA=null;C.hist.push('seg');SFX.play('line');render();checkWin();return;}
   if(C.tool==='pen'){
-    if(C.path.length>=3&&Math.hypot(C.path[0][0]-q[0],C.path[0][1]-q[1])<1){C.closed=true;C.hist.push('close');render();checkWin();return;}
+    if(C.path.length>=3&&Math.hypot(C.path[0][0]-q[0],C.path[0][1]-q[1])<1){SFX.play('line');C.closed=true;C.hist.push('close');render();checkWin();return;}
     const last=C.path[C.path.length-1];if(last&&Math.hypot(last[0]-q[0],last[1]-q[1])<1)return;
-    C.path.push(q);C.hist.push('pt');render();return;}
+    C.path.push(q);C.hist.push('pt');SFX.play(C.path.length>1?'line':'scribble');render();return;}
   const ln={t:C.tool,x:q[0],y:q[1]};
   const dup=C.lines.some(o=>o.t===ln.t&&(ln.t==='h'?Math.abs(o.y-ln.y)<1:ln.t==='v'?Math.abs(o.x-ln.x)<1:Math.abs((o.y-o.x)-(ln.y-ln.x))<1));
-  if(!dup){C.lines.push(ln);C.hist.push('line');}render();
+  if(!dup){C.lines.push(ln);C.hist.push('line');SFX.play('line');}render();
 }
 function consBase(){return L().mitre?[{t:'m',x:CREF[0],y:CREF[1]}]:[];}
-function consUndo(){const C=S.cons,h=C.hist.pop();if(!h)return;if(h==='segA')C.segA=null;else if(h==='seg'){C.segA=C.segs.pop()[0];C.hist.push('segA');S.anim=null;}else if(h==='line')C.lines.pop();else if(h==='pt')C.path.pop();else if(h==='close'){C.closed=false;S.anim=null;}render();}
+function consUndo(){SFX.play('erase');const C=S.cons,h=C.hist.pop();if(!h)return;if(h==='segA')C.segA=null;else if(h==='seg'){C.segA=C.segs.pop()[0];C.hist.push('segA');S.anim=null;}else if(h==='line')C.lines.pop();else if(h==='pt')C.path.pop();else if(h==='close'){C.closed=false;S.anim=null;}render();}
 function consSolved(){
   const C=S.cons;if(!C.closed)return false;
   let pts=C.path.map(([x,y])=>[Math.round((x-CSX)/CU*100)/100,Math.round((CFZ-y)/CU*100)/100]);
@@ -3775,7 +3782,7 @@ function tocEntries(){const k=S.toc.kind;if(k!=='random'){const P=k==='easy'?EAS
 const TOC_ROWS=15;
 function tocPages(){return Math.max(1,Math.ceil(tocEntries().length/TOC_ROWS));}
 // any jump between levels or screens: in NORMAL page-turn mode it flashes like a sheet change
-function turn(fn){if(S.set.refresh==='full'){S.settings=false;flash(fn,true);}else fn();}
+function turn(fn){SFX.play('page');if(S.set.refresh==='full'){S.settings=false;flash(fn,true);}else fn();}
 function openToc(kind){S.screen='toc';S.settings=false;S.ghosts=[];S.toc={kind,page:kind===S.pack&&kind!=='random'?Math.min(Math.floor(S.lvl/TOC_ROWS),1):0};render();}
 function openGame(i,pack){S.pack=pack==='easy'?'easy':'hard';S.screen='game';S.settings=false;startLevel(i);}
 function openTitle(){S.screen='title';S.settings=false;S.ghosts=[];render();}
@@ -3878,8 +3885,8 @@ function placeLock(x,y,w,h){const r=cv.getBoundingClientRect(),sc=r.width/cv.wid
   pwGo.style.width=pwGo.style.height=px(h,0)+'px';pwEl.placeholder=T('jelszó');pwEl.setAttribute('aria-label',T('jelszó'));pwGo.setAttribute('aria-label',T('Feloldás'));
   if(lockEl.hidden){lockEl.hidden=false;if(allSolved())pwEl.value=T('vonalzó');setTimeout(()=>pwEl.focus(),30);}}
 function tryUnlock(){
-  if(PASSWORDS.includes(norm(pwEl.value))){S.unlocked=true;save();lockEl.hidden=true;pwEl.value='';S.popup=null;turn(()=>openToc('random'));return;}
-  const done=()=>{pwEl.value='';};
+  if(PASSWORDS.includes(norm(pwEl.value))){SFX.play('unlock');S.unlocked=true;save();lockEl.hidden=true;pwEl.value='';S.popup=null;turn(()=>openToc('random'));return;}
+  SFX.play('error');const done=()=>{pwEl.value='';};
   if(pwEl.animate&&!matchMedia('(prefers-reduced-motion: reduce)').matches)
     pwEl.animate([{transform:'translateX(0)'},{transform:'translateX(-10px)'},{transform:'translateX(10px)'},{transform:'translateX(-7px)'},{transform:'translateX(7px)'},{transform:'translateX(0)'}],{duration:320}).onfinish=done;
   else done();}
@@ -3887,7 +3894,7 @@ pwGo.addEventListener('click',tryUnlock);
 pwEl.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();tryUnlock();}else if(e.key==='Escape')closePopup();});
 function resetProgress(which){
   Object.keys(S.solved).forEach(k=>{const e=k[0]==='e';if(which==='all'||(which==='easy'&&e)||(which==='hard'&&!e))delete S.solved[k];});
-  if(which!=='easy')S.unlocked=false;save();S.popup=null;S.anim=null;render();}
+  if(which!=='easy')S.unlocked=false;SFX.play('erase');save();S.popup=null;S.anim=null;render();}
 function drawReset(){
   const X=60,Y=250,W=480,H=300;ctx.fillStyle='#fff';ctx.fillRect(X,Y,W,H);pen(LW.thick*1.4);ctx.strokeRect(X,Y,W,H);pen(LW.thin);ctx.strokeRect(X+5,Y+5,W-10,H-10);
   // warning sign
@@ -3982,7 +3989,7 @@ function sheetKey(){
   const cx=300,cy=480,x0=cx-(Lk-36)/2;drawKey(cx,cy,S.key);
   // depth gauge and position numbers
   S.key.forEach((d,i)=>{const xc=x0+50+i*KP+KP/2;pen(LW.thin,[3,3]);for(let k=1;k<=3;k++)seg(xc-10,cy-20+k*KD,xc+10,cy-20+k*KD);ctx.setLineDash([]);
-    txt(String(i+1),xc,cy+50,10,'center',700);hit(xc-KP/2,cy-70,KP,140,()=>{S.key[i]=(S.key[i]+1)%4;S.anim=null;render();checkWin();});});
+    txt(String(i+1),xc,cy+50,10,'center',700);hit(xc-KP/2,cy-70,KP,140,()=>{SFX.play('key');S.key[i]=(S.key[i]+1)%4;S.anim=null;render();checkWin();});});
   if(S.anim&&S.anim.p>=1)stamp(300,480);
   noteLine(l);}
 
@@ -4072,7 +4079,7 @@ function sheetPick(){const l=L(),N=l.N;
     ctx.fillStyle='#fff';ctx.fillRect(x,y,w,h);pen(sel?LW.thick*2:LW.med);ctx.strokeRect(x,y,w,h);txt(String(i+1),x+8,y+18,10,'left',700);
     if(o.t==='top')topPanel(o.v,x,y,w,h);else elevPanel(o.v,x,y,w,h,l.maxH);
     if(bad){pen(4,null,COL.red);seg(x+12,y+12,x+w-12,y+h-12);seg(x+w-12,y+12,x+12,y+h-12);}
-    hit(x,y,w,h,()=>{if(S.anim&&S.anim.p>=1)return;if(i===l.ans){S.pick=i;checkWin();}else{S.wrong.add(i);render();}});});
+    hit(x,y,w,h,()=>{if(S.anim&&S.anim.p>=1)return;if(i===l.ans){S.pick=i;checkWin();}else{S.wrong.add(i);SFX.play('error');render();}});});
   if(S.anim&&S.anim.p>=1)stamp(30+(l.ans%2)*275+132,430+Math.floor(l.ans/2)*120+56,.8);noteLine(l);}
 /* tiling with tetrominoes or tangram-like quarter pieces */
 function tileGeo(){const l=L(),C=l.kind==='tet'?40:50;return{C,BX:Math.round(300-l.W*C/2),BY:Math.round(126+(250-l.H*C)/2)};}
@@ -4106,6 +4113,43 @@ function initTiles(l){const g=tileGeo(),x0=Math.ceil((40-g.BX)/g.C),xMax=Math.fl
     if(x+w>xMax){x=x0;y+=rowH;rowH=0;}
     const p={n,r:0,x,y,ci:i,drag:null};x+=w+(g.C<45?1:0);rowH=Math.max(rowH,h);return p;});}
 
+/* ---------- sound: small paper-and-pen noises synthesised with Web Audio ---------- */
+const SFX=(()=>{let ac=null,master=null,noise=null;
+  function init(){if(ac)return true;const A=window.AudioContext||window.webkitAudioContext;if(!A)return false;
+    ac=new A();master=ac.createGain();master.gain.value=.55;master.connect(ac.destination);
+    noise=ac.createBuffer(1,ac.sampleRate,ac.sampleRate);const d=noise.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;return true;}
+  // band-passed noise with an attack/decay envelope; optional frequency sweep and tremolo (pencil grain)
+  function hiss({t=0,dur=.1,f0=2000,f1=f0,q=1,type='bandpass',gain=.5,att=.005,trem=0,tremDepth=.7}){
+    const now=ac.currentTime+t,src=ac.createBufferSource();src.buffer=noise;src.loop=true;
+    const flt=ac.createBiquadFilter();flt.type=type;flt.Q.value=q;flt.frequency.setValueAtTime(f0,now);flt.frequency.exponentialRampToValueAtTime(Math.max(40,f1),now+dur);
+    const g=ac.createGain();g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(gain,now+att);g.gain.exponentialRampToValueAtTime(.0008,now+dur);
+    let out=g;if(trem){const tg=ac.createGain(),lfo=ac.createOscillator(),ld=ac.createGain();tg.gain.value=1-tremDepth/2;lfo.frequency.value=trem;ld.gain.value=tremDepth/2;
+      lfo.connect(ld);ld.connect(tg.gain);g.connect(tg);out=tg;lfo.start(now);lfo.stop(now+dur+.05);}
+    src.connect(flt);flt.connect(g);out.connect(master);src.start(now,Math.random()*.5);src.stop(now+dur+.05);}
+  function tone({t=0,dur=.08,f0=300,f1=f0,type='sine',gain=.3}){const now=ac.currentTime+t,o=ac.createOscillator(),g=ac.createGain();
+    o.type=type;o.frequency.setValueAtTime(f0,now);o.frequency.exponentialRampToValueAtTime(Math.max(20,f1),now+dur);
+    g.gain.setValueAtTime(gain,now);g.gain.exponentialRampToValueAtTime(.0008,now+dur);o.connect(g);g.connect(master);o.start(now);o.stop(now+dur+.02);}
+  const r=(a,b)=>a+Math.random()*(b-a);
+  const LIB={
+    tick:()=>hiss({dur:.018,f0:5200,type:'highpass',gain:.22,att:.001}),
+    page:()=>{hiss({dur:.26,f0:r(2600,3200),f1:700,q:.7,gain:.32,att:.04});hiss({t:.2,dur:.03,f0:1800,type:'highpass',gain:.12,att:.002});},
+    foilFlip:()=>{for(let i=0;i<4;i++)hiss({t:i*r(.022,.035),dur:.03,f0:r(4200,6500),type:'highpass',gain:.2,att:.001});tone({t:.1,dur:.05,f0:210,f1:150,gain:.18});},
+    drop:()=>{hiss({dur:.04,f0:1100,type:'lowpass',gain:.35,att:.002});tone({dur:.06,f0:260,f1:180,gain:.16});},
+    slide:()=>hiss({dur:.16,f0:700,f1:420,type:'lowpass',gain:.3,att:.02,trem:38,tremDepth:.5}),
+    scribble:()=>hiss({dur:r(.08,.13),f0:r(2600,3400),f1:r(2200,3800),q:2.2,gain:.38,att:.006,trem:r(24,34),tremDepth:.8}),
+    line:()=>hiss({dur:.34,f0:2000,f1:3400,q:2.5,gain:.3,att:.03,trem:46,tremDepth:.35}),
+    erase:()=>hiss({dur:.2,f0:1000,f1:800,q:1.2,gain:.32,att:.02,trem:15,tremDepth:.9}),
+    key:()=>{hiss({dur:.07,f0:4200,f1:3600,q:6,gain:.3,att:.003,trem:60,tremDepth:.6});tone({dur:.04,f0:2300,gain:.05});},
+    whoosh:()=>{hiss({dur:.3,f0:300,f1:2400,type:'lowpass',gain:.3,att:.12});},
+    stamp:()=>{tone({dur:.16,f0:110,f1:52,gain:.5});hiss({dur:.07,f0:900,type:'lowpass',gain:.45,att:.002});hiss({t:.05,dur:.04,f0:2500,type:'highpass',gain:.12,att:.002});},
+    error:()=>{tone({dur:.07,f0:150,type:'square',gain:.07});tone({t:.11,dur:.09,f0:120,type:'square',gain:.07});},
+    unlock:()=>{hiss({dur:.02,f0:5000,type:'highpass',gain:.3,att:.001});hiss({t:.09,dur:.03,f0:3200,type:'highpass',gain:.35,att:.001});tone({t:.15,dur:.25,f0:520,f1:1040,type:'triangle',gain:.12});},
+  };
+  let last={};
+  return{play(name,minGap=0){if(!S.set.sound||!init())return;if(ac.state==='suspended')ac.resume();const n=performance.now();
+      if(minGap&&last[name]&&n-last[name]<minGap)return;last[name]=n;try{LIB[name]();}catch(e){}},
+    unlock(){if(S.set.sound&&init()&&ac.state==='suspended')ac.resume();}};})();
+
 /* ---------- settings ---------- */
 const MODES=[['raw','Natív'],['g16','Szürke 16'],['fs','Floyd–St.'],['b8','Bayer 8×8']];
 const MODE_SHORT={raw:'natív',g16:'szürke',fs:'Floyd',b8:'Bayer'};
@@ -4132,6 +4176,9 @@ function drawSettings(){
   row(Y+270,'E-INK EMULÁCIÓ MOBILON');
   button(X+20,Y+282,90,48,'KI',!emu,()=>{S.set.kal=false;S.set.tone=false;save();render();});
   button(X+116,Y+282,90,48,'BE',emu,()=>{S.set.kal=true;S.set.tone=true;save();render();});
+  txt('HANG',X+270,Y+270,10.5);
+  button(X+270,Y+282,90,48,'KI',!S.set.sound,()=>{S.set.sound=false;save();render();});
+  button(X+366,Y+282,90,48,'BE',S.set.sound,()=>{S.set.sound=true;save();render();SFX.play('scribble');});
   // page refresh
   row(Y+360,'LAPVÁLTÁS');
   button(X+20,Y+372,180,52,'GYORS',S.set.refresh==='ghost',()=>{S.set.refresh='ghost';save();render();},'szellemképes');
@@ -4207,7 +4254,7 @@ function render(){
   post(w,h);
 }
 function goSheet(i){
-  if(S.screen!=='game'||i===S.sheet)return;if(S.settings){S.settings=false;render();}
+  if(S.screen!=='game'||i===S.sheet)return;SFX.play('page');if(S.settings){S.settings=false;render();}
   if(S.set.refresh==='full'){S.ghosts=[];S.cleaned=true;S.sheet=i;flash(render,true);return;}
   // the sheet we leave stays on the panel as a residue; older residues weaken with every page change
   const g=document.createElement('canvas');g.width=rawFrame.width;g.height=rawFrame.height;g.getContext('2d').drawImage(rawFrame,0,0);
@@ -4229,19 +4276,20 @@ function gridInfo(){const l=L(),t=l.sheets[S.sheet];
 function cellAt(p){const l=L();if(S.settings)return null;const gi=gridInfo();if(!gi)return null;
   const x=Math.floor((p[0]-gi.GX)/gi.cell),y=Math.floor((p[1]-gi.GY)/gi.cell);
   return x>=0&&y>=0&&x<l.N&&y<l.N&&gi.max(x,y)>0?[x,y]:null;}
-function undo(){if(S.undo.length){S.grid=S.undo.pop();S.anim=null;render();}}
+function undo(){if(S.undo.length){SFX.play('erase');S.grid=S.undo.pop();S.anim=null;render();}}
 let drag=null,down=null,raf=0,fd=null,bd=null,sd=false,rd=null,td=null;
 function foilAt(p){if(S.settings||L().sheets[S.sheet]!=='foil')return null;
   for(let i=S.foils.length-1;i>=0;i--){const f=S.foils[i],[x,y,w,h]=foilRect(f);if(p[0]>=x&&p[0]<=x+w&&p[1]>=y&&p[1]<=y+h)return f;}return null;}
-function placeFoil(f,tl){
+function placeFoil(f,tl){SFX.play('drop');
   const{GX,GY,cell}=geo(),N=L().N,[w,h]=fdim(f),gx=Math.round((tl[0]-GX)/cell),gy=Math.round((tl[1]-GY)/cell);
   f.at=((f.scl||1)===1&&gx>=0&&gy>=0&&gx+w<=N&&gy+h<=N)?[gx,gy]:null;}
-function rotateFoil(f){
+function rotateFoil(f){SFX.play('foilFlip');
   if(!f.at){f.rot=(f.rot+1)%4;return;}
   const[w,h]=fdim(f),cx=f.at[0]+w/2,cy=f.at[1]+h/2;f.rot=(f.rot+1)%4;const[nw,nh]=fdim(f),N=L().N;
   if(nw>N||nh>N){f.at=null;return;}
   f.at=[Math.min(N-nw,Math.max(0,Math.round(cx-nw/2))),Math.min(N-nh,Math.max(0,Math.round(cy-nh/2)))];}
 cv.addEventListener('pointerdown',e=>{
+  SFX.unlock();
   const p=toPage(e);down={p,cx:e.clientX,cy:e.clientY};
   if(S.screen!=='game'||S.popup)return;
   if(!S.settings&&L().sheets[S.sheet]==='barrier'&&!S.bar.on&&p[0]>=BSW[0]&&p[0]<=BSW[0]+BSW[2]&&p[1]>=BSW[1]&&p[1]<=BSW[1]+BSW[3]){
@@ -4259,7 +4307,7 @@ cv.addEventListener('pointerdown',e=>{
     S.foils.splice(S.foils.indexOf(f),1);S.foils.push(f);render();return;}
   const c=cellAt(p);
   if(c&&!(S.anim&&S.anim.p<1)){cv.setPointerCapture(e.pointerId);const l=L();S.undo.push(S.grid.map(r=>r.slice()));if(S.undo.length>200)S.undo.shift();
-    const mx=gridInfo().max(c[0],c[1]);const v=(S.grid[c[1]][c[0]]+1)%(mx+1);S.grid[c[1]][c[0]]=v;S.anim=null;drag={v,done:new Set([c+''])};render();}
+    SFX.play('scribble');const mx=gridInfo().max(c[0],c[1]);const v=(S.grid[c[1]][c[0]]+1)%(mx+1);S.grid[c[1]][c[0]]=v;S.anim=null;drag={v,done:new Set([c+''])};render();}
 });
 cv.addEventListener('pointermove',e=>{
   if(td){if(!td.moved&&Math.hypot(e.clientX-td.cx,e.clientY-td.cy)<10)return;td.moved=true;const p=toPage(e);td.p.drag=[p[0]-td.off[0],p[1]-td.off[1]];cancelAnimationFrame(raf);raf=requestAnimationFrame(render);return;}
@@ -4269,37 +4317,37 @@ cv.addEventListener('pointermove',e=>{
   if(fd){if(!fd.moved&&Math.hypot(e.clientX-fd.cx,e.clientY-fd.cy)<10)return;fd.moved=true;const p=toPage(e);
     fd.f.dragAt=[p[0]-fd.off[0],p[1]-fd.off[1]];cancelAnimationFrame(raf);raf=requestAnimationFrame(render);return;}
   if(!drag)return;const c=cellAt(toPage(e));if(!c||drag.done.has(c+''))return;
-  drag.done.add(c+'');S.grid[c[1]][c[0]]=Math.min(drag.v,gridInfo().max(c[0],c[1]));cancelAnimationFrame(raf);raf=requestAnimationFrame(render);
+  drag.done.add(c+'');SFX.play('scribble',60);S.grid[c[1]][c[0]]=Math.min(drag.v,gridInfo().max(c[0],c[1]));cancelAnimationFrame(raf);raf=requestAnimationFrame(render);
 });
 cv.addEventListener('pointerup',e=>{
   if(td){const pc=td.p,g=tileGeo();
-    if(td.moved){pc.x=Math.round((pc.drag[0]-g.BX)/g.C);pc.y=Math.round((pc.drag[1]-g.BY)/g.C);pc.drag=null;}
-    else pc.r=(pc.r+1)%qrots(PLIB[pc.n]).length;
+    if(td.moved){pc.x=Math.round((pc.drag[0]-g.BX)/g.C);pc.y=Math.round((pc.drag[1]-g.BY)/g.C);pc.drag=null;SFX.play('drop');}
+    else{pc.r=(pc.r+1)%qrots(PLIB[pc.n]).length;SFX.play('foilFlip');}
     td=null;down=null;S.anim=null;render();checkWin();return;}
   if(rd){const it=rd.it,{C,RX,RY}=roomGeo();
-    if(rd.moved){const nx=Math.round((it.drag[0]-RX)/C),ny=Math.round((it.drag[1]-RY)/C);it.drag=null;if(placeOk(it,nx,ny)){it.x=nx;it.y=ny;}}
+    if(rd.moved){const nx=Math.round((it.drag[0]-RX)/C),ny=Math.round((it.drag[1]-RY)/C);it.drag=null;if(placeOk(it,nx,ny)){it.x=nx;it.y=ny;SFX.play('slide');}else SFX.play('error');}
     else{const r0=it.r,x0=it.x,y0=it.y,[w0,h0]=itemDims(it);let done=false;
       for(let k=1;k<4&&!done;k++){it.r=r0+k;const[w,h]=itemDims(it),cand=[];
         for(let dy=-(h-1);dy<h0;dy++)for(let dx=-(w-1);dx<w0;dx++)cand.push([x0+dx,y0+dy,Math.abs(dx)+Math.abs(dy)]);
         cand.sort((a,b)=>a[2]-b[2]);for(const[x,y]of cand)if(placeOk(it,x,y)){it.x=x;it.y=y;done=true;break;}}
-      if(!done){it.r=r0;it.x=x0;it.y=y0;}}
+      if(!done){it.r=r0;it.x=x0;it.y=y0;SFX.play('error');}else SFX.play('slide');}
     rd=null;down=null;S.anim=null;render();checkWin();return;}
   if(sd){const q=S.bar.drag;sd=false;S.bar.drag=null;down=null;
-    if(q&&q[0]>=BAREA[0]&&q[0]<=BAREA[0]+BAREA[2]&&q[1]>=BAREA[1]&&q[1]<=BAREA[1]+BAREA[3])S.bar.on=true;render();return;}
-  if(bd){S.bar.off=Math.round(S.bar.off/BW)*BW;bd=null;down=null;render();return;}
+    if(q&&q[0]>=BAREA[0]&&q[0]<=BAREA[0]+BAREA[2]&&q[1]>=BAREA[1]&&q[1]<=BAREA[1]+BAREA[3]){S.bar.on=true;SFX.play('drop');}render();return;}
+  if(bd){SFX.play('slide');S.bar.off=Math.round(S.bar.off/BW)*BW;bd=null;down=null;render();return;}
   if(fd){const f=fd.f;if(fd.moved){const tl=f.dragAt;f.dragAt=null;placeFoil(f,tl);}else rotateFoil(f);fd=null;down=null;render();return;}
   if(drag){drag=null;checkWin();down=null;return;}
   if(!down)return;const dx=e.clientX-down.cx,dy=e.clientY-down.cy,p=down.p;down=null;
-  if(S.popup){if(Math.hypot(dx,dy)>14)return;const h=hits.find(b=>p[0]>=b.x&&p[0]<=b.x+b.w&&p[1]>=b.y&&p[1]<=b.y+b.h);if(h)h.fn();return;}
+  if(S.popup){if(Math.hypot(dx,dy)>14)return;const h=hits.find(b=>p[0]>=b.x&&p[0]<=b.x+b.w&&p[1]>=b.y&&p[1]<=b.y+b.h);if(h){SFX.play('tick');h.fn();}return;}
   if(S.screen==='toc'&&!S.settings&&Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.3){const n=tocPages(),i=S.toc.page+(dx<0?1:-1);if(i>=0&&i<n){S.toc.page=i;render();}return;}
   const n=L().sheets.length;
   if(S.screen==='game'&&Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.3){const i=S.sheet+(dx<0?1:-1);if(i>=0&&i<n)goSheet(i);return;}
   if(Math.hypot(dx,dy)>14)return;
-  const h=hits.find(b=>p[0]>=b.x&&p[0]<=b.x+b.w&&p[1]>=b.y&&p[1]<=b.y+b.h);if(h){h.fn();return;}
+  const h=hits.find(b=>p[0]>=b.x&&p[0]<=b.x+b.w&&p[1]>=b.y&&p[1]<=b.y+b.h);if(h){SFX.play('tick');h.fn();return;}
   if(S.screen!=='game')return;
   if(!S.settings&&L().sheets[S.sheet]==='cons')consTap(p);
   if(!S.settings&&L().sheets[S.sheet]==='fold'){const l=L(),x=Math.floor((p[0]-FNET.x)/FNET.cs),y=Math.floor((p[1]-FNET.y)/FNET.cs),k=x+','+y;
-    if(l.spec[k]){const sel=S.fold.sel,i=sel.indexOf(k);if(i>=0)sel.splice(i,1);else if(sel.length<3)sel.push(k);S.anim=null;render();if(sel.length===3)checkWin();}}
+    if(l.spec[k]){SFX.play('scribble');const sel=S.fold.sel,i=sel.indexOf(k);if(i>=0)sel.splice(i,1);else if(sel.length<3)sel.push(k);S.anim=null;render();if(sel.length===3)checkWin();}}
 });
 cv.addEventListener('pointercancel',()=>{bd=null;if(td){td.p.drag=null;td=null;render();}if(rd){rd.it.drag=null;rd=null;render();}if(sd){sd=false;S.bar.drag=null;render();}if(fd){fd.f.dragAt=null;fd=null;render();}drag=null;down=null;});
 addEventListener('keydown',e=>{if(S.screen!=='game')return;const n=L().sheets.length;
@@ -4307,7 +4355,7 @@ addEventListener('keydown',e=>{if(S.screen!=='game')return;const n=L().sheets.le
   else if((e.ctrlKey||e.metaKey)&&e.key==='z')undo();});
 function checkWin(){
   if(!L().check(S.grid)){render();return;}
-  S.solved[sk(S.lvl)]=1;save();
+  S.solved[sk(S.lvl)]=1;save();setTimeout(()=>SFX.play('stamp'),matchMedia('(prefers-reduced-motion: reduce)').matches?0:1050);
   if(matchMedia('(prefers-reduced-motion: reduce)').matches){S.anim={p:1};render();return;}
   const t0=performance.now();S.anim={p:0};
   const step=()=>{if(!S.anim)return;S.anim.p=Math.min(1,(performance.now()-t0)/1100);render();if(S.anim.p<1)setTimeout(step,70);};step();

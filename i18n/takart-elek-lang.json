@@ -2248,6 +2248,13 @@
    "it": "fantasmi"
   },
   {
+   "hu": "HANG",
+   "ctx": "Shown in game (dynamic state).",
+   "en": "SOUND",
+   "de": "TON",
+   "it": "SUONO"
+  },
+  {
    "hu": "PÉLDA",
    "ctx": "Appears on: Easy level 12 (Belváros), sheet 1; Easy level 2 (Látkép), sheet 1 (+1 more).",
    "en": "EXAMPLE",

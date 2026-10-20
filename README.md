@@ -4,7 +4,7 @@
 
 Every level is a small set of drawing sheets: views, a top plan, colour sheets, overlays, a revision log. You flip between the sheets and work out the rule of the level from what is drawn on them. The e-ink *ghosting* is part of the game: the sheet you leave stays faintly on the panel, and some puzzles can only be solved by reading that trace.
 
-The game is a single HTML file with a canvas and plain JavaScript. It has no build step and no dependencies apart from one Google Font (Roboto Mono).
+The game is a single HTML file with a canvas and plain JavaScript. It has no build step and no dependencies apart from one Google Font (Roboto Mono). The sound effects (page turns, overlay flips, pencil scribbles, ruler lines, the approval stamp) are generated in code with the Web Audio API.
 
 ## Play
 
@@ -31,6 +31,7 @@ Open `index.html` in a browser. It is made for a 6–8" e-ink tablet (developed 
 | E-ink emulation on mobile | Kaleido-style colour and paper tone on a normal screen. |
 | Page turn | **Fast:** keeps the ghost image. **Normal:** a short flash on every page or level change. |
 | Font size calibration | An offset on every label, or AUTO by screen size. |
+| Sound | Paper-and-pen sound effects, synthesised in code with Web Audio (no audio files). |
 | Reset progress | Clears EASY, HARD or everything. Resetting HARD locks RANDOM again. |
 
 Progress and settings are kept in the browser's `localStorage`.
